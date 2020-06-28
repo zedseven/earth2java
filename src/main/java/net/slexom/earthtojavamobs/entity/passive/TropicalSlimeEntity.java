@@ -33,7 +33,7 @@ public class TropicalSlimeEntity extends CreatureEntity {
     public TropicalSlimeEntity(EntityType<TropicalSlimeEntity> type, World world) {
         super(type, world);
         this.size = 4;
-        experienceValue = this.size;
+        this.experienceValue = this.size;
         setNoAI(false);
         this.moveController = new TropicalSlimeEntity.MoveHelperController(this);
     }

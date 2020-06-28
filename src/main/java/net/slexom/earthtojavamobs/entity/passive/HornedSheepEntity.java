@@ -31,9 +31,6 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> {
 
     public HornedSheepEntity(EntityType<? extends HornedSheepEntity> type, World world) {
         super(type, world);
-        experienceValue = (int) Math.ceil(Math.random() * 3);
-        ;
-        setNoAI(false);
     }
 
     protected void registerData() {
@@ -44,12 +41,12 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> {
 
     protected void registerGoals() {
         this.eatGrassGoal = new EatGrassGoal(this);
-        this.goalSelector.addGoal(0, new HornedSheepEntity.ChargeGoal(this, (double) 1.4F, true));
-        this.goalSelector.addGoal(1, new SwimGoal(this));
-        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(0, new SwimGoal(this));
+        this.goalSelector.addGoal(1, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, Ingredient.fromItems(Items.WHEAT), false));
-        this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.25D));
-        this.goalSelector.addGoal(5, this.eatGrassGoal);
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25D));
+        this.goalSelector.addGoal(4, this.eatGrassGoal);
+        this.goalSelector.addGoal(5, new HornedSheepEntity.ChargeGoal(this, 1.4D, true));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
         this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
@@ -263,16 +260,20 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> {
     }
 
     class ChargeGoal extends MeleeAttackGoal {
-        ChargeGoal(CreatureEntity creatureIn, double speedIn, boolean useLongMemory) {
+
+        final HornedSheepEntity attacker;
+
+        ChargeGoal(HornedSheepEntity creatureIn, double speedIn, boolean useLongMemory) {
             super(creatureIn, speedIn, useLongMemory);
+            this.attacker = creatureIn;
         }
 
         public boolean shouldExecute() {
-            return super.shouldExecute() && HornedSheepEntity.this.isAngry();
+            return super.shouldExecute() && this.attacker.isAngry();
         }
 
         public boolean shouldContinueExecuting() {
-            return super.shouldContinueExecuting() && HornedSheepEntity.this.isAngry();
+            return super.shouldContinueExecuting() && this.attacker.isAngry();
         }
     }
 
