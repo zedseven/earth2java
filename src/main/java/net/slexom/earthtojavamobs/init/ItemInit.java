@@ -30,6 +30,9 @@ public class ItemInit {
     public static final RegistryObject<Item> HORN = ITEMS.register("horn", () -> new Item(new Item.Properties().group(itemGroup).maxStackSize(64)));
     public static final RegistryObject<Item> BONE_SHARD = ITEMS.register("bone_shard", () -> new BoneShardItem(new Item.Properties().group(null).maxStackSize(16)));
 
+//   public static final RegistryObject<RainbowDye> RAINBOW_DYE = ITEMS.register("rainbow_dye",()-> new RainbowDye(DyeColor.WHITE ,new Item.Properties().group(itemGroup).maxStackSize(64)));
+
+
     // SPAWN EGGS
     private static final Item.Properties spawnEggProps = new Item.Properties().group(itemGroup);
 

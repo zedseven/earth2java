@@ -15,6 +15,22 @@ import net.slexom.earthtojavamobs.block.MudBlock;
 public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, EarthtojavamobsMod.MOD_ID);
 
+
+//    public static final RegistryObject<RainbowCarpetBlock> RAINBOW_CARPET = BLOCKS.register(
+//            "rainbow_carpet",
+//            () ->   new RainbowCarpetBlock(DyeColor.WHITE, Block.Properties.create(Material.CARPET, MaterialColor.SNOW).hardnessAndResistance(0.1F).sound(SoundType.CLOTH))
+//    );
+//
+//    public static final RegistryObject<RainbowBedBlock> RAINBOW_BED = BLOCKS.register(
+//            "rainbow_bed",
+//            () -> new RainbowBedBlock(Block.Properties.create(Material.WOOL).sound(SoundType.WOOD).hardnessAndResistance(0.2F).notSolid())
+//    );
+//
+//    public static final RegistryObject<Block> RAINBOW_WOOL = BLOCKS.register(
+//            "rainbow_wool",
+//            () -> new Block(Block.Properties.create(Material.WOOL, MaterialColor.SNOW).hardnessAndResistance(0.8F).sound(SoundType.CLOTH))
+//    );
+
     public static final RegistryObject<Block> CARVED_MELON = BLOCKS.register(
             "carved_melon",
             () -> new CarvedMelonBlock(Block.Properties.create(Material.GOURD, MaterialColor.LIME).hardnessAndResistance(1.0F).sound(SoundType.WOOD))
