@@ -44,6 +44,7 @@ public class EarthtojavamobsMod {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         FluidInit.FLUIDS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
+        TileEntityTypeInit.TILE_ENTITY_TYPES.register(modEventBus);
         EntityTypesInit.ENTITY_TYPES.register(modEventBus);
         ItemInit.ITEMS.register(modEventBus);
         RecipesInit.RECIPES.register(modEventBus);
