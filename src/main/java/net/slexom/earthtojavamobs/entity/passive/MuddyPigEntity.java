@@ -124,6 +124,70 @@ public class MuddyPigEntity extends E2JBasePigEntity<MuddyPigEntity> {
         }
     }
 
+//    static class RollGoal extends Goal {
+//        private final MuddyPigEntity muddyPigEntity;
+//
+//        public RollGoal(MuddyPigEntity entity) {
+//            this.muddyPigEntity = entity;
+//            this.setMutexFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK, Goal.Flag.JUMP));
+//        }
+//
+//        /**
+//         * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
+//         * method as well.
+//         */
+//        public boolean shouldExecute() {
+//            if ((this.muddyPigEntity.isChild() || this.muddyPigEntity.isPlayful()) && this.muddyPigEntity.onGround) {
+//                if (!this.muddyPigEntity.canPerformAction()) {
+//                    return false;
+//                } else {
+//                    float f = this.muddyPigEntity.rotationYaw * ((float)Math.PI / 180F);
+//                    int i = 0;
+//                    int j = 0;
+//                    float f1 = -MathHelper.sin(f);
+//                    float f2 = MathHelper.cos(f);
+//                    if ((double)Math.abs(f1) > 0.5D) {
+//                        i = (int)((float)i + f1 / Math.abs(f1));
+//                    }
+//
+//                    if ((double)Math.abs(f2) > 0.5D) {
+//                        j = (int)((float)j + f2 / Math.abs(f2));
+//                    }
+//
+//                    if (this.muddyPigEntity.world.getBlockState((new BlockPos(this.muddyPigEntity)).add(i, -1, j)).isAir()) {
+//                        return true;
+//                    } else if (this.muddyPigEntity.isPlayful() && this.muddyPigEntity.rand.nextInt(60) == 1) {
+//                        return true;
+//                    } else {
+//                        return this.muddyPigEntity.rand.nextInt(500) == 1;
+//                    }
+//                }
+//            } else {
+//                return false;
+//            }
+//        }
+//
+//        /**
+//         * Returns whether an in-progress EntityAIBase should continue executing
+//         */
+//        public boolean shouldContinueExecuting() {
+//            return false;
+//        }
+//
+//        /**
+//         * Execute a one shot task or start executing a continuous task
+//         */
+//        public void startExecuting() {
+//            this.muddyPigEntity.func_213576_v(true);
+//        }
+//
+//        public boolean isPreemptible() {
+//            return false;
+//        }
+//    }
+
+
+
     @Override
     public IPacket<?> createSpawnPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);

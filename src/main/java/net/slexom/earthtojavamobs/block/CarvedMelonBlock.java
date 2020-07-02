@@ -70,8 +70,8 @@ public class CarvedMelonBlock extends HorizontalBlock {
             }
 
             for (int l = 0; l < this.getSnowmanPattern().getThumbLength(); ++l) {
-                CachedBlockInfo cachedblockinfo3 = blockpattern$patternhelper.translateOffset(0, l, 0);
-                p_196358_1_.notifyNeighbors(cachedblockinfo3.getPos(), Blocks.AIR);
+                CachedBlockInfo cachedBlockInfo3 = blockpattern$patternhelper.translateOffset(0, l, 0);
+                p_196358_1_.notifyNeighbors(cachedBlockInfo3.getPos(), Blocks.AIR);
             }
         }
     }

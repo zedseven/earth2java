@@ -6,8 +6,11 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.slexom.earthtojavamobs.entity.passive.JumboRabbitEntity;
 
+@OnlyIn(Dist.CLIENT)
 public class JumboRabbitModel<T extends JumboRabbitEntity> extends EntityModel<T> {
     /**
      * The Rabbit's Left Foot
