@@ -13,6 +13,8 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.slexom.earthtojavamobs.entity.base.E2JBaseCowEntity;
 
@@ -46,6 +48,7 @@ public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements 
         super.livingTick();
     }
 
+    @OnlyIn(Dist.CLIENT)
     public void handleStatusUpdate(byte id) {
         if (id == 10) {
             this.shearTimer = 40;
