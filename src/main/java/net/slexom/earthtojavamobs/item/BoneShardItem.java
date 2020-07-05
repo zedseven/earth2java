@@ -1,7 +1,6 @@
 package net.slexom.earthtojavamobs.item;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.SnowballEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Stats;
@@ -12,7 +11,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 import net.slexom.earthtojavamobs.entity.projectile.BoneShardEntity;
 
-public class BoneShardItem extends Item {
+public class BoneShardItem extends E2JItem {
     public BoneShardItem(Item.Properties builder) {
         super(builder);
     }

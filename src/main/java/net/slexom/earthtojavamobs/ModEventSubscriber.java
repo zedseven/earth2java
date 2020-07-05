@@ -57,20 +57,16 @@ public final class ModEventSubscriber {
     @SubscribeEvent
     public static void onModConfigEvent(final ModConfig.ModConfigEvent event) {
         final ModConfig config = event.getConfig();
-        if (config.getSpec() == ConfigHolder.COMMON_SPEC) {
-            ConfigHelper.bakeCommon(config);
-            LOGGER.debug("Baked common config");
-        }
-//        if (config.getSpec() == ConfigHolder.CLIENT_SPEC) {
-//            ConfigHelper.bakeClient(config);
-//            LOGGER.debug("Baked client config");
+        if (config.getSpec() == ConfigHolder.CLIENT_SPEC) {
+            ConfigHelper.bakeClient(config);
+            LOGGER.debug("Baked client config");
 //        } else if (config.getSpec() == ConfigHolder.SERVER_SPEC) {
 //            ConfigHelper.bakeServer(config);
 //            LOGGER.debug("Baked server config");
-//        } else if (config.getSpec() == ConfigHolder.COMMON_SPEC) {
-//            ConfigHelper.bakeCommon(config);
-//            LOGGER.debug("Baked common config");
-//        }
+        } else if (config.getSpec() == ConfigHolder.COMMON_SPEC) {
+            ConfigHelper.bakeCommon(config);
+            LOGGER.debug("Baked common config");
+        }
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
