@@ -1,13 +1,17 @@
 package net.slexom.earthtojavamobs;
 
+import com.google.common.collect.Ordering;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.dimension.DimensionType;
@@ -18,6 +22,9 @@ import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.LakesFeature;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.extensions.IForgeItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -32,6 +39,8 @@ import net.slexom.earthtojavamobs.entity.passive.GlowSquidEntity;
 import net.slexom.earthtojavamobs.init.*;
 import net.slexom.earthtojavamobs.utils.BiomeSpawnHelper;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Random;
 
 @Mod(EarthtojavamobsMod.MOD_ID)
@@ -55,11 +64,6 @@ public class EarthtojavamobsMod {
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, ConfigHolder.SERVER_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHolder.COMMON_SPEC);
 
-    }
-
-    private void setup(final FMLCommonSetupEvent event) {
-        setMudLakeSpawn();
-        registerEntitiesSpawn();
     }
 
     private static void setMudLakeSpawn() {
@@ -112,6 +116,7 @@ public class EarthtojavamobsMod {
         registerAnimalEntitySpawn(EntityTypesInit.ALBINO_COW_REGISTRY_OBJECT.get(), E2JModConfig.albinoCowSpawnBiomes.toArray(new String[0]), E2JModConfig.albinoCowWeight, E2JModConfig.albinoCowGroupMin, E2JModConfig.albinoCowGroupMax);
         registerMonsterEntitySpawn(EntityTypesInit.BONE_SPIDER_REGISTRY_OBJECT.get(), E2JModConfig.boneSpiderSpawnBiomes.toArray(new String[0]), E2JModConfig.boneSpiderWeight, E2JModConfig.boneSpiderGroupMin, E2JModConfig.boneSpiderGroupMax);
         registerAnimalEntitySpawn(EntityTypesInit.JUMBO_RABBIT_REGISTRY_OBJECT.get(), E2JModConfig.jumboRabbitSpawnBiomes.toArray(new String[0]), E2JModConfig.jumboRabbitWeight, E2JModConfig.jumboRabbitGroupMin, E2JModConfig.jumboRabbitGroupMax);
+        registerAnimalEntitySpawn(EntityTypesInit.JOLLY_LLAMA_REGISTRY_OBJECT.get(), E2JModConfig.jollyLlamaSpawnBiomes.toArray(new String[0]), E2JModConfig.jollyLlamaWeight, E2JModConfig.jollyLlamaGroupMin, E2JModConfig.jollyLlamaGroupMax);
 
     }
 
@@ -143,8 +148,12 @@ public class EarthtojavamobsMod {
         });
     }
 
-    public static class E2JItemGroup extends ItemGroup {
+    private void setup(final FMLCommonSetupEvent event) {
+        setMudLakeSpawn();
+        registerEntitiesSpawn();
+    }
 
+    public static class E2JItemGroup extends ItemGroup {
         public static final E2JItemGroup instance = new E2JItemGroup(ItemGroup.GROUPS.length, MOD_ID);
 
         private E2JItemGroup(int index, String label) {
@@ -155,6 +164,7 @@ public class EarthtojavamobsMod {
         public ItemStack createIcon() {
             return new ItemStack(ItemInit.HORN.get());
         }
+
     }
 
 }

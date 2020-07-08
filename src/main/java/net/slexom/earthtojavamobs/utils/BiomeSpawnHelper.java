@@ -74,6 +74,7 @@ public final class BiomeSpawnHelper {
     public static final String[] BONE_SPIDER_SPAWN_BIOMES = getBiomesListFromBiomes(BADLANDS);
     public static final String[] SKELETON_WOLF_SPAWN_BIOMES = getBiomesListFromBiomes(FOREST, TAIGA, SNOWY_TAIGA, GIANT_TAIGA, BADLANDS);
     public static final String[] GLOW_SQUID_SPAWN_BIOMES = getBiomesListFromBiomes(OCEAN, RIVER, SWAMP);
+    public static final String[] JOLLY_LLAMA_SPAWN_BIOMES = getBiomesListFromBiomes(SNOWY_TUNDRA, ICE_SPIKE, SNOWY_TAIGA, FROZEN_RIVER, SNOWY_BEACH);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -102,7 +103,7 @@ public final class BiomeSpawnHelper {
         setSpawnBiomes(entity, spawnBiomes, weight, minGroupCountIn, maxGroupCountIn, EntityClassification.MONSTER);
     }
 
-    public static List<String> convertForConfig(String[] ary){
+    public static List<String> convertForConfig(String[] ary) {
         return Arrays.stream(ary).collect(Collectors.toList());
     }
 

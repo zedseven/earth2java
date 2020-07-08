@@ -147,6 +147,11 @@ final class CommonConfig {
     final ForgeConfigSpec.IntValue jumboRabbitGroupMin;
     final ForgeConfigSpec.IntValue jumboRabbitGroupMax;
 
+    final ForgeConfigSpec.ConfigValue<List<String>> jollyLlamaSpawnBiomes;
+    final ForgeConfigSpec.IntValue jollyLlamaWeight;
+    final ForgeConfigSpec.IntValue jollyLlamaGroupMin;
+    final ForgeConfigSpec.IntValue jollyLlamaGroupMax;
+
     private final int standardSheepWeight = 12;
     private final int standardCowWeight = 8;
     private final int standardChickenWeight = 10;
@@ -552,17 +557,32 @@ final class CommonConfig {
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();
 
-        builder.push("boneSpider");
+        builder.push("jumboRabbit");
         jumboRabbitSpawnBiomes = builder
                 .comment("Biome where entity Spawn")
                 .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.JUMBO_RABBIT_SPAWN_BIOMES));
         jumboRabbitWeight = builder
                 .comment("Weight of entity in spawn")
-                .defineInRange("entityWeight", 20, 0, Integer.MAX_VALUE);
+                .defineInRange("entityWeight", standardRabbitWeight, 0, Integer.MAX_VALUE);
         jumboRabbitGroupMin = builder
                 .comment("Minimum number of entities in group")
                 .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
         jumboRabbitGroupMax = builder
+                .comment("Maximum number of entities in group")
+                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+
+        builder.push("jollyLlama");
+        jollyLlamaSpawnBiomes = builder
+                .comment("Biome where entity Spawn")
+                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.JOLLY_LLAMA_SPAWN_BIOMES));
+        jollyLlamaWeight = builder
+                .comment("Weight of entity in spawn")
+                .defineInRange("entityWeight", 6, 0, Integer.MAX_VALUE);
+        jollyLlamaGroupMin = builder
+                .comment("Minimum number of entities in group")
+                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
+        jollyLlamaGroupMax = builder
                 .comment("Maximum number of entities in group")
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();

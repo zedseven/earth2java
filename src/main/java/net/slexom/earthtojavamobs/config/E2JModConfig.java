@@ -151,6 +151,11 @@ public final class E2JModConfig {
     public static int jumboRabbitGroupMin;
     public static int jumboRabbitGroupMax;
 
+    public static List<String> jollyLlamaSpawnBiomes;
+    public static int jollyLlamaWeight;
+    public static int jollyLlamaGroupMin;
+    public static int jollyLlamaGroupMax;
+
 
     // Client
 
