@@ -74,4 +74,12 @@ public final class ClientModEventSubscriber {
         ClientRegistry.bindTileEntityRenderer(TileEntityTypeInit.RAINBOW_BED.get(), RainbowBedTileEntityRenderer::new);
     }
 
+//    @SubscribeEvent
+//    public static void bedAtlas(TextureStitchEvent.Pre event) {
+//        ResourceLocation rainbowBedTexture = new ResourceLocation(EarthToJavaMobsMod.MOD_ID, "entity/bed/rainbow");
+//        if (event.getMap().getTextureLocation() == Atlases.BED_ATLAS) {
+//            event.addSprite(rainbowBedTexture);
+//        }
+//    }
+    
 }

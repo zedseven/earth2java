@@ -1,13 +1,10 @@
 package slexom.earthtojava.mobs;
 
 import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.client.renderer.Atlases;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,13 +12,13 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.IForgeRegistry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import slexom.earthtojava.mobs.client.renderer.tileentity.RainbowBedItemStackTileEntityRenderer;
 import slexom.earthtojava.mobs.config.ConfigHelper;
 import slexom.earthtojava.mobs.config.ConfigHolder;
 import slexom.earthtojava.mobs.init.BlockInit;
 import slexom.earthtojava.mobs.item.ModdedSpawnEggItem;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod.EventBusSubscriber(modid = EarthToJavaMobsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber {
@@ -74,11 +71,4 @@ public final class ModEventSubscriber {
         ModdedSpawnEggItem.initUnaddedEggs();
     }
 
-    @SubscribeEvent
-    public static void bedAtlas(TextureStitchEvent.Pre event) {
-        ResourceLocation rainbowBedTexture = new ResourceLocation(EarthToJavaMobsMod.MOD_ID, "entity/bed/rainbow");
-        if (event.getMap().getTextureLocation() == Atlases.BED_ATLAS) {
-            event.addSprite(rainbowBedTexture);
-        }
-    }
 }

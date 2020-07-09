@@ -51,7 +51,7 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.15.2-31.2.27'
+    minecraft 'net.minecraftforge:forge:1.15.2-31.2.31'
 }
 
 
@@ -85,10 +85,10 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/slexom/earth2java_dev")
+            url = uri("https://maven.pkg.github.com/slexom/${project.properties['github_repo']}")
             credentials {
-                username = "Slexom"
-                password = "0a858813474bf6f45b04ef4e8d8c5e8aa96e9fce"
+                username = "${project.properties['github_owner']}"
+                password = "${project.properties['github_token']}"
             }
         }
     }
