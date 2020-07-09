@@ -6,7 +6,6 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -14,10 +13,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import slexom.earthtojava.mobs.EarthToJavaMobsMod;
 import slexom.earthtojava.mobs.client.renderer.entity.*;
-import slexom.earthtojava.mobs.client.renderer.tileentity.RainbowBedTileEntityRenderer;
 import slexom.earthtojava.mobs.init.EntityTypesInit;
 import slexom.earthtojava.mobs.init.FluidInit;
-import slexom.earthtojava.mobs.init.TileEntityTypeInit;
 
 
 @EventBusSubscriber(modid = EarthToJavaMobsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -71,7 +68,7 @@ public final class ClientModEventSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BONE_SHARD_REGISTRY_OBJECT.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer()));
 
 
-        ClientRegistry.bindTileEntityRenderer(TileEntityTypeInit.RAINBOW_BED.get(), RainbowBedTileEntityRenderer::new);
+//        ClientRegistry.bindTileEntityRenderer(TileEntityTypeInit.RAINBOW_BED.get(), RainbowBedTileEntityRenderer::new);
     }
 
 //    @SubscribeEvent
