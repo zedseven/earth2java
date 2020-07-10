@@ -27,7 +27,9 @@ public class ItemInit {
                             .group(itemGroup)
             )
     );
-    public static final RegistryObject<Item> HORN = ITEMS.register("horn", () -> new HornItem(new Item.Properties().group(itemGroup).maxStackSize(64)));
+    public static final RegistryObject<HornItem> HORN = ITEMS.register("horn", () -> new HornItem(new Item.Properties().group(itemGroup).maxStackSize(64)));
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties().group(itemGroup).maxStackSize(64)));
+
 
     // SPAWN EGGS
     private static final Item.Properties spawnEggProps = new Item.Properties().group(itemGroup);

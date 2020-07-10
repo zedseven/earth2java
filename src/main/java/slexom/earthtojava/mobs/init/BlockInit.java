@@ -10,14 +10,13 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import slexom.earthtojava.mobs.EarthToJavaMobsMod;
-import slexom.earthtojava.mobs.block.CarvedMelonBlock;
-import slexom.earthtojava.mobs.block.MudBlock;
-import slexom.earthtojava.mobs.block.RainbowBedBlock;
-import slexom.earthtojava.mobs.block.RainbowCarpetBlock;
+import slexom.earthtojava.mobs.block.*;
 
 public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, EarthToJavaMobsMod.MOD_ID);
 
+    public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", ()-> new Block(Block.Properties.create(Material.IRON, MaterialColor.RED).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL)));
+    public static final RegistryObject<RubyOreBlock> RUBY_ORE = BLOCKS.register("ruby_block", ()-> new RubyOreBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)));
 
     public static final RegistryObject<RainbowCarpetBlock> RAINBOW_CARPET = BLOCKS.register(
             "rainbow_carpet",

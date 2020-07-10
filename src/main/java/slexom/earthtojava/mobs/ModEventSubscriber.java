@@ -11,6 +11,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,6 +20,7 @@ import slexom.earthtojava.mobs.config.ConfigHelper;
 import slexom.earthtojava.mobs.config.ConfigHolder;
 import slexom.earthtojava.mobs.init.BlockInit;
 import slexom.earthtojava.mobs.item.ModdedSpawnEggItem;
+import slexom.earthtojava.mobs.world.gen.E2JOreGen;
 
 @Mod.EventBusSubscriber(modid = EarthToJavaMobsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModEventSubscriber {
@@ -69,6 +71,11 @@ public final class ModEventSubscriber {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onPostRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
         ModdedSpawnEggItem.initUnaddedEggs();
+    }
+
+    @SubscribeEvent
+    public static void registerOres(FMLLoadCompleteEvent event){
+        E2JOreGen.generateOre();
     }
 
 }
