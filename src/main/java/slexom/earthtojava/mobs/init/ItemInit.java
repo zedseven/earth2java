@@ -62,10 +62,10 @@ public class ItemInit {
     public static final RegistryObject<ModdedSpawnEggItem> TROPICAL_SLIME_SPAWN_EGG = registerSpawnEgg(EntityTypesInit.TROPICAL_SLIME_REGISTRY_NAME, EntityTypesInit.TROPICAL_SLIME_REGISTRY_OBJECT, 0x0e496e, 0x8ed3ff);
     public static final RegistryObject<ModdedSpawnEggItem> VESTED_RABBIT_SPAWN_EGG = registerSpawnEgg(EntityTypesInit.VESTED_RABBIT_REGISTRY_NAME, EntityTypesInit.VESTED_RABBIT_REGISTRY_OBJECT, 0xdedede, 0x747474);
     public static final RegistryObject<ModdedSpawnEggItem> WOOLY_COW_SPAWN_EGG = registerSpawnEgg(EntityTypesInit.WOOLY_COW_REGISTRY_NAME, EntityTypesInit.WOOLY_COW_REGISTRY_OBJECT, 0xcc3300, 0xff9933);
+    public static final RegistryObject<ModdedSpawnEggItem> WANDERING_TRADER_SPAWN_EGG = registerSpawnEgg(EntityTypesInit.WANDERING_TRADER_REGISTRY_NAME, EntityTypesInit.WANDERING_TRADER_REGISTRY_OBJECT, 0xcc0000, 0xffcccc);
 
     private static RegistryObject<ModdedSpawnEggItem> registerSpawnEgg(String entityRegistryName, RegistryObject<? extends EntityType<?>> entity, int primaryColor, int secondaryColor) {
         return ITEMS.register(entityRegistryName + "_spawn_egg", () -> new ModdedSpawnEggItem(entity, primaryColor, secondaryColor, spawnEggProps));
     }
-
 
 }

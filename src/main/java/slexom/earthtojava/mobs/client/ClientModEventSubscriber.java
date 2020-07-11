@@ -1,11 +1,15 @@
 package slexom.earthtojava.mobs.client;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -13,8 +17,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import slexom.earthtojava.mobs.EarthToJavaMobsMod;
 import slexom.earthtojava.mobs.client.renderer.entity.*;
+import slexom.earthtojava.mobs.client.renderer.tileentity.RainbowBedTileEntityRenderer;
 import slexom.earthtojava.mobs.init.EntityTypesInit;
 import slexom.earthtojava.mobs.init.FluidInit;
+import slexom.earthtojava.mobs.init.TileEntityTypeInit;
 
 
 @EventBusSubscriber(modid = EarthToJavaMobsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -34,7 +40,21 @@ public final class ClientModEventSubscriber {
     public static void onFMLClientSetupEvent(final FMLClientSetupEvent event) {
         RenderTypeLookup.setRenderLayer(FluidInit.MUD_FLUID_STILL.get(), RenderType.getSolid());
         RenderTypeLookup.setRenderLayer(FluidInit.MUD_FLUID_FLOWING.get(), RenderType.getSolid());
+        registerEntityRenderer();
+        registerProjectileRenderer();
+        registerTileEntityRenderer();
+    }
 
+    private static void registerTileEntityRenderer() {
+        ClientRegistry.bindTileEntityRenderer(TileEntityTypeInit.RAINBOW_BED.get(), RainbowBedTileEntityRenderer::new);
+    }
+
+    private static void registerProjectileRenderer() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MELON_SEED_PROJECTILE_REGISTRY_OBJECT.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer()));
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BONE_SHARD_REGISTRY_OBJECT.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer()));
+    }
+
+    private static void registerEntityRenderer() {
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.AMBER_CHICKEN_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JChickenRenderer(renderManagerIn, EntityTypesInit.AMBER_CHICKEN_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ASHEN_COW_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JCowRenderer(renderManagerIn, EntityTypesInit.ASHEN_COW_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CLUCKSHROOM_REGISTRY_OBJECT.get(), CluckshroomRenderer::new);
@@ -59,24 +79,19 @@ public final class ClientModEventSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MUDDY_FOOT_RABBIT_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JRabbitRenderer(renderManagerIn, EntityTypesInit.MUDDY_FOOT_RABBIT_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.FURNACE_GOLEM_REGISTRY_OBJECT.get(), FurnaceGolemRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MELON_GOLEM_REGISTRY_OBJECT.get(), MelonGolemRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MELON_SEED_PROJECTILE_REGISTRY_OBJECT.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer()));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ALBINO_COW_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JCowRenderer(renderManagerIn, EntityTypesInit.ALBINO_COW_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.JUMBO_RABBIT_REGISTRY_OBJECT.get(), renderManagerIn -> new JumboRabbitRenderer(renderManagerIn, EntityTypesInit.JUMBO_RABBIT_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.JOLLY_LLAMA_REGISTRY_OBJECT.get(), JollyLlamaRenderer::new);
-
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BONE_SPIDER_REGISTRY_OBJECT.get(), renderManagerIn -> new BoneSpiderRenderer(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BONE_SHARD_REGISTRY_OBJECT.get(), renderManagerIn -> new SpriteRenderer<>(renderManagerIn, Minecraft.getInstance().getItemRenderer()));
-
-
-//        ClientRegistry.bindTileEntityRenderer(TileEntityTypeInit.RAINBOW_BED.get(), RainbowBedTileEntityRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.WANDERING_TRADER_REGISTRY_OBJECT.get(), E2JWanderingTraderRenderer::new);
     }
 
-//    @SubscribeEvent
-//    public static void bedAtlas(TextureStitchEvent.Pre event) {
-//        ResourceLocation rainbowBedTexture = new ResourceLocation(EarthToJavaMobsMod.MOD_ID, "entity/bed/rainbow");
-//        if (event.getMap().getTextureLocation() == Atlases.BED_ATLAS) {
-//            event.addSprite(rainbowBedTexture);
-//        }
-//    }
-    
+    @SubscribeEvent
+    public static void bedAtlas(TextureStitchEvent.Pre event) {
+        ResourceLocation rainbowBedTexture = new ResourceLocation(EarthToJavaMobsMod.MOD_ID, "entity/bed/rainbow");
+        if (event.getMap().getTextureLocation() == Atlases.BED_ATLAS) {
+            event.addSprite(rainbowBedTexture);
+        }
+    }
+
 }

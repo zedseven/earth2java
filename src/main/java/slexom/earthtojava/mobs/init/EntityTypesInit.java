@@ -7,6 +7,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import slexom.earthtojava.mobs.EarthToJavaMobsMod;
+import slexom.earthtojava.mobs.entity.merchant.villager.E2JWanderingTraderEntity;
 import slexom.earthtojava.mobs.entity.monster.BoneSpiderEntity;
 import slexom.earthtojava.mobs.entity.monster.SkeletonWolfEntity;
 import slexom.earthtojava.mobs.entity.passive.*;
@@ -16,6 +17,16 @@ import slexom.earthtojava.mobs.entity.projectile.MelonSeedProjectileEntity;
 public class EntityTypesInit {
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, EarthToJavaMobsMod.MOD_ID);
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static final String WANDERING_TRADER_REGISTRY_NAME = "wandering_trader";
+    public static final RegistryObject<EntityType<E2JWanderingTraderEntity>> WANDERING_TRADER_REGISTRY_OBJECT = ENTITY_TYPES.register(
+            WANDERING_TRADER_REGISTRY_NAME,
+            () -> EntityType.Builder.create(E2JWanderingTraderEntity::new, EntityClassification.CREATURE)
+                    .size(EntityType.WANDERING_TRADER.getWidth(), EntityType.WANDERING_TRADER.getHeight())
+                    .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, WANDERING_TRADER_REGISTRY_NAME).toString())
+    );
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

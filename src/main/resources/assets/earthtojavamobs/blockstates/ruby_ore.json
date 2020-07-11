@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "block/ruby_ore" }
+        "": { "model": "earthtojavamobs:block/ruby_ore" }
     }
 }

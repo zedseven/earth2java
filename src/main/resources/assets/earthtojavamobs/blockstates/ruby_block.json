@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "block/ruby_block" }
+        "": { "model": "earthtojavamobs:block/ruby_block" }
     }
 }

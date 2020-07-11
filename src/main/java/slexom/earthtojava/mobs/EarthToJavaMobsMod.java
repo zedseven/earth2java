@@ -18,6 +18,7 @@ import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.LakesFeature;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -31,6 +32,7 @@ import slexom.earthtojava.mobs.config.E2JModConfig;
 import slexom.earthtojava.mobs.entity.passive.GlowSquidEntity;
 import slexom.earthtojava.mobs.init.*;
 import slexom.earthtojava.mobs.utils.BiomeSpawnHelper;
+import slexom.earthtojava.mobs.world.spawner.E2JWanderingTraderSpawner;
 
 import java.util.Random;
 
@@ -50,6 +52,7 @@ public class EarthToJavaMobsMod {
         RecipesInit.RECIPES.register(modEventBus);
         modEventBus.register(this);
         modEventBus.addListener(this::setup);
+        MinecraftForge.EVENT_BUS.register(new E2JWanderingTraderSpawner());
 
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, ConfigHolder.SERVER_SPEC);
@@ -156,5 +159,6 @@ public class EarthToJavaMobsMod {
         }
 
     }
+
 
 }
