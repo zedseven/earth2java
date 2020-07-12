@@ -1,5 +1,6 @@
 package slexom.earthtojava.mobs;
 
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
@@ -14,9 +15,14 @@ import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.Heightmap;
+import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
+import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
+import net.minecraft.world.gen.feature.DefaultFlowersFeature;
 import net.minecraft.world.gen.feature.LakesFeature;
 import net.minecraft.world.gen.placement.ChanceConfig;
+import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +41,9 @@ import slexom.earthtojava.mobs.utils.BiomeSpawnHelper;
 import slexom.earthtojava.mobs.world.spawner.E2JWanderingTraderSpawner;
 
 import java.util.Random;
+
+//TODO: modificare ricetta vaso mod
+// Finire di sistemare il lama allegro e aggiungerlo al nuovo mercante
 
 @Mod(EarthToJavaMobsMod.MOD_ID)
 public class EarthToJavaMobsMod {
@@ -141,8 +150,41 @@ public class EarthToJavaMobsMod {
         });
     }
 
+    private static void setButtercupSpawn() {
+        DeferredWorkQueue.runLater(new Runnable() {
+            @Override
+            public void run() {
+                for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
+                    biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
+                            new DefaultFlowersFeature(BlockClusterFeatureConfig::deserialize) {
+                                @Override
+                                public boolean place(IWorld world, ChunkGenerator generator, Random random, BlockPos pos, BlockClusterFeatureConfig config) {
+                                    DimensionType dimensionType = world.getDimension().getType();
+                                    boolean dimensionCriteria = false;
+                                    if (dimensionType == DimensionType.OVERWORLD)
+                                        dimensionCriteria = true;
+                                    if (!dimensionCriteria)
+                                        return false;
+                                    return super.place(world, generator, random, pos, config);
+                                }
+                            }
+                                    .withConfiguration((new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.BUTTERCUP.get().getDefaultState()), new SimpleBlockPlacer())).tries(64).build())
+                                    .withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(5)))
+                    );
+                }
+            }
+
+        });
+    }
+
+    private final void registerToComposter(){
+        DeferredWorkQueue.runLater(() -> ComposterBlock.registerCompostable(0.65F, BlockInit.BUTTERCUP.get()));
+    }
+
     private void setup(final FMLCommonSetupEvent event) {
+        registerToComposter();
         setMudLakeSpawn();
+        setButtercupSpawn();
         registerEntitiesSpawn();
     }
 

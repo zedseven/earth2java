@@ -18,6 +18,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 import slexom.earthtojava.mobs.entity.base.E2JBaseCowEntity;
+import slexom.earthtojava.mobs.init.BlockInit;
 
 public class MoobloomEntity extends E2JBaseCowEntity<MoobloomEntity> implements net.minecraftforge.common.IShearable {
 
@@ -79,7 +80,7 @@ public class MoobloomEntity extends E2JBaseCowEntity<MoobloomEntity> implements 
             int i = MathHelper.floor(this.moobloom.getPosX());
             int j = MathHelper.floor(this.moobloom.getPosY());
             int k = MathHelper.floor(this.moobloom.getPosZ());
-            Block flower = Math.random() > 0.8 ? Blocks.SUNFLOWER : Blocks.DANDELION;
+            Block flower = Math.random() > 0.8 ? Blocks.SUNFLOWER : BlockInit.BUTTERCUP.get();
             BlockPos blockPos = new BlockPos(i, j, k);
             BlockState blockState = flower.getDefaultState();
             BlockPos blockDownPos = blockPos.down();

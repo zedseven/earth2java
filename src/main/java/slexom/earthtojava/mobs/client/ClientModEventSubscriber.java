@@ -18,6 +18,7 @@ import org.apache.logging.log4j.Logger;
 import slexom.earthtojava.mobs.EarthToJavaMobsMod;
 import slexom.earthtojava.mobs.client.renderer.entity.*;
 import slexom.earthtojava.mobs.client.renderer.tileentity.RainbowBedTileEntityRenderer;
+import slexom.earthtojava.mobs.init.BlockInit;
 import slexom.earthtojava.mobs.init.EntityTypesInit;
 import slexom.earthtojava.mobs.init.FluidInit;
 import slexom.earthtojava.mobs.init.TileEntityTypeInit;
@@ -28,18 +29,12 @@ public final class ClientModEventSubscriber {
 
     private static final Logger LOGGER = LogManager.getLogger(EarthToJavaMobsMod.MOD_ID + " Client Mod Event Subscriber");
 
-    /**
-     * We need to register our renderers on the client because rendering code does not exist on the server
-     * and trying to use it on a dedicated server will crash the game.
-     * <p>
-     * This method will be called by Forge when it is time for the mod to do its client-side setup
-     * This method will always be called after the Registry events.
-     * This means that all Blocks, Items, TileEntityTypes, etc. will all have been registered already
-     */
     @SubscribeEvent
     public static void onFMLClientSetupEvent(final FMLClientSetupEvent event) {
         RenderTypeLookup.setRenderLayer(FluidInit.MUD_FLUID_STILL.get(), RenderType.getSolid());
         RenderTypeLookup.setRenderLayer(FluidInit.MUD_FLUID_FLOWING.get(), RenderType.getSolid());
+        RenderTypeLookup.setRenderLayer(BlockInit.BUTTERCUP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BUTTERCUP.get(), RenderType.getCutout());
         registerEntityRenderer();
         registerProjectileRenderer();
         registerTileEntityRenderer();

@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "earthtojavamobs:rainbow_bed"
+      "earthtojavamobs:flower_pot"
     ]
   },
   "criteria": {
-    "has_rainbow_wool": {
+    "has_brick": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "earthtojavamobs:rainbow_wool"
+            "item": "minecraft:brick"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "earthtojavamobs:rainbow_bed"
+        "recipe": "earthtojavamobs:flower_pot"
       }
     }
   },
   "requirements": [
     [
-      "has_rainbow_wool",
+      "has_brick",
       "has_the_recipe"
     ]
   ]
