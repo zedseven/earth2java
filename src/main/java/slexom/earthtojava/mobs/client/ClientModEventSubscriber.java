@@ -53,16 +53,16 @@ public final class ClientModEventSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.AMBER_CHICKEN_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JChickenRenderer(renderManagerIn, EntityTypesInit.AMBER_CHICKEN_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ASHEN_COW_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JCowRenderer(renderManagerIn, EntityTypesInit.ASHEN_COW_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.CLUCKSHROOM_REGISTRY_OBJECT.get(), CluckshroomRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.FLECKED_SHEEP_REGISTRY_OBJECT.get(), FleckedSheepRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.FLECKED_SHEEP_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JOneColorSheepRenderer<>(renderManagerIn, EntityTypesInit.FLECKED_SHEEP_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.GLOW_SQUID_REGISTRY_OBJECT.get(), GlowSquidRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.HORNED_SHEEP_REGISTRY_OBJECT.get(), HornedSheepRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.INKY_SHEEP_REGISTRY_OBJECT.get(), InkySheepRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.INKY_SHEEP_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JOneColorSheepRenderer<>(renderManagerIn, EntityTypesInit.INKY_SHEEP_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MIDNIGHT_CHICKEN_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JChickenRenderer(renderManagerIn, EntityTypesInit.MIDNIGHT_CHICKEN_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MOOBLOOM_REGISTRY_OBJECT.get(), MoobloomRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.MUDDY_PIG_REGISTRY_OBJECT.get(), MuddyPigRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.PALE_PIG_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JPigRenderer(renderManagerIn, EntityTypesInit.PALE_PIG_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.PIEBALD_PIG_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JPigRenderer(renderManagerIn, EntityTypesInit.PIEBALD_PIG_REGISTRY_NAME));
-        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ROCKY_SHEEP_REGISTRY_OBJECT.get(), RockySheepRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ROCKY_SHEEP_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JOneColorSheepRenderer<>(renderManagerIn, EntityTypesInit.ROCKY_SHEEP_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.SKELETON_WOLF_REGISTRY_OBJECT.get(), SkeletonWolfRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.SPOTTED_PIG_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JPigRenderer(renderManagerIn, EntityTypesInit.SPOTTED_PIG_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.STORMY_CHICKEN_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JChickenRenderer(renderManagerIn, EntityTypesInit.STORMY_CHICKEN_REGISTRY_NAME));
@@ -77,8 +77,9 @@ public final class ClientModEventSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.ALBINO_COW_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JCowRenderer(renderManagerIn, EntityTypesInit.ALBINO_COW_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.JUMBO_RABBIT_REGISTRY_OBJECT.get(), renderManagerIn -> new JumboRabbitRenderer(renderManagerIn, EntityTypesInit.JUMBO_RABBIT_REGISTRY_NAME));
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.JOLLY_LLAMA_REGISTRY_OBJECT.get(), JollyLlamaRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BONE_SPIDER_REGISTRY_OBJECT.get(), renderManagerIn -> new BoneSpiderRenderer(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BONE_SPIDER_REGISTRY_OBJECT.get(), BoneSpiderRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.WANDERING_TRADER_REGISTRY_OBJECT.get(), E2JWanderingTraderRenderer::new);
+       // RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RAINBOW_SHEEP_REGISTRY_OBJECT.get(), renderManagerIn -> new E2JOneColorSheepRenderer<>(renderManagerIn, EntityTypesInit.RAINBOW_SHEEP_REGISTRY_NAME));
     }
 
     @SubscribeEvent
