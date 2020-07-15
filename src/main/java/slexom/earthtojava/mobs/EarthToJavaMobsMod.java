@@ -177,7 +177,7 @@ public class EarthToJavaMobsMod {
         });
     }
 
-    private final void registerToComposter(){
+    private static void registerToComposter(){
         DeferredWorkQueue.runLater(() -> ComposterBlock.registerCompostable(0.65F, BlockInit.BUTTERCUP.get()));
     }
 

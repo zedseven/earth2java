@@ -4,13 +4,13 @@ import net.minecraft.client.renderer.entity.model.QuadrupedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import slexom.earthtojava.mobs.entity.passive.InkySheepEntity;
+import slexom.earthtojava.mobs.entity.base.E2JOneColorSheepEntity;
 
 @OnlyIn(Dist.CLIENT)
-public class InkySheepWoolModel<T extends InkySheepEntity> extends QuadrupedModel<T> {
+public class E2JOneColorSheepWoolModel<T extends E2JOneColorSheepEntity<T>> extends QuadrupedModel<T> {
     private float headRotationAngleX;
 
-    public InkySheepWoolModel() {
+    public E2JOneColorSheepWoolModel() {
         super(12, 0.0F, false, 8.0F, 4.0F, 2.0F, 2.0F, 24);
         this.headModel = new ModelRenderer(this, 0, 0);
         this.headModel.addBox(-3.0F, -4.0F, -4.0F, 6.0F, 6.0F, 6.0F, 0.6F);
