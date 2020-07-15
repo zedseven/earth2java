@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Roh",
     "item.earthtojavamobs.buttercup": "Iskerník",
     "item.earthtojavamobs.mud_fluid_bucket": "Vedro blata",
+    "item.earthtojavamobs.flower_pot": "Kvetináč",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Zablatené prasa je znalec bahenných kúpeľov. Na prvý pohľad to nie je zrejmé, ale majú aj veľký zmysel pre štýl.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Pred niekoľkými rokmi prieskumníci objavili v ďalekých krajoch vzácnu podivnú sliepku pokrytú hubami. Sliepkohuba, ako ju pomenovali, je podivný poddruh sliepky. Je chutná? To sa časom ukáže.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Kvetokrava je krásna krava, ktorá sa zdobí žltými voňavými kvetmi. Môžete ju ostrihať, a ak budete mať šťastie, môžete nájsť krásny nový iskerník.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Zdá sa, že ich stratila rohatá ovca.",
     "item.earthtojavamobs.buttercup.desc": "Malý, jasný, žltý kvet. Je v ňom skutočné maslo?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Vedro toho najlepšieho a najšpinavšieho blata. ",
+    "item.earthtojavamobs.flower_pot.desc": "Ukážte svoje kvety a záhradné pôžitky vo veľkom štýle.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "角",
     "item.earthtojavamobs.buttercup": "毛茛",
     "item.earthtojavamobs.mud_fluid_bucket": "泥桶",
+    "item.earthtojavamobs.flower_pot": "花盆",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "泥猪是泥浆浴鉴赏大师。乍一看您可能不知道，但它们也有着很强的时尚感。",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "几年前，远道而来的探险家们发现了一种奇异而罕见的长满了蘑菇的鸡。正如它的名字一样，咯菇是鸡的一个奇怪的亚种。它好吃吗？只有时间会告诉我们答案。",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "哞花是一种身上装饰着黄色芬芳花朵的美丽奶牛。您可以给它剪毛，如果您够幸运的话，您可能会发现一种美丽的全新毛茛品种。",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "角羊似乎把这些放错了地方。",
     "item.earthtojavamobs.buttercup.desc": "一种黄色的小花。里面有真正的黄油吗？",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "一桶最上乘、最脏的泥。",
+    "item.earthtojavamobs.flower_pot.desc": "以时尚的方式展示您的鲜花和花园景致。",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

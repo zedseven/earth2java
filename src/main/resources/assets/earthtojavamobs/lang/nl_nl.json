@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Hoorn",
     "item.earthtojavamobs.buttercup": "Boterbloem",
     "item.earthtojavamobs.mud_fluid_bucket": "Emmer modder",
+    "item.earthtojavamobs.flower_pot": "Bloempot",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Het modderig varken is een connoisseur van modderbaden. Je zou het in eerste instantie misschien niet zeggen, maar ze zijn ook erg modieus.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Jaren geleden ontdekten een aantal verkenners een vreemde en zeldzame kip bedekt met paddenstoelen. De Kakelzwam, zoals deze kip werd genoemd, is een merkwaardig ondersoort van de kip. Of het lekker is? De tijd zal het leren.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "De Loeibloem is een prachtige koe die zichzelf versiert met geurige gele bloemen. Je kunt haar scheren en als je geluk hebt vind je misschien wel een prachtig boterbloempje.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Een gehoornd schaap is deze kwijtgeraakt.",
     "item.earthtojavamobs.buttercup.desc": "Een kleine, felgele bloem. Zit er echte boter in?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Een emmer met de allerbeste en vieste modder. ",
+    "item.earthtojavamobs.flower_pot.desc": "Stel je bloemen en dergelijke op stijlvolle wijze tentoon.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

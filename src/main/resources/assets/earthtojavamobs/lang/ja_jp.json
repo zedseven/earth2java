@@ -60,6 +60,7 @@
     "item.earthtojavamobs.horn": "ホーン",
     "item.earthtojavamobs.buttercup": "金鳳花",
     "item.earthtojavamobs.mud_fluid_bucket": "泥入りバケツ",
+    "item.earthtojavamobs.flower_pot": "植木鉢",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "泥だらけの豚はその名の通り、泥のお風呂が大好き。一目見ただけでは分かりませんが、センスも良いですよ。",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "数年前、遠くの地を冒険していた探検家は、きのこにおおわれた珍妙なニワトリに出会いました。きのコッコはその名前の通り、ニワトリの奇妙な亜種です。その味の良し悪しは、時が経てば分かるでしょう。",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "ムーブルームは美しい牛で、よい香りの黄色い花飾りをつけているのが特徴です。運が良ければ、毛を刈り取ったときに美しい新種の金鳳花が見つかるかもしれません。",
@@ -91,6 +92,7 @@
     "item.earthtojavamobs.horn.desc": "角のある羊が忘れ物をしたようです",
     "item.earthtojavamobs.buttercup.desc": "鮮やかな黄色をした小さい花。本当にバターが入っているかも？",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "最高に汚い泥が入ったバケツ",
+    "item.earthtojavamobs.flower_pot.desc": "花などの美しい植物をおしゃれに飾れます",
     "block.earthtojavamobs.carved_melon": "くり抜かれたスイカ",
     "block.earthtojavamobs.melon_lantern": "スイカランタン",
     "itemGroup.earthtojavamobs": "Earth2Java"

@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Szarv",
     "item.earthtojavamobs.buttercup": "Boglárka",
     "item.earthtojavamobs.mud_fluid_bucket": "Iszapos vödör",
+    "item.earthtojavamobs.flower_pot": "Virágcserép",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "A sáros malac a dagonyák ínyence. Első ránézésre meg nem lehet mondani, de nagyon jó stílusérzékük is van.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Néhány éve messzire merészkedő felfedezők felfedeztek egy ritka csirkefajt, amit gombák borítottak. A galócapinty nevet kapta ez a különös csirke alfaj. Vajon finom? Csak az idő a megmondhatója.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "A liliomborjú gyönyörű tehén, amelyik sárga, illatos virágokkal díszíti magát. Leszakíthatod, és ha szerencséd van, egy gyönyörű, új boglárkát találsz.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "A tülkös juh úgy tűnik, nem jó helyre tette.",
     "item.earthtojavamobs.buttercup.desc": "Apró, élénksárga virág. Valódi vaj is van benne?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Egy vödör finom, sáros föld. ",
+    "item.earthtojavamobs.flower_pot.desc": "Rendezd el virágaidat és kerti díszeidet stílusosan.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

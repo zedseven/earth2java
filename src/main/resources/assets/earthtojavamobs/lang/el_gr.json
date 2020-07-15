@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Κέρας",
     "item.earthtojavamobs.buttercup": "Νεραγκούλα",
     "item.earthtojavamobs.mud_fluid_bucket": "Κουβάς με λάσπη",
+    "item.earthtojavamobs.flower_pot": "Γλάστρα",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Το λασπωμένο γουρούνι είναι ειδήμονας στα λασπόλουτρα. Μπορεί να μη φαίνεται με την πρώτη ματιά, αλλά έχει, επίσης, σπουδαία αίσθηση του στυλ.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Πριν από μερικά χρόνια, εξερευνητές ανακάλυψαν στα πέρατα του κόσμου ένα σπάνιο, παράξενο κοτόπουλο καλυμμένο με μανιτάρια. Το κοτομανιτάρι, όπως έγινε γνωστό, είναι ένα αλλόκοτο υποείδος κοτόπουλου. Είναι γευστικό άραγε; Μόνο ο χρόνος θα δείξει.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Ο αγελανθός είναι μια πανέμορφη αγελάδα στολισμένη με κίτρινα, ευωδιαστά λουλούδια. Μπορείς να την κουρέψεις και, αν έχεις την τύχη στο πλευρό σου, μπορεί να βρεις μια πανέμορφη νέα νεραγκούλα.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Ένα Κερασφόρο πρόβατο φαίνεται πως τα έχασε.",
     "item.earthtojavamobs.buttercup.desc": "Ένα μικρό, φωτεινό, κίτρινο λουλούδι. Υπάρχει πραγματικό νερό εκεί μέσα;",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Ένας κουβάς από την καλύτερη, πιο βρώμικη λάσπη. ",
+    "item.earthtojavamobs.flower_pot.desc": "Δείξε με στυλ τα λουλούδια και τα καλούδια του κήπου σου.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

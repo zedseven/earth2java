@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Горн",
     "item.earthtojavamobs.buttercup": "Жовтець",
     "item.earthtojavamobs.mud_fluid_bucket": "Відро грязі",
+    "item.earthtojavamobs.flower_pot": "Вазонок",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Брудна свиня – цінитель грязьових ванн. Може, це й непомітно з першого погляду, але у них також відмінне почуття стилю.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Кілька років тому дослідники, яких далеко занесло, виявили рідкісну дивну курку, вкриту грибами. Це незвичайний підвид курки, який назвали кургрибом. Чи він смачний? Час покаже.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Квіткорова – прекрасна корова, яка прикрашає себе жовтими пахучими квітами. Ви можете її стригти, а якщо пощастить, то, може, навіть знайдете дуже гарний новий жовтець.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Схоже, це загубила рогата вівця.",
     "item.earthtojavamobs.buttercup.desc": "Маленька жовтогаряча квітка. Там справжнє масло?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Відро найкращої, найбруднішої грязі. ",
+    "item.earthtojavamobs.flower_pot.desc": "Стильно демонструйте свої квіти та цікавинки саду.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Róg",
     "item.earthtojavamobs.buttercup": "Jaskier",
     "item.earthtojavamobs.mud_fluid_bucket": "Wiadro błota",
+    "item.earthtojavamobs.flower_pot": "Donica",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Ubłocone świnie to koneserzy kąpieli błotnych. Mają też świetne wyczucie stylu, chociaż na pierwszy rzut oka może tego nie widać.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Kilka lat temu przemierzający odległe zakątki świata poszukiwacze przygód natknęli się na rzadką, dziwną kurę pokrytą grzybami. Okazało się, że jest ona przedstawicielką pewnego podgatunku kur, nazwano ją więc grzybową kurą. Czy jest smaczna? Czas pokaże.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Kwietna krowa to piękna mućka przystrojona żółtymi, pachnącymi kwiatami. Możesz ją ostrzyc, a jeśli dopisze ci szczęście, znajdziesz ślicznego jaskra.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Chyba zgubiła je górska owca.",
     "item.earthtojavamobs.buttercup.desc": "Mały żółty kwiat. Jest jaskrawy, dlatego nazywa się jaskier.",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Wiadro pełne najwyższej klasy najbrudniejszego błocka.",
+    "item.earthtojavamobs.flower_pot.desc": "Pochwal się wszystkim swoimi kwiatkami i ogrodowymi cudami.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

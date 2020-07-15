@@ -60,6 +60,7 @@
     "item.earthtojavamobs.horn": "Горн",
     "item.earthtojavamobs.buttercup": "Лютик",
     "item.earthtojavamobs.mud_fluid_bucket": "Ведро грязи",
+    "item.earthtojavamobs.flower_pot": "Цветочный горшок",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Заляпанная свинья знает толк в грязевых ваннах. А какое у нее чувство стиля! Хотя на первый взгляд и не скажешь.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Давным-давно исследователи далеких земель обнаружили редкий подвид куриц, покрытых грибами. Кудахтогрибы, как их позже назвали, — весьма странны. Каковы они на вкус? Покажет лишь время.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Коровоцвет— прекрасная корова, украшенная ароматными желтыми цветами. Постригите ее, и, если вам повезет, вы найдете красивый лютик.",
@@ -91,6 +92,7 @@
     "item.earthtojavamobs.horn.desc": "Похоже, их потеряла рогатая овца.",
     "item.earthtojavamobs.buttercup.desc": "Маленький и яркий желтый цветок. Его что, намазали маслом?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Ведро самой лучшей, самой жирной грязи.",
+    "item.earthtojavamobs.flower_pot.desc": "Продемонстрируйте свои цветы и садовые чудеса со вкусом.",
     "block.earthtojavamobs.carved_melon": "Вырезанная дыня",
     "block.earthtojavamobs.melon_lantern": "Светильник дыня",
     "itemGroup.earthtojavamobs": "Earth2Java"

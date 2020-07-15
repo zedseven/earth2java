@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Rohovina",
     "item.earthtojavamobs.buttercup": "Pryskyřník",
     "item.earthtojavamobs.mud_fluid_bucket": "Kbelík s blátem",
+    "item.earthtojavamobs.flower_pot": "Květináč",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Zablácené prase je odborník na koupele v blátě. Na první pohled byste to nepoznali, ale taky má vytříbený vkus.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Před několika lety našli objevitelé dálav vzácnou slepici pokrytou houbami. Pojmenovali ji kokohouba a jedná se o podivný poddruh slepice. Dá se jíst? To se teprve ukáže.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Květokráva je nádherná kráva, která je vyzdobená žlutými navoněnými květinami. Můžete ji ostříhat, a pokud budete mít štěstí, najdete krásný nový pryskyřník.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Ten asi ztratila nějaká rohatá ovce.",
     "item.earthtojavamobs.buttercup.desc": "Malá, světle žlutá květina. Opravdu obsahuje pryskyřici?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Kbelík nejkvalitnějšího a nejšpinavějšího bláta.",
+    "item.earthtojavamobs.flower_pot.desc": "Vystavte si květiny a zahradní dekorace ve velkém stylu.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

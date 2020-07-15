@@ -60,6 +60,7 @@
     "item.earthtojavamobs.horn": "Cuerno",
     "item.earthtojavamobs.buttercup": "Ranúnculo",
     "item.earthtojavamobs.mud_fluid_bucket": "Cubo con barro",
+    "item.earthtojavamobs.flower_pot": "Maceta",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "El cerdo fangoso es experto en baños de barro. Aunque no lo parezca, también tiene mucho estilo.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Hace algunos años, unos exploradores venidos de tierras muy lejanas descubrieron una extraña especie de gallina cubierta de champiñones. La hongallina, como llegó a llamarse, es una extraña subespecie de las gallinas. ¿Que si está buena? Solo el tiempo lo dirá...",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "La vacaflor es una hermosa vaca que se adorna con flores perfumadas amarillas. Puedes trasquilarla y, si tienes suerte, puedes encontrar un hermoso ranúnculo.",
@@ -91,6 +92,7 @@
     "item.earthtojavamobs.horn.desc": "Parece que los ha perdido una oveja con cuernos.",
     "item.earthtojavamobs.buttercup.desc": "Una flor amarilla, pequeña y brillante. ¿De verdad que dentro hay ranas?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Un cubo lleno del mejor barro sucio. ",
+    "item.earthtojavamobs.flower_pot.desc": "Muestra las flores y los encantos de tu jardín con estilo.",
     "block.earthtojavamobs.carved_melon": "Melón tallado",
     "block.earthtojavamobs.melon_lantern": "Linterna de melón",
     "itemGroup.earthtojavamobs": "Earth2Java"

@@ -60,6 +60,7 @@
     "item.earthtojavamobs.horn": "Chifre",
     "item.earthtojavamobs.buttercup": "Ranúnculo",
     "item.earthtojavamobs.mud_fluid_bucket": "Balde de Lama",
+    "item.earthtojavamobs.flower_pot": "Vaso de Flor",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "O porco porquinho é um especialista em banhos de lama. Você pode não perceber à primeira vista, mas ele é muito estiloso.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Há alguns anos, exploradores de terras distantes descobriram um animal estranho e raro coberto de cogumelos. O cogupato, como passou a ser chamado, é uma subespécie da galinha. Será que ele é delicioso? Só o tempo dirá.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "A vaca florida é uma vaca linda enfeitada com flores amarelas perfumadas. Você pode tosquiá-la e, se tiver sorte, encontrar um belo ranúnculo novo.",
@@ -91,6 +92,7 @@
     "item.earthtojavamobs.horn.desc": "Parece que uma Ovelha com Chifres perdeu este item.",
     "item.earthtojavamobs.buttercup.desc": "Uma pequena e brilhante flor amarela. Será que tem uma rã dentro?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Um balde da melhor e mais suja lama. ",
+    "item.earthtojavamobs.flower_pot.desc": "Exiba suas flores e prazeres de jardim em grande estilo.",
     "block.earthtojavamobs.carved_melon": "Melão esculpido",
     "block.earthtojavamobs.melon_lantern": "Lanterna de melão",
     "itemGroup.earthtojavamobs": "Earth2Java"

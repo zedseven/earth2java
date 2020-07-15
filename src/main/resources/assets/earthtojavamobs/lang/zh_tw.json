@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "角",
     "item.earthtojavamobs.buttercup": "毛茛",
     "item.earthtojavamobs.mud_fluid_bucket": "一桶泥",
+    "item.earthtojavamobs.flower_pot": "花盆",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "泥豬很喜歡洗泥巴浴。乍看之下雖然不會發現，但牠們其實也非常具有特色。",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "幾年前，一群遠征的探險家發現了一種稀有的怪雞，這種雞的身上長滿了蘑菇，因此命名為咕咕菇。這是一種非常奇怪的雞。但是好吃嗎？我們只能等時間來證明了。",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "哞花是一種美麗的乳牛，喜歡在自己身上插美麗又芳香的黃花。你可以修剪牠，而且如果運氣夠好，還可以找到美麗的新毛茛。",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "這些好像是角羊不小心掉的。",
     "item.earthtojavamobs.buttercup.desc": "這是朵亮黃色的小花。裡面不知道有沒有真的奶油呢？",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "一桶最高級、最骯髒的泥巴。 ",
+    "item.earthtojavamobs.flower_pot.desc": "以風格獨具的方式展示您的花朵和花園特色。",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

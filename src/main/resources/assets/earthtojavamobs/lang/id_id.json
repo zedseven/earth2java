@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Tanduk",
     "item.earthtojavamobs.buttercup": "Buttercup",
     "item.earthtojavamobs.mud_fluid_bucket": "Ember Lumpur",
+    "item.earthtojavamobs.flower_pot": "Pot Bunga",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Babi berlumpur adalah penikmat mandi lumpur. Kamu awalnya tidak akan menyangka, tetapi mereka juga punya selera gaya yang hebat.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Beberapa tahun lalu, para penjelajah dari tempat yang jauh menemukan ayam aneh langka yang ditutupi jamur. Jamur ayam, nama yang dipilih untuknya, adalah subspesies ayam aneh. Apakah rasanya lezat? Waktu yang akan menjawab.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Kembang sapi adalah seekor sapi cantik yang menghiasi dirinya dengan bunga kuning yang wangi. Kamu bisa mencukurnya dan jika beruntung kamu mungkin menemukan buttercup baru yang indah.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Seekor Domba Bertanduk tampaknya telah kehilangan ini.",
     "item.earthtojavamobs.buttercup.desc": "Bunga kuning kecil yang cerah. Apakah ada mentega sungguhan di dalamnya?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Seember lemper yang paling bagus dan kotor. ",
+    "item.earthtojavamobs.flower_pot.desc": "Tunjukkan bunga dan keindahan tamanmu dengan penuh gaya.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

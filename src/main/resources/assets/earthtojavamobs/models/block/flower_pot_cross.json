@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "block/flower_pot",
-        "flowerpot": "block/flower_pot",
+        "particle": "earthtojavamobs:block/flower_pot",
+        "flowerpot": "earthtojavamobs:block/flower_pot",
         "dirt": "block/dirt"
     },
     "elements": [

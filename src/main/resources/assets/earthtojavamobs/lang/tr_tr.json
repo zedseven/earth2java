@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Boynuz",
     "item.earthtojavamobs.buttercup": "Düğün Çiçeği",
     "item.earthtojavamobs.mud_fluid_bucket": "Çamur Kovası",
+    "item.earthtojavamobs.flower_pot": "Çiçek Saksısı",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Çamurlu domuz bir çamur banyosu uzmanıdır. İlk bakışta anlayamazsınız ama çok iyi bir moda anlayışları da vardır.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Birkaç yıl önce çok uzaklara yayılmış kâşifler üzeri mantarlarla kaplı, ender ve tuhaf bir tavuğu keşfettiler. Gıdaklayan mantar adı verilen bu tür, tavuğun tuhaf bir alt türüdür. Lezzetli mi? Bunu zaman gösterecek.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Mö çiçeği kendini esanslı sarı çiçeklerle süslemiş güzel bir inektir. Onu kırkabilirsin ve şanslıysan yeni ve güzel bir düğün çiçeği bulabilirsin.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Görünüşe göre bir Boynuzlu Koyun bunları yanlış yerleştirmiş.",
     "item.earthtojavamobs.buttercup.desc": "Küçük, açık sarı bir çiçek. İçinde gerçek tereyağı mı var?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "En ince, en kirli çamuru içeren bir kova. ",
+    "item.earthtojavamobs.flower_pot.desc": "Çiçeklerini ve bahçe tatlarını güzel bir şekilde sergile.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

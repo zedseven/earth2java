@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Horn",
     "item.earthtojavamobs.buttercup": "Smörblomma",
     "item.earthtojavamobs.mud_fluid_bucket": "Hink med lera",
+    "item.earthtojavamobs.flower_pot": "Blomkruka",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Lortgrisen älskar lerbad. Man kan inte tro det vid första anblick, men de har bra koll på mode också!",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "För några år sedan påträffades en märklig art av hönor täckta av svamp. Kackelsvampen, som den kom att kallas, är verkligen underlig. Smakar den bra? Det återstår att se.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Blomkon är en vacker ko som gör sig fin med gula blommor. Om du klipper den kan du få en smörblomma om du har tur.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Ett hornfår måste ha tappat det.",
     "item.earthtojavamobs.buttercup.desc": "En liten klargul blomma. Finns det verkligen smör i den?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "En hink med den finaste och smutsigaste leran. ",
+    "item.earthtojavamobs.flower_pot.desc": "Visa upp dina blommor och andra växter med stil.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

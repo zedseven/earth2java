@@ -31,6 +31,7 @@
     "item.earthtojavamobs.horn": "Corneta",
     "item.earthtojavamobs.buttercup": "Ranúnculo",
     "item.earthtojavamobs.mud_fluid_bucket": "Balde de Lama",
+    "item.earthtojavamobs.flower_pot": "Vaso de Flores",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "O porco lamacento é um especialista em banhos de lama. À primeira vista, podes não saber, mas também têm uma grande queda para o estilo.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Há alguns anos, exploradores remotos descobriram uma galinha estranha e rara, coberta de cogumelos. O galinhelo, como foi chamado, é uma subespécie de galinha fora do vulgar. É delicioso? Apenas o tempo o dirá.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "A muuuflor é uma bonita vaca que se adorna com flores amarelas perfumadas. Podes tosquiá-la e, se tiveres sorte, podes encontrar um bonito ranúnculo novo.",
@@ -62,5 +63,6 @@
     "item.earthtojavamobs.horn.desc": "Parece que um Carneiro os perdeu.",
     "item.earthtojavamobs.buttercup.desc": "Uma flor amarela pequena e brilhante. Aquilo é manteiga verdadeira?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Um balde com a melhor e mais suja lama. ",
+    "item.earthtojavamobs.flower_pot.desc": "Apresenta as tuas flores e jardim com estilo.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }
