@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Mustelammas",
     "entity.earthtojavamobs.harelequin_rabbit": "Harlekiinipupu",
     "entity.earthtojavamobs.wandering_trader": "Kuljeskeleva kauppias",
-    "item.earthtojavamobs.mud_fluid_bucket": "Mutaämpäri",
     "item.earthtojavamobs.horn": "Sarvi",
+    "item.earthtojavamobs.buttercup": "Leinikki",
+    "item.earthtojavamobs.mud_fluid_bucket": "Mutaämpäri",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Mutapossu on mutakylpyjen asiantuntija. Sitä ei uskoisi ensinäkemältä, mutta niillä on myös upea tyylitaju.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Kauas eksyneet tutkimusmatkailijat löysivät joitakin vuosia sitten melko oudon, sienten peittämän kanan. Tämä kanan eriskummallinen alalaji nimettiin kotkosieneksi. Onko se herkullinen? Se selviää vasta ajan myötä.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Hiehokukka on kaunis lehmä, joka kaunistaa itseään keltaisilla tuoksukukilla. Voit keritä sen, jolloin saatat löytää kauniin uuden leinikin.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Älä anna tämän jänön huolitellun ulkoasun hämätä. Se nimittäin ahmii porkkanasi siinä missä muutkin!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Tyylikäs nimi tyylikkäälle jänölle. Niin monta väriä!",
     "item.earthtojavamobs.horn.desc": "Sarvellinen lammas näyttää hukanneen nämä.",
+    "item.earthtojavamobs.buttercup.desc": "Pieni kirkkaankeltainen kukka. Onko siinä oikeaa voita?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Ämpärillinen kaikkein hienointa likaista mutaa. ",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

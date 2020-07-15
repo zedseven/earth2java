@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Blækfår",
     "entity.earthtojavamobs.harelequin_rabbit": "Harlekin-kanin",
     "entity.earthtojavamobs.wandering_trader": "Handelsrejsende",
-    "item.earthtojavamobs.mud_fluid_bucket": "Spand mudder",
     "item.earthtojavamobs.horn": "Horn",
+    "item.earthtojavamobs.buttercup": "Buttercup",
+    "item.earthtojavamobs.mud_fluid_bucket": "Spand mudder",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Muddergrisen elsker sine mudderbade og har en ret god sans for stil, selvom det ikke lige er det indtryk, man umiddelbart får.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "For år tilbage fandt en gruppe eventyrere på mission i ødemarken en sjælden, mystisk kylling dækket af svampe. Klukshroomen, som den nu hedder, er en mærkværdig underart af den almindelige kylling. Smager den godt? Vi ved det faktisk ikke.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Moobloom er en smuk ko, der pynter sig selv med gule, duftende blomster. Hvis du klipper den, kan du være heldig at finde en vidunderlig ny smørblomst.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Lad dig ikke snyde af kaninens elegante ydre. Det guffer stadig dine gulerødder i sig!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Et smart navn på en smart kanin. Så mange farver!",
     "item.earthtojavamobs.horn.desc": "Det ligner noget fra et tykhornsfår.",
+    "item.earthtojavamobs.buttercup.desc": "En lille gul blomst. Er der rigtig smør i den?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "En spand af det fineste, mest beskidte mudder.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

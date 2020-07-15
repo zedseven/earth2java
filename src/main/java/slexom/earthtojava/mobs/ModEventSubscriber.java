@@ -32,6 +32,7 @@ public final class ModEventSubscriber {
         final ItemGroup ITEM_GROUP = EarthToJavaMobsMod.E2JItemGroup.instance;
         BlockInit.BLOCKS.getEntries().stream()
                 .filter(block -> !(block.get() instanceof FlowingFluidBlock))
+                .filter(block -> block.get() != BlockInit.POTTED_BUTTERCUP.get())
                 .map(RegistryObject::get)
                 .forEach(block -> {
                     final Item.Properties properties = new Item.Properties().group(ITEM_GROUP);
@@ -74,7 +75,7 @@ public final class ModEventSubscriber {
     }
 
     @SubscribeEvent
-    public static void registerOres(FMLLoadCompleteEvent event){
+    public static void registerOres(FMLLoadCompleteEvent event) {
         E2JOreGen.generateOre();
     }
 

@@ -53,7 +53,7 @@ public class MoobloomEntity extends E2JBaseCowEntity<MoobloomEntity> implements 
             }
             this.world.addEntity(cowentity);
             for (int i = 0; i < 5; ++i) {
-                ret.add(new ItemStack(Blocks.DANDELION));
+                ret.add(new ItemStack(BlockInit.BUTTERCUP.get()));
             }
             this.playSound(SoundEvents.ENTITY_MOOSHROOM_SHEAR, 1.0F, 1.0F);
         }

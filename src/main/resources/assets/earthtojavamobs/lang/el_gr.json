@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Μελανό πρόβατο",
     "entity.earthtojavamobs.harelequin_rabbit": "Λαγός Χάρλεκουϊν",
     "entity.earthtojavamobs.wandering_trader": "Γυρολόγος",
-    "item.earthtojavamobs.mud_fluid_bucket": "Κουβάς με λάσπη",
     "item.earthtojavamobs.horn": "Κέρας",
+    "item.earthtojavamobs.buttercup": "Νεραγκούλα",
+    "item.earthtojavamobs.mud_fluid_bucket": "Κουβάς με λάσπη",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Το λασπωμένο γουρούνι είναι ειδήμονας στα λασπόλουτρα. Μπορεί να μη φαίνεται με την πρώτη ματιά, αλλά έχει, επίσης, σπουδαία αίσθηση του στυλ.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Πριν από μερικά χρόνια, εξερευνητές ανακάλυψαν στα πέρατα του κόσμου ένα σπάνιο, παράξενο κοτόπουλο καλυμμένο με μανιτάρια. Το κοτομανιτάρι, όπως έγινε γνωστό, είναι ένα αλλόκοτο υποείδος κοτόπουλου. Είναι γευστικό άραγε; Μόνο ο χρόνος θα δείξει.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Ο αγελανθός είναι μια πανέμορφη αγελάδα στολισμένη με κίτρινα, ευωδιαστά λουλούδια. Μπορείς να την κουρέψεις και, αν έχεις την τύχη στο πλευρό σου, μπορεί να βρεις μια πανέμορφη νέα νεραγκούλα.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Μην αφήσεις αυτόν τον χαριτωμένο λαγό να σε ξεγελάσει. Σίγουρα θα καταβροχθίσει τα καρότα σου!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Ένα εντυπωσιακό όνομα για έναν εντυπωσιακό λαγό. Τόσα πολλά χρώματα!",
     "item.earthtojavamobs.horn.desc": "Ένα Κερασφόρο πρόβατο φαίνεται πως τα έχασε.",
+    "item.earthtojavamobs.buttercup.desc": "Ένα μικρό, φωτεινό, κίτρινο λουλούδι. Υπάρχει πραγματικό νερό εκεί μέσα;",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Ένας κουβάς από την καλύτερη, πιο βρώμικη λάσπη. ",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

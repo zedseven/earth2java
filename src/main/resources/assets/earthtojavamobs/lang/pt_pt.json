@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Ovelha Suja de Tinta",
     "entity.earthtojavamobs.harelequin_rabbit": "Coelho Arlequim",
     "entity.earthtojavamobs.wandering_trader": "Feirante",
-    "item.earthtojavamobs.mud_fluid_bucket": "Balde de Lama",
     "item.earthtojavamobs.horn": "Corneta",
+    "item.earthtojavamobs.buttercup": "Ranúnculo",
+    "item.earthtojavamobs.mud_fluid_bucket": "Balde de Lama",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "O porco lamacento é um especialista em banhos de lama. À primeira vista, podes não saber, mas também têm uma grande queda para o estilo.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Há alguns anos, exploradores remotos descobriram uma galinha estranha e rara, coberta de cogumelos. O galinhelo, como foi chamado, é uma subespécie de galinha fora do vulgar. É delicioso? Apenas o tempo o dirá.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "A muuuflor é uma bonita vaca que se adorna com flores amarelas perfumadas. Podes tosquiá-la e, se tiveres sorte, podes encontrar um bonito ranúnculo novo.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Não deixes que a aparência elegante deste coelho te engane. Vai devorar cenouras de qualquer forma!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Um nome elegante para um coelho elegante. Tantas cores!",
     "item.earthtojavamobs.horn.desc": "Parece que um Carneiro os perdeu.",
+    "item.earthtojavamobs.buttercup.desc": "Uma flor amarela pequena e brilhante. Aquilo é manteiga verdadeira?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Um balde com a melhor e mais suja lama. ",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

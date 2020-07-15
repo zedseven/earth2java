@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Изцапана с мастило овца",
     "entity.earthtojavamobs.harelequin_rabbit": "Заек Арлекин",
     "entity.earthtojavamobs.wandering_trader": "Странстващ търговец",
-    "item.earthtojavamobs.mud_fluid_bucket": "Кофа с кал",
     "item.earthtojavamobs.horn": "Рог",
+    "item.earthtojavamobs.buttercup": "Лютиче",
+    "item.earthtojavamobs.mud_fluid_bucket": "Кофа с кал",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Калното прасе е ценител на калната баня. На пръв поглед не бихте предположили, но то също така има и чудесен усет за стил.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Преди години далечни изследователи открили рядка и странна кокошка, покрита с гъби. Пилегъбата, както била наречена, е странен подвид на кокошката? Вкусна ли е? Само времето ще покаже.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Муублум е красива крава, накичена с жълти ароматни цветя. Може да я острижете и с малко късмет да намерите красиво ново лютиче.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Не позволявай на изпипаната външност на този заек да те заблуди. Ще изпапка морковите ти!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Пъстро име за пъстър заек. Толкова много цветове!",
     "item.earthtojavamobs.horn.desc": "Рогата овца, изглежда, е изгубила тези неща.",
+    "item.earthtojavamobs.buttercup.desc": "Малко яркожълто цвете. Има ли истинско масло в него?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Кофа първокласна и мръсна кал. ",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

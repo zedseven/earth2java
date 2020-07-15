@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Atramentowa owca",
     "entity.earthtojavamobs.harelequin_rabbit": "Pstrokaty królik",
     "entity.earthtojavamobs.wandering_trader": "Kupiec wędrowny",
-    "item.earthtojavamobs.mud_fluid_bucket": "Wiadro błota",
     "item.earthtojavamobs.horn": "Róg",
+    "item.earthtojavamobs.buttercup": "Jaskier",
+    "item.earthtojavamobs.mud_fluid_bucket": "Wiadro błota",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Ubłocone świnie to koneserzy kąpieli błotnych. Mają też świetne wyczucie stylu, chociaż na pierwszy rzut oka może tego nie widać.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Kilka lat temu przemierzający odległe zakątki świata poszukiwacze przygód natknęli się na rzadką, dziwną kurę pokrytą grzybami. Okazało się, że jest ona przedstawicielką pewnego podgatunku kur, nazwano ją więc grzybową kurą. Czy jest smaczna? Czas pokaże.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Kwietna krowa to piękna mućka przystrojona żółtymi, pachnącymi kwiatami. Możesz ją ostrzyc, a jeśli dopisze ci szczęście, znajdziesz ślicznego jaskra.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Nie pozwól, by wytworny wygląd tego królika cię zmylił. Ten zwierzak ma chrapkę na Twoje marchewki!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Nazwa mówi sama za siebie. Ależ ten królik jest kolorowy!",
     "item.earthtojavamobs.horn.desc": "Chyba zgubiła je górska owca.",
+    "item.earthtojavamobs.buttercup.desc": "Mały żółty kwiat. Jest jaskrawy, dlatego nazywa się jaskier.",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Wiadro pełne najwyższej klasy najbrudniejszego błocka.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

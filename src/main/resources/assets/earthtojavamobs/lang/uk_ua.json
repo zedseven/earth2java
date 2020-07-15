@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Чорнильна вівця",
     "entity.earthtojavamobs.harelequin_rabbit": "Кролик Арлекін",
     "entity.earthtojavamobs.wandering_trader": "Мандрівний крамар",
-    "item.earthtojavamobs.mud_fluid_bucket": "Відро грязі",
     "item.earthtojavamobs.horn": "Горн",
+    "item.earthtojavamobs.buttercup": "Жовтець",
+    "item.earthtojavamobs.mud_fluid_bucket": "Відро грязі",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Брудна свиня – цінитель грязьових ванн. Може, це й непомітно з першого погляду, але у них також відмінне почуття стилю.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Кілька років тому дослідники, яких далеко занесло, виявили рідкісну дивну курку, вкриту грибами. Це незвичайний підвид курки, який назвали кургрибом. Чи він смачний? Час покаже.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Квіткорова – прекрасна корова, яка прикрашає себе жовтими пахучими квітами. Ви можете її стригти, а якщо пощастить, то, може, навіть знайдете дуже гарний новий жовтець.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Але нехай франтуватий вигляд цього кролика вас не обдурить. Він усе одно погризе всю вашу моркву!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Вишукане ім’я для вишуканого кролика. А які кольори!",
     "item.earthtojavamobs.horn.desc": "Схоже, це загубила рогата вівця.",
+    "item.earthtojavamobs.buttercup.desc": "Маленька жовтогаряча квітка. Там справжнє масло?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Відро найкращої, найбруднішої грязі. ",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

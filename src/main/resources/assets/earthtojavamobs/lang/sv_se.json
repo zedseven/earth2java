@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Bläckfår",
     "entity.earthtojavamobs.harelequin_rabbit": "Harelekinkanin",
     "entity.earthtojavamobs.wandering_trader": "Handelsresande",
-    "item.earthtojavamobs.mud_fluid_bucket": "Hink med lera",
     "item.earthtojavamobs.horn": "Horn",
+    "item.earthtojavamobs.buttercup": "Smörblomma",
+    "item.earthtojavamobs.mud_fluid_bucket": "Hink med lera",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Lortgrisen älskar lerbad. Man kan inte tro det vid första anblick, men de har bra koll på mode också!",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "För några år sedan påträffades en märklig art av hönor täckta av svamp. Kackelsvampen, som den kom att kallas, är verkligen underlig. Smakar den bra? Det återstår att se.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Blomkon är en vacker ko som gör sig fin med gula blommor. Om du klipper den kan du få en smörblomma om du har tur.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Låt inte den här kaninens prydliga utseende lura dig, den skulle fortfarande sluka dina morötter!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Ett tjusigt namn på en tjusig kanin. Så många färger!",
     "item.earthtojavamobs.horn.desc": "Ett hornfår måste ha tappat det.",
+    "item.earthtojavamobs.buttercup.desc": "En liten klargul blomma. Finns det verkligen smör i den?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "En hink med den finaste och smutsigaste leran. ",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

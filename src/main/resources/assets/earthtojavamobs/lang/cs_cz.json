@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Inkoustová ovce",
     "entity.earthtojavamobs.harelequin_rabbit": "Pestrobarevný králík",
     "entity.earthtojavamobs.wandering_trader": "Potulný obchodník",
-    "item.earthtojavamobs.mud_fluid_bucket": "Kbelík s blátem",
     "item.earthtojavamobs.horn": "Rohovina",
+    "item.earthtojavamobs.buttercup": "Pryskyřník",
+    "item.earthtojavamobs.mud_fluid_bucket": "Kbelík s blátem",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Zablácené prase je odborník na koupele v blátě. Na první pohled byste to nepoznali, ale taky má vytříbený vkus.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Před několika lety našli objevitelé dálav vzácnou slepici pokrytou houbami. Pojmenovali ji kokohouba a jedná se o podivný poddruh slepice. Dá se jíst? To se teprve ukáže.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Květokráva je nádherná kráva, která je vyzdobená žlutými navoněnými květinami. Můžete ji ostříhat, a pokud budete mít štěstí, najdete krásný nový pryskyřník.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Nenechte se zmást elegantním vzhledem tohoto králíka. Mrkev si musíte hlídat stejně!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Nóbl jméno pro nóbl králíka. Tolik barev!",
     "item.earthtojavamobs.horn.desc": "Ten asi ztratila nějaká rohatá ovce.",
+    "item.earthtojavamobs.buttercup.desc": "Malá, světle žlutá květina. Opravdu obsahuje pryskyřici?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Kbelík nejkvalitnějšího a nejšpinavějšího bláta.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

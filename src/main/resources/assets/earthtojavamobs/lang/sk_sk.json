@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Atramentová ovca",
     "entity.earthtojavamobs.harelequin_rabbit": "Pestrofarebný králik",
     "entity.earthtojavamobs.wandering_trader": "Potulný obchodník",
-    "item.earthtojavamobs.mud_fluid_bucket": "Vedro blata",
     "item.earthtojavamobs.horn": "Roh",
+    "item.earthtojavamobs.buttercup": "Iskerník",
+    "item.earthtojavamobs.mud_fluid_bucket": "Vedro blata",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Zablatené prasa je znalec bahenných kúpeľov. Na prvý pohľad to nie je zrejmé, ale majú aj veľký zmysel pre štýl.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Pred niekoľkými rokmi prieskumníci objavili v ďalekých krajoch vzácnu podivnú sliepku pokrytú hubami. Sliepkohuba, ako ju pomenovali, je podivný poddruh sliepky. Je chutná? To sa časom ukáže.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Kvetokrava je krásna krava, ktorá sa zdobí žltými voňavými kvetmi. Môžete ju ostrihať, a ak budete mať šťastie, môžete nájsť krásny nový iskerník.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Nenechajte sa oklamať elegantným výzorom tohto králika. Aj tak vám zhltne všetku mrkvu!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Meno ako stvorené pre králika. A ešte k tomu farebného!",
     "item.earthtojavamobs.horn.desc": "Zdá sa, že ich stratila rohatá ovca.",
+    "item.earthtojavamobs.buttercup.desc": "Malý, jasný, žltý kvet. Je v ňom skutočné maslo?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Vedro toho najlepšieho a najšpinavšieho blata. ",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

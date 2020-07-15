@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Oveja entintada",
     "entity.earthtojavamobs.harelequin_rabbit": "Conejo arliebrequín",
     "entity.earthtojavamobs.wandering_trader": "Comerciante errante",
-    "item.earthtojavamobs.mud_fluid_bucket": "Cubeta de barro",
     "item.earthtojavamobs.horn": "Cuerno",
+    "item.earthtojavamobs.buttercup": "Ranúnculo",
+    "item.earthtojavamobs.mud_fluid_bucket": "Cubeta de barro",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "El cerdo fangoso es todo un conocedor de los baños de lodo. Aunque no lo parezca, también tiene un gran sentido de la moda.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "Hace unos años, los exploradores descubrieron una especie extraña de gallina cubierta de hongos. La hongallina, como se le conoce desde entonces, es una subespecie poco común de la gallina. ¿Es deliciosa? Solo el tiempo lo dirá.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "La vacaflor es una vaca muy bella a la que le gusta decorarse con flores aromáticas de color amarillo. Puedes esquilarla y, si tienes suerte, puedes encontrar un ranúnculo hermoso.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "No te dejes engañar por la apariencia elegante de este conejo. ¡Se puede comer todas tus zanahorias!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Un nombre elegante para un conejo elegante. ¡Cuántos colores!",
     "item.earthtojavamobs.horn.desc": "Parece que un carnero perdió estos objetos.",
+    "item.earthtojavamobs.buttercup.desc": "Una flor pequeña de color amarillo brillante. ¿Tiene mantequilla de verdad?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "Una cubeta del mejor lodo que existe.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }

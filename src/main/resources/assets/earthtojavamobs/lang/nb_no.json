@@ -28,8 +28,9 @@
     "entity.earthtojavamobs.inky_sheep": "Blekksau",
     "entity.earthtojavamobs.harelequin_rabbit": "Harelekin-kanin",
     "entity.earthtojavamobs.wandering_trader": "Handelsreisende",
-    "item.earthtojavamobs.mud_fluid_bucket": "Bøtte med gjørme",
     "item.earthtojavamobs.horn": "Horn",
+    "item.earthtojavamobs.buttercup": "Soleie",
+    "item.earthtojavamobs.mud_fluid_bucket": "Bøtte med gjørme",
     "item.earthtojavamobs.muddy_pig_spawn_egg.desc": "Gjørmegrisen er en gjørmebadentusiast. Du ser det ikke ved første øyekast, men de har også en god stil.",
     "item.earthtojavamobs.cluckshroom_spawn_egg.desc": "For en del år siden oppdaget oppdagelsesreisende langt borte en sjelden merkelig høne dekket av sopp. Sopphønen er, som navnet tilsier, en merkelig underart av høne. Smaker den godt? Det vil tiden vise.",
     "item.earthtojavamobs.moobloom_spawn_egg.desc": "Blomsterkua er en vakker ku som pryder seg selv med gule, duftende blomster. Du kan klippe den, og hvis du er heldig kan du finne en vakker ny soleie.",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Ikke la denne kaninens elegante utseende lure deg. Den vil fortsatt sluke gulrøttene dine!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Et fancy navn for en fancy kanin. Så mange farger!",
     "item.earthtojavamobs.horn.desc": "En sau med horn ser ut til å ha forlagt disse.",
+    "item.earthtojavamobs.buttercup.desc": "En liten, lys gul blomst. Er det ekte smør der inne?",
     "item.earthtojavamobs.mud_fluid_bucket.desc": "En bøtte med den beste, mest skitne gjørmen.",
     "itemGroup.earthtojavamobs": "Earth2Java"
 }
