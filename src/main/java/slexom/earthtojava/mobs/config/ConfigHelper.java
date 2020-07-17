@@ -155,6 +155,11 @@ public final class ConfigHelper {
         E2JModConfig.jollyLlamaWeight = ConfigHolder.COMMON.jollyLlamaWeight.get();
         E2JModConfig.jollyLlamaGroupMin = ConfigHolder.COMMON.jollyLlamaGroupMin.get();
         E2JModConfig.jollyLlamaGroupMax = ConfigHolder.COMMON.jollyLlamaGroupMax.get();
+
+        E2JModConfig.rainbowSheepSpawnBiomes = ConfigHolder.COMMON.rainbowSheepSpawnBiomes.get();
+        E2JModConfig.rainbowSheepWeight = ConfigHolder.COMMON.rainbowSheepWeight.get();
+        E2JModConfig.rainbowSheepGroupMin = ConfigHolder.COMMON.rainbowSheepGroupMin.get();
+        E2JModConfig.rainbowSheepGroupMax = ConfigHolder.COMMON.rainbowSheepGroupMax.get();
     }
 
     public static void bakeServer(final net.minecraftforge.fml.config.ModConfig config) {

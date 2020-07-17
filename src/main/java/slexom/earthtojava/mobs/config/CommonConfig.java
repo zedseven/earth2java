@@ -152,6 +152,12 @@ final class CommonConfig {
     final ForgeConfigSpec.IntValue jollyLlamaGroupMin;
     final ForgeConfigSpec.IntValue jollyLlamaGroupMax;
 
+
+    final ForgeConfigSpec.ConfigValue<List<String>> rainbowSheepSpawnBiomes;
+    final ForgeConfigSpec.IntValue rainbowSheepWeight;
+    final ForgeConfigSpec.IntValue rainbowSheepGroupMin;
+    final ForgeConfigSpec.IntValue rainbowSheepGroupMax;
+
     private final int standardSheepWeight = 12;
     private final int standardCowWeight = 8;
     private final int standardChickenWeight = 10;
@@ -583,6 +589,22 @@ final class CommonConfig {
                 .comment("Minimum number of entities in group")
                 .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
         jollyLlamaGroupMax = builder
+                .comment("Maximum number of entities in group")
+                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+
+
+        builder.push("rainbowSheep");
+        rainbowSheepSpawnBiomes = builder
+                .comment("Biome where entity Spawn")
+                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.RAINBOW_SHEEP_SPAWN_BIOMES));
+        rainbowSheepWeight = builder
+                .comment("Weight of entity in spawn")
+                .defineInRange("entityWeight", standardSheepWeight, 0, Integer.MAX_VALUE);
+        rainbowSheepGroupMin = builder
+                .comment("Minimum number of entities in group")
+                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
+        rainbowSheepGroupMax = builder
                 .comment("Maximum number of entities in group")
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();

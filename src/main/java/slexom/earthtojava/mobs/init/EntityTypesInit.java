@@ -208,13 +208,13 @@ public class EntityTypesInit {
                     .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, PIEBALD_PIG_REGISTRY_NAME).toString())
     );
 
-//    public static final String RAINBOW_SHEEP_REGISTRY_NAME = "rainbow_sheep";
-//    public static final RegistryObject<EntityType<RainbowSheepEntity>> RAINBOW_SHEEP_REGISTRY_OBJECT = ENTITY_TYPES.register(
-//            RAINBOW_SHEEP_REGISTRY_NAME,
-//            () -> EntityType.Builder.create(RainbowSheepEntity::new, EntityClassification.CREATURE)
-//                    .size(EntityType.SHEEP.getWidth(), EntityType.SHEEP.getHeight())
-//                    .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, RAINBOW_SHEEP_REGISTRY_NAME).toString())
-//    );
+    public static final String RAINBOW_SHEEP_REGISTRY_NAME = "rainbow_sheep";
+    public static final RegistryObject<EntityType<RainbowSheepEntity>> RAINBOW_SHEEP_REGISTRY_OBJECT = ENTITY_TYPES.register(
+            RAINBOW_SHEEP_REGISTRY_NAME,
+            () -> EntityType.Builder.create(RainbowSheepEntity::new, EntityClassification.CREATURE)
+                    .size(EntityType.SHEEP.getWidth(), EntityType.SHEEP.getHeight())
+                    .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, RAINBOW_SHEEP_REGISTRY_NAME).toString())
+    );
 
     public static final String ROCKY_SHEEP_REGISTRY_NAME = "rocky_sheep";
     public static final RegistryObject<EntityType<RockySheepEntity>> ROCKY_SHEEP_REGISTRY_OBJECT = ENTITY_TYPES.register(

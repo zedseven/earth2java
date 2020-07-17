@@ -156,6 +156,11 @@ public final class E2JModConfig {
     public static int jollyLlamaGroupMin;
     public static int jollyLlamaGroupMax;
 
+    public static List<String> rainbowSheepSpawnBiomes;
+    public static int rainbowSheepWeight;
+    public static int rainbowSheepGroupMin;
+    public static int rainbowSheepGroupMax;
+
 
     // Client
 
