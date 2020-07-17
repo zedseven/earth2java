@@ -1,8 +1,9 @@
 package slexom.earthtojava.mobs.item;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -15,9 +16,9 @@ import slexom.earthtojava.mobs.config.E2JModConfig;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class E2JItem extends Item {
-    public E2JItem(Properties properties) {
-        super(properties);
+public class E2JBlockItem extends BlockItem {
+    public E2JBlockItem(Block blockIn, Properties builder) {
+        super(blockIn, builder);
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -30,5 +31,4 @@ public class E2JItem extends Item {
             }
         }
     }
-
 }

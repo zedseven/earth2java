@@ -1,8 +1,8 @@
 package slexom.earthtojava.mobs.item;
 
-import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -14,20 +14,17 @@ import slexom.earthtojava.mobs.config.E2JModConfig;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.function.Supplier;
 
-public class E2JItem extends Item {
-    public E2JItem(Properties properties) {
-        super(properties);
+public class MudFluidBucketItem extends BucketItem {
+    public MudFluidBucketItem(Supplier<? extends Fluid> supplier, Properties builder) {
+        super(supplier, builder);
     }
 
     @OnlyIn(Dist.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (E2JModConfig.showDescription) {
-            String translationKey = this.getTranslationKey() + ".desc";
-            if (I18n.hasKey(translationKey)) {
-                TranslationTextComponent description = new TranslationTextComponent(translationKey);
-                tooltip.add(description.applyTextStyle(TextFormatting.GRAY));
-            }
+            tooltip.add( new TranslationTextComponent(this.getTranslationKey() + ".desc").applyTextStyle(TextFormatting.GRAY));
         }
     }
 

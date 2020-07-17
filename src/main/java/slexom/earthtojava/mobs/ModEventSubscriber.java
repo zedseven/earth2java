@@ -19,6 +19,7 @@ import slexom.earthtojava.mobs.client.renderer.tileentity.RainbowBedItemStackTil
 import slexom.earthtojava.mobs.config.ConfigHelper;
 import slexom.earthtojava.mobs.config.ConfigHolder;
 import slexom.earthtojava.mobs.init.BlockInit;
+import slexom.earthtojava.mobs.item.E2JBlockItem;
 import slexom.earthtojava.mobs.item.ModdedSpawnEggItem;
 import slexom.earthtojava.mobs.world.gen.E2JOreGen;
 
@@ -38,16 +39,16 @@ public final class ModEventSubscriber {
                     final Item.Properties properties = new Item.Properties().group(ITEM_GROUP);
                     final Item.Properties hiddenBlockProperties = new Item.Properties().group(null);
                     if (block == BlockInit.MELON_GOLEM_HEAD_BLINK.get() || block == BlockInit.MELON_GOLEM_HEAD_SHOOT.get()) {
-                        final BlockItem blockItem = new BlockItem(block, hiddenBlockProperties);
+                        final BlockItem blockItem = new E2JBlockItem(block, hiddenBlockProperties);
                         blockItem.setRegistryName(block.getRegistryName());
                         registry.register(blockItem);
                     } else if (block == BlockInit.RAINBOW_BED.get()) {
                         final Item.Properties bedProperties = new Item.Properties().setISTER(() -> RainbowBedItemStackTileEntityRenderer::new).group(ITEM_GROUP);
-                        final BlockItem blockItem = new BlockItem(block, bedProperties);
+                        final BlockItem blockItem = new E2JBlockItem(block, bedProperties);
                         blockItem.setRegistryName(block.getRegistryName());
                         registry.register(blockItem);
                     } else {
-                        final BlockItem blockItem = new BlockItem(block, properties);
+                        final BlockItem blockItem = new E2JBlockItem(block, properties);
                         blockItem.setRegistryName(block.getRegistryName());
                         registry.register(blockItem);
                     }
