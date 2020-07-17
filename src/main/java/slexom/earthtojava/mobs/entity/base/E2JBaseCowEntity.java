@@ -16,7 +16,7 @@ public class E2JBaseCowEntity<T extends CowEntity> extends CowEntity {
     private int remainingTick = 0;
     private int internalBlinkTick = 0;
 
-    public E2JBaseCowEntity(EntityType<? extends CowEntity> type, World worldIn) {
+    public E2JBaseCowEntity(EntityType<T> type, World worldIn) {
         super(type, worldIn);
         experienceValue = 3;
         setNoAI(false);
