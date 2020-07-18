@@ -638,37 +638,6 @@ final class CommonConfig {
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();
 
-        builder.push("jollyLlama");
-        jollyLlamaSpawnBiomes = builder
-                .comment("Biome where entity Spawn")
-                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.JOLLY_LLAMA_SPAWN_BIOMES));
-        jollyLlamaWeight = builder
-                .comment("Weight of entity in spawn")
-                .defineInRange("entityWeight", 6, 0, Integer.MAX_VALUE);
-        jollyLlamaGroupMin = builder
-                .comment("Minimum number of entities in group")
-                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
-        jollyLlamaGroupMax = builder
-                .comment("Maximum number of entities in group")
-                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
-        builder.pop();
-
-
-        builder.push("rainbowSheep");
-        rainbowSheepSpawnBiomes = builder
-                .comment("Biome where entity Spawn")
-                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.RAINBOW_SHEEP_SPAWN_BIOMES));
-        rainbowSheepWeight = builder
-                .comment("Weight of entity in spawn")
-                .defineInRange("entityWeight", standardSheepWeight, 0, Integer.MAX_VALUE);
-        rainbowSheepGroupMin = builder
-                .comment("Minimum number of entities in group")
-                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
-        rainbowSheepGroupMax = builder
-                .comment("Maximum number of entities in group")
-                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
-        builder.pop();
-
         builder.pop();
     }
 
