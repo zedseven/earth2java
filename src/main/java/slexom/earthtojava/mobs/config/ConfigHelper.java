@@ -15,6 +15,13 @@ public final class ConfigHelper {
     public static void bakeCommon(final net.minecraftforge.fml.config.ModConfig config) {
 
         E2JModConfig.mudLakeFrequency = ConfigHolder.COMMON.mudLakeFrequency.get();
+        E2JModConfig.canWanderingTraderSpawn = ConfigHolder.COMMON.canWanderingTraderSpawn.get();
+        E2JModConfig.canRubyOreGenerate = ConfigHolder.COMMON.canRubyOreGenerate.get();
+        E2JModConfig.rubyOreCount = ConfigHolder.COMMON.rubyOreCount.get();
+        E2JModConfig.rubyOreBottomOffset = ConfigHolder.COMMON.rubyOreBottomOffset.get();
+        E2JModConfig.rubyOreTopOffset = ConfigHolder.COMMON.rubyOreTopOffset.get();
+        E2JModConfig.rubyOreMaximum = ConfigHolder.COMMON.rubyOreMaximum.get();
+
 
         E2JModConfig.amberChickenSpawnBiomes = ConfigHolder.COMMON.amberChickenSpawnBiomes.get();
         E2JModConfig.amberChickenWeight = ConfigHolder.COMMON.amberChickenWeight.get();

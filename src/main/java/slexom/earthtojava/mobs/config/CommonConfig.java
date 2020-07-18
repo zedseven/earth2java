@@ -9,8 +9,15 @@ final class CommonConfig {
 
     final String CATEGORY_GENERAL = "general";
     final String CATEGORY_ENTITIES = "entities";
+    final String CATEGORY_ORE_GENERATION = "ore_generation";
 
     final ForgeConfigSpec.IntValue mudLakeFrequency;
+    final ForgeConfigSpec.BooleanValue canWanderingTraderSpawn;
+    final ForgeConfigSpec.BooleanValue canRubyOreGenerate;
+    final ForgeConfigSpec.IntValue rubyOreCount;
+    final ForgeConfigSpec.IntValue rubyOreBottomOffset;
+    final ForgeConfigSpec.IntValue rubyOreTopOffset;
+    final ForgeConfigSpec.IntValue rubyOreMaximum;
 
     final ForgeConfigSpec.ConfigValue<List<String>> amberChickenSpawnBiomes;
     final ForgeConfigSpec.IntValue amberChickenWeight;
@@ -171,7 +178,29 @@ final class CommonConfig {
         mudLakeFrequency = builder
                 .comment("Frequency of mud lake generation. Lower number -> High appearance chance")
                 .defineInRange("mudLakeFrequency", 40, 1, Integer.MAX_VALUE);
+
+        canWanderingTraderSpawn = builder
+                .comment("Enable or disable the custom Wandering Trader")
+                .define("canWanderingTraderSpawn", true);
+
         builder.pop();
+
+        builder.push(CATEGORY_ORE_GENERATION);
+        builder.push("ruby");
+        canRubyOreGenerate = builder
+                .comment("Enable or disable the generation for Ruby Ore")
+                .define("canRubyOreGenerate", true);
+        rubyOreCount = builder
+                .defineInRange("rubyOreCount", 2, 0, Integer.MAX_VALUE);
+        rubyOreBottomOffset = builder
+                .defineInRange("rubyOreBottomOffset", 0, 0, Integer.MAX_VALUE);
+        rubyOreTopOffset = builder
+                .defineInRange("rubyOreTopOffset", 0, 0, Integer.MAX_VALUE);
+        rubyOreMaximum = builder
+                .defineInRange("rubyOreMaximum", 16, 0, Integer.MAX_VALUE);
+        builder.pop();
+        builder.pop();
+
         builder.push(CATEGORY_ENTITIES);
         builder.push("amberChicken");
         amberChickenSpawnBiomes = builder
@@ -574,6 +603,37 @@ final class CommonConfig {
                 .comment("Minimum number of entities in group")
                 .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
         jumboRabbitGroupMax = builder
+                .comment("Maximum number of entities in group")
+                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+
+        builder.push("jollyLlama");
+        jollyLlamaSpawnBiomes = builder
+                .comment("Biome where entity Spawn")
+                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.JOLLY_LLAMA_SPAWN_BIOMES));
+        jollyLlamaWeight = builder
+                .comment("Weight of entity in spawn")
+                .defineInRange("entityWeight", 6, 0, Integer.MAX_VALUE);
+        jollyLlamaGroupMin = builder
+                .comment("Minimum number of entities in group")
+                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
+        jollyLlamaGroupMax = builder
+                .comment("Maximum number of entities in group")
+                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+
+
+        builder.push("rainbowSheep");
+        rainbowSheepSpawnBiomes = builder
+                .comment("Biome where entity Spawn")
+                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.RAINBOW_SHEEP_SPAWN_BIOMES));
+        rainbowSheepWeight = builder
+                .comment("Weight of entity in spawn")
+                .defineInRange("entityWeight", standardSheepWeight, 0, Integer.MAX_VALUE);
+        rainbowSheepGroupMin = builder
+                .comment("Minimum number of entities in group")
+                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
+        rainbowSheepGroupMax = builder
                 .comment("Maximum number of entities in group")
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();

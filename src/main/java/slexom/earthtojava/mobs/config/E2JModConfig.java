@@ -15,6 +15,13 @@ public final class E2JModConfig {
     //Common
 
     public static int mudLakeFrequency;
+    public static boolean canWanderingTraderSpawn;
+    public static boolean canRubyOreGenerate;
+    public static int rubyOreCount;
+    public static int rubyOreBottomOffset;
+    public static int rubyOreTopOffset;
+    public static int rubyOreMaximum;
+
 
     public static List<String> amberChickenSpawnBiomes;
     public static int amberChickenWeight;

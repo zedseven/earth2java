@@ -17,6 +17,7 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.spawner.WorldEntitySpawner;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import slexom.earthtojava.mobs.config.E2JModConfig;
 import slexom.earthtojava.mobs.entity.merchant.villager.E2JWanderingTraderEntity;
 import slexom.earthtojava.mobs.init.EntityTypesInit;
 
@@ -32,11 +33,14 @@ public class E2JWanderingTraderSpawner {
 
     @SubscribeEvent
     public void tick(TickEvent.WorldTickEvent event) {
-        this.world = (ServerWorld) event.world;
-        this.random = this.world.getRandom();
-        if (world.getDayTime() % 24000 == 1500) {
-            if (random.nextInt(100) < CHANCE) {
-                spawnTrader();
+
+        if(E2JModConfig.canWanderingTraderSpawn) {
+            this.world = (ServerWorld) event.world;
+            this.random = this.world.getRandom();
+            if (world.getDayTime() % 24000 == 1500) {
+                if (random.nextInt(100) < CHANCE) {
+                    spawnTrader();
+                }
             }
         }
     }

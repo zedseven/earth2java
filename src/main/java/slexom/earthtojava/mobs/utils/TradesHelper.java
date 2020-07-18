@@ -11,6 +11,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
+import slexom.earthtojava.mobs.config.E2JModConfig;
 import slexom.earthtojava.mobs.init.ItemInit;
 
 import java.util.Random;
@@ -105,7 +106,8 @@ public class TradesHelper {
         }
 
         public MerchantOffer getOffer(Entity trader, Random rand) {
-            return new MerchantOffer(new ItemStack(ItemInit.RUBY.get(), this.currencyAmount), new ItemStack(this.itemStack.getItem(), this.sellingItemAmount), this.maxInStock, this.givenExp, this.priceMultiplier);
+            Item currency = E2JModConfig.canRubyOreGenerate ? ItemInit.RUBY.get() : Items.EMERALD;
+            return new MerchantOffer(new ItemStack(currency, this.currencyAmount), new ItemStack(this.itemStack.getItem(), this.sellingItemAmount), this.maxInStock, this.givenExp, this.priceMultiplier);
         }
     }
 
@@ -131,7 +133,8 @@ public class TradesHelper {
         public MerchantOffer getOffer(Entity trader, Random rand) {
             Potion potion = ForgeRegistries.POTION_TYPES.getValue(new ResourceLocation(this.potionType));
             ItemStack potionItemStack = PotionUtils.addPotionToItemStack(new ItemStack(this.itemStack.getItem(), sellingItemAmount), potion);
-            return new MerchantOffer(new ItemStack(ItemInit.RUBY.get(), this.currencyAmount), potionItemStack, this.maxInStock, this.givenExp, this.priceMultiplier);
+            Item currency = E2JModConfig.canRubyOreGenerate ? ItemInit.RUBY.get() : Items.EMERALD;
+            return new MerchantOffer(new ItemStack(currency, this.currencyAmount), potionItemStack, this.maxInStock, this.givenExp, this.priceMultiplier);
         }
     }
 }

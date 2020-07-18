@@ -12,6 +12,7 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
+import slexom.earthtojava.mobs.config.E2JModConfig;
 import slexom.earthtojava.mobs.init.BlockInit;
 
 import java.util.Random;
@@ -26,6 +27,9 @@ public class E2JOreGen {
                     new OreFeature(OreFeatureConfig::deserialize) {
                         @Override
                         public boolean place(IWorld world, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos pos, OreFeatureConfig config) {
+                            if (!E2JModConfig.canRubyOreGenerate) {
+                                return false;
+                            }
                             DimensionType dimensionType = world.getDimension().getType();
                             boolean dimensionCriteria = false;
                             if (dimensionType == DimensionType.OVERWORLD)
@@ -35,7 +39,7 @@ public class E2JOreGen {
                             return super.place(world, generator, rand, pos, config);
                         }
                     }.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.RUBY_ORE.get().getDefaultState(), 8))
-                            .withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(2, 0, 0, 16)))
+                            .withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(E2JModConfig.rubyOreCount, E2JModConfig.rubyOreBottomOffset, E2JModConfig.rubyOreTopOffset, E2JModConfig.rubyOreMaximum)))
             );
         }
     }
