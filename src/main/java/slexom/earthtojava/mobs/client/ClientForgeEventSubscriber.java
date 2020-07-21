@@ -1,6 +1,6 @@
 package slexom.earthtojava.mobs.client;
 
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.ResourceLocation;
@@ -11,9 +11,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import slexom.earthtojava.mobs.EarthToJavaMobsMod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import slexom.earthtojava.mobs.EarthToJavaMobsMod;
 
 
 @EventBusSubscriber(modid = EarthToJavaMobsMod.MOD_ID, bus = EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
@@ -43,11 +43,11 @@ public final class ClientForgeEventSubscriber {
     }
 
     private static Fluid getMudFluid(EntityViewRenderEvent event) {
-        PlayerEntity player = (PlayerEntity) event.getInfo().getRenderViewEntity();
-        World world = player.world;
-        int x = MathHelper.floor(player.getPosX());
-        int y = MathHelper.floor(player.getPosYEye());
-        int z = MathHelper.floor(player.getPosZ());
+        Entity entity = event.getInfo().getRenderViewEntity();
+        World world = entity.world;
+        int x = MathHelper.floor(entity.getPosX());
+        int y = MathHelper.floor(entity.getPosYEye());
+        int z = MathHelper.floor(entity.getPosZ());
         return world.getFluidState(new BlockPos(x, y, z)).getFluid();
     }
 
