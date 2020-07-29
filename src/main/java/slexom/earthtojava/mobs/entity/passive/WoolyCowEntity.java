@@ -1,4 +1,3 @@
-
 package slexom.earthtojava.mobs.entity.passive;
 
 import net.minecraft.block.Blocks;
@@ -23,7 +22,7 @@ import javax.annotation.Nullable;
 
 public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements IForgeShearable {
 
-    private static final DataParameter<Byte> isSheared = EntityDataManager.createKey(WoolyCowEntity.class, DataSerializers.BYTE);
+    private static final DataParameter<Boolean> isSheared = EntityDataManager.createKey(WoolyCowEntity.class, DataSerializers.BOOLEAN);
 
     private int shearTimer;
     private EatGrassGoal eatGrassGoal;
@@ -61,20 +60,21 @@ public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements 
 
     protected void registerData() {
         super.registerData();
-        this.dataManager.register(isSheared, (byte) 0);
+        this.dataManager.register(isSheared, false);
     }
 
     public boolean getSheared() {
-        return (this.dataManager.get(isSheared) & 16) != 0;
+        return this.dataManager.get(isSheared);
     }
 
     public void setSheared(boolean sheared) {
-        byte b0 = this.dataManager.get(isSheared);
-        if (sheared) {
-            this.dataManager.set(isSheared, (byte) (b0 | 16));
-        } else {
-            this.dataManager.set(isSheared, (byte) (b0 & -17));
-        }
+        this.dataManager.set(isSheared, sheared);
+//        byte b0 = this.dataManager.get(isSheared);
+//        if (sheared) {
+//            this.dataManager.set(isSheared, (byte) (b0 | 16));
+//        } else {
+//            this.dataManager.set(isSheared, (byte) (b0 & -17));
+//        }
     }
 
     public void eatGrassBonus() {
