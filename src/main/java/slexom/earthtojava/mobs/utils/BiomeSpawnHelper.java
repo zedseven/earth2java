@@ -6,11 +6,15 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.WaterMobEntity;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -70,10 +74,10 @@ public final class BiomeSpawnHelper {
     public static final String[] FLECKED_SHEEP_SPAWN_BIOMES = getBiomesListFromBiomes(PLAINS, MOUNTAINS, TAIGA, GRAVELLY_MOUNTAINS, FOREST);
     public static final String[] SPOTTED_PIG_SPAWN_BIOMES = getBiomesListFromBiomes(SWAMP);
     public static final String[] MIDNIGHT_CHICKEN_SPAWN_BIOMES = getBiomesListFromBiomes(FOREST, DARK_FOREST, JUNGLE, BIRCH_FOREST);
-    public static final String[] MUDDY_PIG_SPAWN_BIOMES = getBiomesListFromBiomes(PLAINS, MOUNTAINS, RIVER);
+    public static final String[] MUDDY_PIG_SPAWN_BIOMES = getBiomeListFromBiomeTypes(BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.RIVER);
     public static final String[] TROPICAL_SLIME_SPAWN_BIOMES = getBiomesListFromBiomes(BEACH);
     public static final String[] CLUCKSHROOM_SPAWN_BIOMES = getBiomesListFromBiomes(MUSHROOM_FIELDS);
-    public static final String[] SUNSET_COW_SPAWN_BIOMES = getBiomesListFromBiomes(SAVANNA);
+    public static final String[] SUNSET_COW_SPAWN_BIOMES = getBiomeListFromBiomeTypes(BiomeDictionary.Type.SAVANNA);
     public static final String[] PIEBALD_PIG_SPAWN_BIOMES = getBiomesListFromBiomes(FOREST, BIRCH_FOREST, PLAINS, MOUNTAINS, TAIGA, SAVANNA);
     public static final String[] AMBER_CHICKEN_SPAWN_BIOMES = getBiomesListFromBiomes(DESERT, SAVANNA);
     public static final String[] BONE_SPIDER_SPAWN_BIOMES = getBiomesListFromBiomes(BADLANDS);
@@ -83,11 +87,48 @@ public final class BiomeSpawnHelper {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    public static String[] getBiomesList(String[]... identifiers){
+        List<String> biomes = new ArrayList<>();
+        List<String> types = new ArrayList<>();
+        String[] flatted = Stream.of(identifiers).flatMap(Stream::of).toArray(String[]::new);
+        for(String identifier: flatted){
+            String[] splitted = identifier.split(":");
+            if(splitted.length == 2){
+                biomes.add(identifier);
+            }
+            if(splitted.length == 1){
+                types.add(identifier);
+            }
+        }
+        return Stream.concat(biomes.stream(), types.stream()).toArray(String[]::new);
+    }
+
     public static String[] getBiomesListFromBiomes(String[]... biomes) {
         return Stream.of(biomes).flatMap(Stream::of).toArray(String[]::new);
     }
 
+    public static String[] getBiomeListFromBiomeTypes(BiomeDictionary.Type... types){
+        return Stream.of(types).flatMap(Stream::of).map(BiomeDictionary.Type::getName).toArray(String[]::new) ;
+    }
+
     private static void setSpawnBiomes(EntityType<?> entity, String[] spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn, EntityClassification classification) {
+
+        for (String identifier : spawnBiomes) {
+            String[] splitted = identifier.split(":");
+            if (splitted.length == 2) {
+                Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(identifier));
+                if(biome != null){
+                    biome.getSpawns(classification).add(new Biome.SpawnListEntry(entity, weight, minGroupCountIn, maxGroupCountIn));
+                }
+            }
+            if (splitted.length == 1) {
+                Set<Biome> biomes = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(identifier.toUpperCase()));
+                for (Biome biome : biomes) {
+                    biome.getSpawns(classification).add(new Biome.SpawnListEntry(entity, weight, minGroupCountIn, maxGroupCountIn));
+                }
+            }
+        }
+
         for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
             boolean biomeCriteria = Arrays.asList(spawnBiomes).contains(ForgeRegistries.BIOMES.getKey(biome).toString());
             if (!biomeCriteria)
