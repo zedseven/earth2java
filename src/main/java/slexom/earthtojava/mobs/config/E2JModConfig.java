@@ -96,6 +96,11 @@ public final class E2JModConfig {
     public static int piebaldPigGroupMin;
     public static int piebaldPigGroupMax;
 
+    public static List<String> pinkFootedPigSpawnBiomes;
+    public static int pinkFootedPigWeight;
+    public static int pinkFootedPigGroupMin;
+    public static int pinkFootedPigGroupMax;
+
     public static List<String> rockySheepSpawnBiomes;
     public static int rockySheepWeight;
     public static int rockySheepGroupMin;

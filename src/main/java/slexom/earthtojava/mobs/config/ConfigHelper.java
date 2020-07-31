@@ -96,6 +96,11 @@ public final class ConfigHelper {
         E2JModConfig.piebaldPigGroupMin = ConfigHolder.COMMON.piebaldPigGroupMin.get();
         E2JModConfig.piebaldPigGroupMax = ConfigHolder.COMMON.piebaldPigGroupMax.get();
 
+        E2JModConfig.pinkFootedPigSpawnBiomes = ConfigHolder.COMMON.pinkFootedPigSpawnBiomes.get();
+        E2JModConfig.pinkFootedPigWeight = ConfigHolder.COMMON.pinkFootedPigWeight.get();
+        E2JModConfig.pinkFootedPigGroupMin = ConfigHolder.COMMON.pinkFootedPigGroupMin.get();
+        E2JModConfig.pinkFootedPigGroupMax = ConfigHolder.COMMON.pinkFootedPigGroupMax.get();
+
         E2JModConfig.rockySheepSpawnBiomes = ConfigHolder.COMMON.rockySheepSpawnBiomes.get();
         E2JModConfig.rockySheepWeight = ConfigHolder.COMMON.rockySheepWeight.get();
         E2JModConfig.rockySheepGroupMin = ConfigHolder.COMMON.rockySheepGroupMin.get();

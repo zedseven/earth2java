@@ -134,6 +134,14 @@ public class EntityTypesInit {
                     .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, PIEBALD_PIG_REGISTRY_NAME).toString())
     );
 
+    public static final String PINK_FOOTED_PIG_REGISTRY_NAME = "pink_footed_pig";
+    public static final RegistryObject<EntityType<PinkFootedPigEntity>> PINK_FOOTED_PIG_REGISTRY_OBJECT = ENTITY_TYPES.register(
+            PINK_FOOTED_PIG_REGISTRY_NAME,
+            () -> EntityType.Builder.create(PinkFootedPigEntity::new, EntityClassification.CREATURE)
+                    .size(EntityType.PIG.getWidth(), EntityType.PIG.getHeight())
+                    .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, PINK_FOOTED_PIG_REGISTRY_NAME).toString())
+    );
+
     public static final String RAINBOW_SHEEP_REGISTRY_NAME = "rainbow_sheep";
     public static final RegistryObject<EntityType<RainbowSheepEntity>> RAINBOW_SHEEP_REGISTRY_OBJECT = ENTITY_TYPES.register(
             RAINBOW_SHEEP_REGISTRY_NAME,

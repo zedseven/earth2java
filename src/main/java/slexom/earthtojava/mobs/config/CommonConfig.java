@@ -92,6 +92,11 @@ final class CommonConfig {
     final ForgeConfigSpec.IntValue piebaldPigGroupMin;
     final ForgeConfigSpec.IntValue piebaldPigGroupMax;
 
+    final ForgeConfigSpec.ConfigValue<List<String>> pinkFootedPigSpawnBiomes;
+    final ForgeConfigSpec.IntValue pinkFootedPigWeight;
+    final ForgeConfigSpec.IntValue pinkFootedPigGroupMin;
+    final ForgeConfigSpec.IntValue pinkFootedPigGroupMax;
+
     final ForgeConfigSpec.ConfigValue<List<String>> rockySheepSpawnBiomes;
     final ForgeConfigSpec.IntValue rockySheepWeight;
     final ForgeConfigSpec.IntValue rockySheepGroupMin;
@@ -419,6 +424,21 @@ final class CommonConfig {
                 .comment("Minimum number of entities in group")
                 .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
         piebaldPigGroupMax = builder
+                .comment("Maximum number of entities in group")
+                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+
+        builder.push("pinkFootedPig");
+        pinkFootedPigSpawnBiomes = builder
+                .comment("Biome where entity Spawn")
+                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.PINK_FOOTED_PIG_SPAWN_BIOMES));
+        pinkFootedPigWeight = builder
+                .comment("Weight of entity in spawn")
+                .defineInRange("entityWeight", standardPigWeight, 0, Integer.MAX_VALUE);
+        pinkFootedPigGroupMin = builder
+                .comment("Minimum number of entities in group")
+                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
+        pinkFootedPigGroupMax = builder
                 .comment("Maximum number of entities in group")
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();
