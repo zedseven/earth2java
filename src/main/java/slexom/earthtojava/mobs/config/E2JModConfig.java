@@ -18,6 +18,7 @@ public final class E2JModConfig {
     public static boolean canWanderingTraderSpawn;
     public static int wanderingTraderDelay;
     public static int wanderingTraderChance;
+    public static String wanderingTraderCurrency;
     public static boolean canRubyOreGenerate;
     public static int rubyOreCount;
     public static int rubyOreBottomOffset;

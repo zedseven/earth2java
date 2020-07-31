@@ -18,6 +18,7 @@ public final class ConfigHelper {
         E2JModConfig.canWanderingTraderSpawn = ConfigHolder.COMMON.canWanderingTraderSpawn.get();
         E2JModConfig.wanderingTraderDelay = ConfigHolder.COMMON.wanderingTraderDelay.get();
         E2JModConfig.wanderingTraderChance = ConfigHolder.COMMON.wanderingTraderChance.get();
+        E2JModConfig.wanderingTraderCurrency = ConfigHolder.COMMON.wanderingTraderCurrency.get();
         E2JModConfig.canRubyOreGenerate = ConfigHolder.COMMON.canRubyOreGenerate.get();
         E2JModConfig.rubyOreCount = ConfigHolder.COMMON.rubyOreCount.get();
         E2JModConfig.rubyOreBottomOffset = ConfigHolder.COMMON.rubyOreBottomOffset.get();

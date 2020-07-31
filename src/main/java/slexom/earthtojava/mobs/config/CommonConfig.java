@@ -15,6 +15,7 @@ final class CommonConfig {
     final ForgeConfigSpec.BooleanValue canWanderingTraderSpawn;
     final ForgeConfigSpec.IntValue wanderingTraderDelay;
     final ForgeConfigSpec.IntValue wanderingTraderChance;
+    final ForgeConfigSpec.ConfigValue<String> wanderingTraderCurrency;
     final ForgeConfigSpec.BooleanValue canRubyOreGenerate;
     final ForgeConfigSpec.IntValue rubyOreCount;
     final ForgeConfigSpec.IntValue rubyOreBottomOffset;
@@ -183,21 +184,23 @@ final class CommonConfig {
 
         canWanderingTraderSpawn = builder
                 .comment("Enable or disable the custom Wandering Trader")
-                .define("canWanderingTraderSpawn", true);
+                .define("canWanderingTraderSpawn", false);
         wanderingTraderDelay = builder
                 .comment("Number of in-game days to wait until the mod trader can spawn")
                 .defineInRange("wanderingTraderDelay", 4, 0, Integer.MAX_VALUE);
         wanderingTraderChance = builder
                 .comment("Chance for the mod trader to spawn")
                 .defineInRange("wanderingTraderChance", 20, 1, 100);
-
+        wanderingTraderCurrency = builder
+                .comment("Identifier of the item to use as currency for trades")
+                .define("wanderingTraderCurrency", "earthtojavamobs:ruby");
         builder.pop();
 
         builder.push(CATEGORY_ORE_GENERATION);
         builder.push("ruby");
         canRubyOreGenerate = builder
                 .comment("Enable or disable the generation for Ruby Ore")
-                .define("canRubyOreGenerate", true);
+                .define("canRubyOreGenerate", false);
         rubyOreCount = builder
                 .defineInRange("rubyOreCount", 2, 0, Integer.MAX_VALUE);
         rubyOreBottomOffset = builder
