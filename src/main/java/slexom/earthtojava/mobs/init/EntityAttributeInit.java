@@ -35,6 +35,7 @@ public class EntityAttributeInit {
         registerAttributes(EntityTypesInit.PALE_PIG_REGISTRY_OBJECT.get(), E2JBasePigEntity.registerAttributes());
         registerAttributes(EntityTypesInit.MUDDY_PIG_REGISTRY_OBJECT.get(), E2JBasePigEntity.registerAttributes());
         registerAttributes(EntityTypesInit.SPOTTED_PIG_REGISTRY_OBJECT.get(), E2JBasePigEntity.registerAttributes());
+        registerAttributes(EntityTypesInit.PINK_FOOTED_PIG_REGISTRY_OBJECT.get(), E2JBasePigEntity.registerAttributes());
 
         registerAttributes(EntityTypesInit.JUMBO_RABBIT_REGISTRY_OBJECT.get(), E2JBaseRabbitEntity.registerAttributes());
         registerAttributes(EntityTypesInit.HARELEQUIN_RABBIT_REGISTRY_OBJECT.get(), E2JBaseRabbitEntity.registerAttributes());
