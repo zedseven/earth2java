@@ -191,8 +191,8 @@ final class CommonConfig {
                 .comment("Enable or disable the custom Wandering Trader")
                 .define("canWanderingTraderSpawn", false);
         wanderingTraderDelay = builder
-                .comment("Number of in-game days to wait until the mod trader can spawn")
-                .defineInRange("wanderingTraderDelay", 4, 0, Integer.MAX_VALUE);
+                .comment("Number of in-game days to wait between mod trader spawn")
+                .defineInRange("wanderingTraderDelay", 4, 1, Integer.MAX_VALUE);
         wanderingTraderChance = builder
                 .comment("Chance for the mod trader to spawn")
                 .defineInRange("wanderingTraderChance", 20, 1, 100);

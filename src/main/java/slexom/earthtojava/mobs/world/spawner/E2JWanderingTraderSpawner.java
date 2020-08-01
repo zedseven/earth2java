@@ -40,42 +40,19 @@ public class E2JWanderingTraderSpawner {
     @SubscribeEvent
     public void tick(TickEvent.WorldTickEvent event) {
         if (E2JModConfig.canWanderingTraderSpawn) {
-            if(event.phase == TickEvent.Phase.END && event.side == LogicalSide.SERVER){
+            if (event.phase == TickEvent.Phase.END && event.side == LogicalSide.SERVER) {
                 world = (ServerWorld) event.world;
-                if(world.getGameRules().getBoolean(GameRules.field_230128_E_) && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)){
+                if (world.getGameRules().getBoolean(GameRules.field_230128_E_) && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
                     iServerWorldInfo = world.getServer().func_240793_aU_().func_230407_G_();
                     int CHANCE = E2JModConfig.wanderingTraderChance;
                     int DELAY = E2JModConfig.wanderingTraderDelay;
                     long dayTime = iServerWorldInfo.getDayTime();
-                    if ((dayTime / (long)DAY) > DELAY) {
-                        if (dayTime % DAY == 1500) {
-                            if (random.nextInt(100) < CHANCE) {
-                                spawnTrader(this.world);
-                            }
+                    if (dayTime % ((long) (DAY * DELAY)) == 1500) {
+                        if (random.nextInt(100) < CHANCE) {
+                            spawnTrader(this.world);
                         }
                     }
                 }
-//                world = (ServerWorld) event.world;
-//                if (world.getGameRules().getBoolean(GameRules.field_230128_E_) && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
-//                    iServerWorldInfo = world.getServer().func_240793_aU_().func_230407_G_();
-//                    long dayTime = iServerWorldInfo.getDayTime();
-//                    E2JWanderingTraderSaveData data = E2JWanderingTraderSaveData.get(world);
-//                    int spawnDelay = data.getTraderDelay();
-//                    if (spawnDelay <= 0) {
-//                        spawnDelay = DAY;
-//                        data.setTraderDelay(spawnDelay);
-//                    }
-//                    if (--spawnTime == 0) {
-//                        spawnTime = 1500;
-//                        spawnDelay -= 1500;
-//                        data.setTraderDelay(spawnDelay);
-//                        if (spawnDelay == 0) {
-//                            if (this.random.nextInt(100) < CHANCE) {
-//                                spawnTrader(this.world);
-//                            }
-//                        }
-//                    }
-//                }
             }
         }
     }
