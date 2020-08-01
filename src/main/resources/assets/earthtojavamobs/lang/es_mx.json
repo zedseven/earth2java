@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Conejo arliebrequín",
     "entity.earthtojavamobs.rainbow_sheep": "Oveja arcoíris",
     "entity.earthtojavamobs.pink_footed_pig": "Cerdo de patas rosas",
+    "entity.earthtojavamobs.bronzed_chicken": "Gallina bronceada",
     "entity.earthtojavamobs.wandering_trader": "Comerciante errante",
     "item.earthtojavamobs.horn": "Cuerno",
     "block.earthtojavamobs.buttercup": "Ranúnculo",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Este cerdo punteado es de lo más dulce. Le encanta vivir con sus amigos cerditos y recorrer los pastizales en busca de bocadillos dulces.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "¿Ya te aburriste de los colores lisos? La lana de la oveja arcoíris no tiene uno ni dos, sino SIETE colores atrevidos para hacer creaciones multicolor.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Una gallina con plumaje brillante que puede ser más útil que el oro.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Un ave animada que puede cacarear como las mejores y es una excelente adición para cualquier corral.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Esta gallina es más oscura que un bloque de carbón, por lo que puede ser difícil verla en la sombra. ¡Abre bien los ojos!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Esta gallina de color nublado quiere que todos sepan que no es responsable si el clima se pone gr-ave.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Como las piedras debajo del pasto, esta oveja conoce los diferentes colores simples.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "¡Qué colorido! Las camas son una de las primeras cosas que tienes que hacer para tu casa nueva, porque son geniales. ¿Quién no disfruta una buena cama?",
     "block.earthtojavamobs.rainbow_carpet.desc": "¡Qué colorido! Decora tus edificios con un toque hogareño. Pero recuerda que las alfombras son inflamables.",
     "block.earthtojavamobs.rainbow_wool.desc": "Bee, bee... Oveja arcoíris, ¿tienes algo de lana? Esta lana es un material de construcción fabuloso. Solo recuerda que es inflamable.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Harlekiinipupu",
     "entity.earthtojavamobs.rainbow_sheep": "Sateenkaarilammas",
     "entity.earthtojavamobs.pink_footed_pig": "Pinkkisorkkapossu",
+    "entity.earthtojavamobs.bronzed_chicken": "Pronssikana",
     "entity.earthtojavamobs.wandering_trader": "Kuljeskeleva kauppias",
     "item.earthtojavamobs.horn": "Sarvi",
     "block.earthtojavamobs.buttercup": "Leinikki",
@@ -59,13 +60,14 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Tämä täpläpossu on äärettömän makea. Se tykkää viettää aikaa possukavereidensa kanssa metsästäen herkkupaloja masulleen Ruohotasangolla.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Oletko kyllästynyt yksittäisiin tavallisiin väreihin? Sateenkaarilampaiden villasta löytyy yksi, kaksi, SEITSEMÄN upeaa sävyä, joilla saat sateenkaaren värit luomuksiisi.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Loisteliaalla höyhenpuvullaan prameileva kana, joka voi olla kultaakin hyödyllisempi.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Sisukas lintu, jonka kotkotus vetää vertoja parhaimmille. Mahtava lisäys mihin tahansa kanahäkkiin.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Tämä kana on hiilikuutiotakin mustempi, joten sitä on vaikea nähdä varjoissa. Ole siis tarkkana kuin haukka!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Tämä pilvenvärinen kana haluaa tiedottaa kaikille, etteivät sitä kiinnosta säähän liittyvät kotkotukset.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Tämän lampaan yksinkertaiset värit tuovat mieleen kivet ruohikkojen alla.",
     "item.earthtojavamobs.flecked_sheep_spawn_egg.desc": "Tältä kalpeanaamaiselta lampaalta saa keritsemällä tuuheaa ruskeaa villaa.",
     "item.earthtojavamobs.inky_sheep_spawn_egg.desc": "Ehkä tämä lammas kirjoittaa paljon kirjeitä. Tai ehkä se vain sotkee.",
     "item.earthtojavamobs.muddy_foot_rabbit_spawn_egg.desc": "Metsässä kirmaillessaan ei voi välttyä mudalta.",
-    "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Älä anna tämän jänön huolitellun ulkoasun hämätä. Se nimittäin ahmii porkkanasi siinä missä muutkin!",
+    "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Älä anna tämän jäniksen huolitellun ulkoasun hämätä. Se nimittäin ahmii porkkanasi siinä missä muutkin!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Tyylikäs nimi tyylikkäälle jänölle. Niin monta väriä!",
     "item.earthtojavamobs.horn.desc": "Sarvellinen lammas näyttää hukanneen nämä.",
     "block.earthtojavamobs.buttercup.desc": "Pieni kirkkaankeltainen kukka. Onko siinä oikeaa voita?",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Todella värikästä! Sängyt ovat ensimmäisiä asioita, joita uuteen taloon kannattaa tehdä, sillä ne ovat niin loistavia. Kuka nyt ei sängystä tykkäisi?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Todella värikästä! Piristä rakennuksiasi kotoisalla tunnelmalla. Muista kuitenkin, että matot ovat syttyviä.",
     "block.earthtojavamobs.rainbow_wool.desc": "Bää bää, sateenkaaren värinen lammas, onko sulla villaa? Värjätty villa on mahtava rakennusmateriaali. Kunhan vain muistat, että se on syttyvää.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

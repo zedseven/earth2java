@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "ハーレクイン ウサギ",
     "entity.earthtojavamobs.rainbow_sheep": "虹色の羊",
     "entity.earthtojavamobs.pink_footed_pig": "ピンク色の足の豚",
+    "entity.earthtojavamobs.bronzed_chicken": "日焼けしたチキン",
     "entity.earthtojavamobs.wandering_trader": "行商人",
     "item.earthtojavamobs.muddy_pig_spawn_egg": "泥だらけの豚ーンエッグ",
     "item.earthtojavamobs.cluckshroom_spawn_egg": "きのコッコーンエッグ",
@@ -60,6 +61,7 @@
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg": "ハーレクイン ウサギーンエッグ",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg": "虹色の羊ーンエッグ",
     "item.earthtojavamobs.pink_footed_pig_spawn_egg": "ピンク色の足の豚ーンエッグ",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg": "日焼けしたチキンーンエッグ",
     "item.earthtojavamobs.wandering_trader_spawn_egg": "行商人ーンエッグ",
     "item.earthtojavamobs.horn": "ホーン",
     "block.earthtojavamobs.buttercup": "金鳳花",
@@ -86,10 +88,11 @@
     "item.earthtojavamobs.sunset_cow_spawn_egg.desc": "群れへの黄金の壮麗な追加。",
     "item.earthtojavamobs.pale_pig_spawn_egg.desc": "この小さな子豚の色素に欠けているものは、かわいらしさで補う以上のものです。",
     "item.earthtojavamobs.piebald_pig_spawn_egg.desc": "目の肥えた豚のコレクターのための独特な着色。",
-    "item.earthtojavamobs.pink_footed_pig_spawn_egg.desc": "豚はユニークで種類も形もさまざま。この豚はなんと足がピンク色。",
+    "item.earthtojavamobs.pink_footed_pig_spawn_egg.desc": "豚はユニークで、種類も形もさまざま。この豚はなんと足がピンク色。",
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "このスポッティな豚はかなり甘いです。それは甘いお菓子を求めて草地を狩り、豚の友達と一緒に暮らすのが大好きです。",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "単色の無地に飽きましたか? 虹色の羊は、1 つではなく、2 つでもなく、7 つの大胆な色合いを持つウールを育て、虹のような雰囲気を作り出します。",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "鮮やかな羽毛を誇る、金そのものよりも役に立つかもしれないニワトリ。",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "誰よりも鳴くことが上手な鳥です。鳥小屋にやって来た、素晴らしい新参者です。",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "石炭ブロックよりも暗いニワトリ。暗いところだと見えにくいかも。ちゃんと見張っておいてくださいね!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "この曇り色のニワトリは、悪天候の責任は取らないということをみんなに知ってもらいたいです。",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "草の下の石のように、この羊は様々な単純な色を見せてくれます。",
@@ -107,5 +110,6 @@
     "block.earthtojavamobs.rainbow_wool.desc": "メーメー、虹色の羊さん、ウールを持ってませんか? このウールはすばらしい建築材料ですが、燃えやすい点には注意しましょう。",
     "block.earthtojavamobs.carved_melon": "くり抜かれたスイカ",
     "block.earthtojavamobs.melon_lantern": "スイカランタン",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

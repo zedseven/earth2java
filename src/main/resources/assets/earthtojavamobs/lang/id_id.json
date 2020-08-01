@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Kelinci Pantomim",
     "entity.earthtojavamobs.rainbow_sheep": "Domba Pelangi",
     "entity.earthtojavamobs.pink_footed_pig": "Babi Berkaki Merah Muda",
+    "entity.earthtojavamobs.bronzed_chicken": "Ayam Perunggu",
     "entity.earthtojavamobs.wandering_trader": "Pedagang Keliling",
     "item.earthtojavamobs.horn": "Tanduk",
     "block.earthtojavamobs.buttercup": "Buttercup",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Babi berbintik ini sangat manis. Dia suka hidup bersama teman-teman babinya, mencari kudapan manis di Dataran Berumput.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Bosan dengan satu warna polos? Domba Pelangi menghasilkan wol dengan tak hanya satu, atau dua, tetapi TUJUH rona tajam untuk membuat kreasi pelangi fantastis.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Seekor ayam dengan bulu cemerlang yang mungkin lebih berguna daripada emas.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Burung pemberani yang bisa berkokok dengan sempurna dan merupakan pelengkap yang menakjubkan untuk segala kandang.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Ayam ini sulit dilihat dalam gelap karena lebih pekat daripada blok batu bara. Pasang mata lebar-lebar!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Ayam berwarna langit mendung ini ingin semua orang tahu bahwa dia tidak bertanggung jawab atas cuaca burung.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Seperti bebatuan di balik rerumputan, domba ini menunjukkan ragam warna sederhana.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Sangat penuh warna! Tempat tidur adalah salah satu item pertama yang ingin kamu buat untuk rumah barumu karena kehebatannya. Siapa yang tidak suka tempat tidur?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Sangat penuh warna! Semarakkan bangunanmu dan berikan nuansa yang nyaman. Tetapi ingat: karpet mudah terbakar.",
     "block.earthtojavamobs.rainbow_wool.desc": "Mbek, mbek, domba pelangi, apa kamu punya wol? Wol ini bisa jadi material bangunan yang fantastis. Tetapi ingat, wol mudah terbakar.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

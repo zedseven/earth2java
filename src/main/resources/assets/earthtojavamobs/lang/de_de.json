@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Haselequin-Kaninchen",
     "entity.earthtojavamobs.rainbow_sheep": "Regenbogenschaf",
     "entity.earthtojavamobs.pink_footed_pig": "Rosafuß-Schwein",
+    "entity.earthtojavamobs.bronzed_chicken": "Bronzenes Huhn",
     "entity.earthtojavamobs.wandering_trader": "Wandernder Händler",
     "item.earthtojavamobs.muddy_pig_spawn_egg": "Schlammschwein-Spawn-Ei",
     "item.earthtojavamobs.cluckshroom_spawn_egg": "Pilzhuhn-Spawn-Ei",
@@ -60,6 +61,7 @@
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg": "Haselequin-Kaninchen-Spawn-Ei",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg": "Regenbogenschaf-Spawn-Ei",
     "item.earthtojavamobs.pink_footed_pig_spawn_egg": "Rosafuß-Schwein-Spawn-Ei",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg": "Bronzenes Huhn-Spawn-Ei",
     "item.earthtojavamobs.wandering_trader_spawn_egg": "Wandernder Händler-Spawn-Ei",
     "item.earthtojavamobs.horn": "Horn",
     "block.earthtojavamobs.buttercup": "Butterblume",
@@ -90,6 +92,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Dieses gefleckte Schwein ist wirklich niedlich. Es durchstreift gerne mit seinen Ringelschwanzfreunden die Graslandschaft auf der Suche nach süßen Leckereien.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Sind dir einzelne Farben zu langweilig? Die Regenbogenschafe haben Wolle mit nicht einer oder zwei, sondern gleich SIEBEN gewagten Farben, aus denen du regenbogentastische Dinge herstellen kannst!",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Ein Huhn, das keine schnöden Alltagseier legt und vermutlich nützlicher ist als Gold.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Ein mutiger Vogel, der mit den Besten gluckt und sich in jedem Hühnerstall toll macht.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Schwärzer als ein Kohleblock, verschwindet dieses Huhn oft im Schatten. Halte deine Augen offen!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Dieses wolkenfarbene Huhn möchte alle wissen lassen, dass es kein Vorbote für schlechtes Wetter ist.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Dieses Schaf kommt farblich eher simpel daher, wie Steine … gewöhnliche Steine.",
@@ -107,5 +110,6 @@
     "block.earthtojavamobs.rainbow_wool.desc": "Mäh! Mähähhh! Regenbogenfarbenes Schaf, hast du Wolle? Diese Wolle eignet sich fantastisch als Werkstoff. Denke aber daran, dass es sehr leicht entzündlich ist.",
     "block.earthtojavamobs.carved_melon": "Geschnitzter Melone",
     "block.earthtojavamobs.melon_lantern": "Melone Lanterne",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

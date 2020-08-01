@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Lapin arlequin",
     "entity.earthtojavamobs.rainbow_sheep": "Mouton arc-en-ciel",
     "entity.earthtojavamobs.pink_footed_pig": "Cochon aux pieds roses",
+    "entity.earthtojavamobs.bronzed_chicken": "Poulet bronzé",
     "entity.earthtojavamobs.wandering_trader": "Commerçant ambulant",
     "item.earthtojavamobs.horn": "Corne",
     "block.earthtojavamobs.buttercup": "Bouton d'or",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Ce cochon tacheté est aussi doux qu'il est possible de l'être. Il adore cohabiter avec ses amis cochons, parcourant les plaines herbeuses pour trouver de la nourriture sucrée.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Les couleurs unies et monochromes vous ennuient? La laine du mouton arc-en-ciel ne pousse pas en une ni en deux couleurs, mais bien en SEPT nuances vives pour des créations dignes de l'arc-en-ciel.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Un poulet au brillant plumage qui pourrait être encore plus utile que l'or.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Un oiseau courageux qui peut caqueter avec les meilleurs, et un merveilleux ajout à tout poulailler.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Plus sombre qu'un bloc de charbon, ce poulet peut être difficile à repérer dans la pénombre. Ouvrez l'œil!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Ce poulet aux motifs de nuages aimerait bien nous dire qu'il n'est pas responsable du mauvais temps.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Tout comme les pierres sous l'herbe, ce mouton affiche la variété des simples couleurs.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Tellement coloré! Les lits font partie des premières choses que vous souhaiterez fabriquer pour votre nouvelle maison parce que c'est une idée si brillante. Qui n'aime pas les lits?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Tellement coloré! Éclairez vos bâtiments et donnez-leur un côté chaleureux. Mais, rappelez-vous que les tapis sont inflammables.",
     "block.earthtojavamobs.rainbow_wool.desc": "Bêêê, bêêê... petit mouton arc-en-ciel, as-tu de la laine? Cette laine est un matériau de construction fantastique. Rappelez-vous toutefois qu'elle est inflammable.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

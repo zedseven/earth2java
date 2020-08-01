@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Harelekinkanin",
     "entity.earthtojavamobs.rainbow_sheep": "Regnbågsfår",
     "entity.earthtojavamobs.pink_footed_pig": "Rosafotad gris",
+    "entity.earthtojavamobs.bronzed_chicken": "Bronsfärgad höna",
     "entity.earthtojavamobs.wandering_trader": "Handelsresande",
     "item.earthtojavamobs.horn": "Horn",
     "block.earthtojavamobs.buttercup": "Smörblomma",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Den fläckiga grisen är fullkomligt bedårande. Den älskar att leka med sina griskompisar och leta godsaker att äta på gräsfält.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Är det för tråkigt med enfärgade saker? Regnbågsfårens ull innehåller hela SJU klara färger så att du kan tillverka regnbågsfärgade föremål.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "En höna som ståtar med lysande fjäderdräkt och kan vara värd sin vikt i guld.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "En frodig fågel som kan skrocka som få, en härlig tillgång i ditt hägn.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Denna höna är mörkare än en bit kol och kan vara svår att se i skuggor. Håll ögonen öppna!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Den här mulna hönan vill att alla ska gå med fjäderlätta steg.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Precis som stenarna under gräset så har det här fåret olika enkla färger.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Vilken färgglädje! En säng är bland det första du bör bygga i ditt nya hem, för de är fantastiska. Vem tycker inte om sängar?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Vilken färgglädje! Liva upp dina byggnader och gör dem hemtrevligare. Kom ihåg att mattor kan fatta eld.",
     "block.earthtojavamobs.rainbow_wool.desc": "Bä, bä, regnbågsfärgade får, har du någon ull? Denna ull är ett fantastiskt byggnadsmaterial, men tänk på att det lätt fattar eld.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

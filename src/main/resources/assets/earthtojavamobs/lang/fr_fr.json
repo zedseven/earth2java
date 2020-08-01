@@ -28,6 +28,8 @@
     "entity.earthtojavamobs.inky_sheep": "Mouton d’encre",
     "entity.earthtojavamobs.harelequin_rabbit": "Lapin arlequin",
     "entity.earthtojavamobs.rainbow_sheep": "Mouton arc-en-ciel",
+    "entity.earthtojavamobs.pink_footed_pig": "Cochon à pieds roses",
+    "entity.earthtojavamobs.bronzed_chicken": "Poulet bronzé",
     "entity.earthtojavamobs.wandering_trader": "Marchand voyageur",
     "item.earthtojavamobs.muddy_pig_spawn_egg": "Oeuf d'apparition de cochon boueux",
     "item.earthtojavamobs.cluckshroom_spawn_egg": "Oeuf d'apparition de champipoule",
@@ -58,6 +60,8 @@
     "item.earthtojavamobs.inky_sheep_spawn_egg": "Oeuf d'apparition de mouton d’encre",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg": "Oeuf d'apparition de lapin arlequin",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg": "Oeuf d'apparition de mouton arc-en-ciel",
+    "item.earthtojavamobs.pink_footed_pig_spawn_egg": "Oeuf d'apparition de cochon à pieds roses",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg": "Oeuf d'apparition de poulet bronzé",
     "item.earthtojavamobs.wandering_trader_spawn_egg": "Oeuf d'apparition de marchand voyageur",
     "item.earthtojavamobs.horn": "Corne",
     "block.earthtojavamobs.buttercup": "Bouton d'or",
@@ -84,9 +88,11 @@
     "item.earthtojavamobs.sunset_cow_spawn_egg.desc": "Une touche d'or pour n'importe quel troupeau.",
     "item.earthtojavamobs.pale_pig_spawn_egg.desc": "Ce petit cochon manque de pigmentation, mais il compense avec son côté mignon.",
     "item.earthtojavamobs.piebald_pig_spawn_egg.desc": "Une coloration unique pour les collectionneurs de cochons avertis.",
+    "item.earthtojavamobs.pink_footed_pig_spawn_egg.desc": "Les cochons sont variés et uniques. Celui-ci a les pieds roses.",
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Ce cochon tacheté est super doux. Il aime vivre avec ses amis cochons, chasser dans les plaines herbeuses à la recherche de friandises à manger.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Vous voulez voir autre chose que des couleurs simples et unies ? La laine du mouton arc-en-ciel n'a non pas une ni deux, mais SEPT teintes audacieuses pour réaliser des créations aux couleurs de l'arc-en-ciel.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Un poulet qui arbore un plumage brillant et peut être plus utile que de l'or.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Un oiseau courageux qui peut rivaliser avec les meilleurs, et un merveilleux compagnon en mode co-op.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Plus sombre qu'un bloc de charbon, ce poulet est difficile à repérer dans le noir. Ouvrez l'œil !",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Ce poulet de couleur nuageuse voudrait faire savoir qu'il ne peut pas prévoir la météo.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Comme les pierres sous l'herbe, ce mouton arbore une gamme de couleurs simples.",
@@ -104,5 +110,6 @@
     "block.earthtojavamobs.rainbow_wool.desc": "Bêê, bêê, mouton arc-en-ciel, as-tu de la laine ? Cette laine est un fantastique matériau de construction. Rappelez-vous simplement qu'elle peut prendre feu.",
     "block.earthtojavamobs.carved_melon": "Pastèque sculptées",
     "block.earthtojavamobs.melon_lantern": "Pastèque-lanterne",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

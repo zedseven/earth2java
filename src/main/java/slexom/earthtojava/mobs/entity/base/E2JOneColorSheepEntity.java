@@ -3,10 +3,12 @@ package slexom.earthtojava.mobs.entity.base;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.IShearable;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -26,12 +28,15 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.IForgeShearable;
 import net.minecraftforge.fml.network.NetworkHooks;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Random;
 
-public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity implements net.minecraftforge.common.IForgeShearable {
+public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity implements IShearable, IForgeShearable {
 
     private static final DataParameter<Byte> isSheared = EntityDataManager.createKey(E2JOneColorSheepEntity.class, DataSerializers.BYTE);
 
@@ -50,6 +55,10 @@ public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity
         setNoAI(false);
     }
 
+    public static AttributeModifierMap.MutableAttribute registerAttributes() {
+        return MobEntity.func_233666_p_().func_233815_a_(Attributes.MAX_HEALTH, 8.0D).func_233815_a_(Attributes.MOVEMENT_SPEED, 0.23F);
+    }
+
     protected void registerGoals() {
         this.eatGrassGoal = new EatGrassGoal(this);
         this.goalSelector.addGoal(0, new SwimGoal(this));
@@ -61,11 +70,6 @@ public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity
         this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
         this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
-    }
-
-
-    public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return MobEntity.func_233666_p_().func_233815_a_(Attributes.MAX_HEALTH, 8.0D).func_233815_a_(Attributes.MOVEMENT_SPEED, 0.23F);
     }
 
     protected void updateAITasks() {
@@ -136,10 +140,10 @@ public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity
         return this.isAlive() && !this.getSheared() && !this.isChild();
     }
 
-    public java.util.List<ItemStack> onSheared(@Nullable PlayerEntity player, @javax.annotation.Nonnull ItemStack item, World world, BlockPos pos, int fortune) {
+    public List<ItemStack> onSheared(@Nullable PlayerEntity player, @Nonnull ItemStack item, World world, BlockPos pos, int fortune) {
         world.playMovingSound(null, this, SoundEvents.ENTITY_SHEEP_SHEAR, player == null ? SoundCategory.BLOCKS : SoundCategory.PLAYERS, 1.0F, 1.0F);
         if (!this.world.isRemote) {
-            java.util.List<ItemStack> items = new java.util.ArrayList<>();
+            List<ItemStack> items = new java.util.ArrayList<>();
             this.setSheared(true);
             int i = 1 + this.rand.nextInt(3);
             for (int j = 0; j < i; ++j) {
@@ -197,9 +201,27 @@ public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity
         this.playSound(SoundEvents.ENTITY_SHEEP_STEP, 0.35F, 1.0F);
     }
 
+
+    @Override
+    public void func_230263_a_(SoundCategory soundCategory) {
+        this.world.playMovingSound(null, this, SoundEvents.ENTITY_SHEEP_SHEAR, soundCategory, 1.0F, 1.0F);
+        this.setSheared(true);
+        int i = 1 + this.rand.nextInt(3);
+        for (int j = 0; j < i; ++j) {
+            ItemEntity itementity = this.entityDropItem(this.wool, 1);
+            if (itementity != null) {
+                itementity.setMotion(itementity.getMotion().add((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F, this.rand.nextFloat() * 0.05F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F));
+            }
+        }
+    }
+
+    @Override
+    public boolean func_230262_K__() {
+        return this.isAlive() && !this.getSheared() && !this.isChild();
+    }
+
     @Override
     public IPacket<?> createSpawnPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
-
 }

@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Harlekinnyúl",
     "entity.earthtojavamobs.rainbow_sheep": "Szivárványjuh",
     "entity.earthtojavamobs.pink_footed_pig": "Rózsaszín lábú malac",
+    "entity.earthtojavamobs.bronzed_chicken": "Lebarnult csirke",
     "entity.earthtojavamobs.wandering_trader": "Vándorkereskedő",
     "item.earthtojavamobs.horn": "Szarv",
     "block.earthtojavamobs.buttercup": "Boglárka",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Ez a foltos malac végtelenül elragadó. Imádja egyszerű életét kis malacbarátaival, a Füves síkságon édességet keresve.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Unod már az egyszerű, homogén színeket? A szivárványjuh bundája nem egy, nem kettő, hanem egyenesen HÉT markáns színárnyalatot tartalmaz, így igazán szivárványos alkotásokat hozhatsz létre.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Az ilyen színekben ragyogó tollazatú csirke többet érhet magánál az aranynál is.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Egy vakmerő madár, aki együtt kotkodácsol a legmenőbb bandával és minden baromfiudvar oszlopos tagja.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Ez a csirke a szénnél is feketébb, szinte lehetetlen észrevenni a sötétben. Tartsd nyitva a szemed!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Ez a felhős színeket felvonultató csirke szeretné tudatni mindenkivel, hogy nem felelős a borongós időjárásért.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Akár a fű alatt húzódó kövek, ez a juh is az egyszerű, természetes színek bajnoka.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Milyen színpompás! Az ágy az első tárgyak egyike lesz, amit el szeretnél majd készíteni házadhoz, mert az ágyak zseniálisak. Ki ne szeretné az ágyat?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Milyen színpompás! Dobd fel az épületeidet, adj nekik otthonosabb hangulatot. Azt viszont ne felejtsd el, hogy a szőnyegek gyúlékonyak.",
     "block.earthtojavamobs.rainbow_wool.desc": "Bee, bee, szivárványszínű bárány, van gyapjad? Ez a gyapjú fantasztikus építőanyag. Csak ne feledd, hogy gyúlékony.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

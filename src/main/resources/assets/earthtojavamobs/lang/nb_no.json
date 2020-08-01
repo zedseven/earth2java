@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Harelekin-kanin",
     "entity.earthtojavamobs.rainbow_sheep": "Regnbuesau",
     "entity.earthtojavamobs.pink_footed_pig": "Gris med rosa føtter",
+    "entity.earthtojavamobs.bronzed_chicken": "Bronsehøne",
     "entity.earthtojavamobs.wandering_trader": "Handelsreisende",
     "item.earthtojavamobs.horn": "Horn",
     "block.earthtojavamobs.buttercup": "Soleie",
@@ -59,13 +60,14 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Denne prikkete grisen er så søt som det går an å bli. Den elsker å leve med grisevennene sine og jakte på gresskledde sletter for å finne noen søte godbiter.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Lei av enkle, heledekkende farger? Regnbuesauen vokser ull med ikke en, ikke to, men syv dristige nyanser for å lage regnbuefantastiske kreasjoner.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "En høne som kan skryte av strålende fjærdrakt og kan være mer nyttig enn gull.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "En modig fugl som kan klukke som en proff og er et flott tilskudd til ethvert hønsehus.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Denne høna er mørkere enn en blokk med kull, og den kan være vanskelig å se i skyggen. Hold øynene åpne!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Denne skyfargede høna vil at alle skal vite at den ikke er ansvarlige for noe fuglevær.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Som steinene under gresset, viser denne sauen mangfoldet av enkle farger.",
     "item.earthtojavamobs.flecked_sheep_spawn_egg.desc": "Rik, brun ull kan høstes fra denne blekansiktsauene.",
     "item.earthtojavamobs.inky_sheep_spawn_egg.desc": "Kanskje denne sauen skriver mange brev. Eller kanskje den bare roter alt til.",
     "item.earthtojavamobs.muddy_foot_rabbit_spawn_egg.desc": "Når man hopper gjennom skogen, er man nødt til å finne litt gjørme.",
-    "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Ikke la denne kaninens elegante utseende lure deg. Den vil fortsatt sluke gulrøttene dine!",
+    "item.earthtojavamobs.vested_rabbit_spawn_egg.desc": "Ikke la det elegante utseendet til denne kaninen lure deg. Den vil fortsatt gomle i seg gulrøttene dine!",
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg.desc": "Et fancy navn for en fancy kanin. Så mange farger!",
     "item.earthtojavamobs.horn.desc": "En sau med horn ser ut til å ha forlagt disse.",
     "block.earthtojavamobs.buttercup.desc": "En liten, lys gul blomst. Er det ekte smør der inne?",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Så fargerikt! Senger er en av de første tingene du vil lage til det nye huset ditt, fordi de er fantastiske. Hvem liker ikke en seng?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Så fargerikt! Lys opp bygningene dine og gi dem en hjemmekoselig følelse. Men husk: Tepper er brannfarlige.",
     "block.earthtojavamobs.rainbow_wool.desc": "Bæ, bæ, regnbuefargede lam, har du noe ull? Denne ullen er et fantastisk byggemateriale. Bare husk at det er brannfarlig.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

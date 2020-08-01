@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "헐리퀸 토끼",
     "entity.earthtojavamobs.rainbow_sheep": "무지개 양",
     "entity.earthtojavamobs.pink_footed_pig": "분홍색 발 돼지",
+    "entity.earthtojavamobs.bronzed_chicken": "청동 닭",
     "entity.earthtojavamobs.wandering_trader": "떠돌이 상인",
     "item.earthtojavamobs.muddy_pig_spawn_egg": "진흙투성이 돼지 생성 알",
     "item.earthtojavamobs.cluckshroom_spawn_egg": "버섯닭 생성 알",
@@ -60,6 +61,7 @@
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg": "헐리퀸 토끼 생성 알",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg": "무지개 양 생성 알",
     "item.earthtojavamobs.pink_footed_pig_spawn_egg": "분홍색 발 돼지 생성 알",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg": "청동 닭 생성 알",
     "item.earthtojavamobs.wandering_trader_spawn_egg": "떠돌이 상인 생성 알",
     "item.earthtojavamobs.horn": "뿔",
     "block.earthtojavamobs.buttercup": "미나리아재비",
@@ -90,6 +92,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "이 얼룩돼지는 정말 다정하기 그지 없습니다. 돼지 친구들과 함께 사는 것을 좋아하며, 달콤한 간식을 먹으러 잔디 평원까지 나가곤 합니다.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "단 하나뿐인 단색에 질리셨나요? 무지개 양은 한 가지도, 두 가지도 아닌 일곱 가지 대담한 색조로 양털이 자라서 무지개스러운 창작물을 만들 수 있어요.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "화려한 깃털을 자랑하는 이 닭은 금보다 더 유용할지도 모릅니다.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "닭 중에서도 최고의 닭들과 함께 꼬꼬댁 거릴 수 있는 용감한 새로, 어떤 닭장에든 멋지게 어울립니다.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "석탄 블록보다 더 까만 이 닭은 그림자 속에서 잘 보이지 않을 수 있습니다. 눈을 떼지 마세요!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "이 흐릿한 색깔의 닭은 자기 때문에 날씨가 안 좋은 것이 아니라고 주장합니다.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "이 양들은 마치 풀 밑의 돌처럼 다양하고도 단순한 색깔을 보여줍니다.",
@@ -107,5 +110,6 @@
     "block.earthtojavamobs.rainbow_wool.desc": "메에에, 메에에, 무지개색 양아, 혹시 양털 좀 있니? 이 양털은 환상적인 건축 재료가 됩니다. 불이 잘 붙는다는 것만 기억하세요.",
     "block.earthtojavamobs.carved_melon": "조각된 수박",
     "block.earthtojavamobs.melon_lantern": "수박 랜턴",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }
