@@ -8,6 +8,7 @@ import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import slexom.earthtojava.mobs.client.renderer.entity.layers.FurnaceGolemFlamesLayer;
+import slexom.earthtojava.mobs.client.renderer.entity.layers.FurnaceGolemTorchLayer;
 import slexom.earthtojava.mobs.client.renderer.entity.model.FurnaceGolemModel;
 import slexom.earthtojava.mobs.entity.passive.FurnaceGolemEntity;
 
@@ -17,6 +18,7 @@ public class FurnaceGolemRenderer extends MobRenderer<FurnaceGolemEntity, Furnac
     public FurnaceGolemRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new FurnaceGolemModel<>(), 0.7F);
         this.addLayer(new FurnaceGolemFlamesLayer(this));
+        this.addLayer(new FurnaceGolemTorchLayer(this));
     }
 
     protected void applyRotations(FurnaceGolemEntity entityLiving, MatrixStack matrixStackIn, float ageInTicks, float rotationYaw, float partialTicks) {

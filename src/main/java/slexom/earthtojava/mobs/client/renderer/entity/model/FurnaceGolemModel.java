@@ -6,9 +6,10 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import slexom.earthtojava.mobs.entity.passive.FurnaceGolemEntity;
 
 @OnlyIn(Dist.CLIENT)
-public class FurnaceGolemModel<T extends IronGolemEntity> extends SegmentedModel<T> {
+public class FurnaceGolemModel<T extends FurnaceGolemEntity> extends SegmentedModel<T> {
     private final ModelRenderer ironGolemHead;
     private final ModelRenderer ironGolemBody;
     private final ModelRenderer ironGolemRightArm;
@@ -59,7 +60,7 @@ public class FurnaceGolemModel<T extends IronGolemEntity> extends SegmentedModel
             this.ironGolemRightArm.rotateAngleX = -2.0F + 1.5F * this.triangleWave((float)i - partialTick, 10.0F);
             this.ironGolemLeftArm.rotateAngleX = -2.0F + 1.5F * this.triangleWave((float)i - partialTick, 10.0F);
         } else {
-            int j = entityIn.getHoldRoseTick();
+            int j = entityIn.getHoldTorchTick();
             if (j > 0) {
                 this.ironGolemRightArm.rotateAngleX = -0.8F + 0.025F * this.triangleWave((float)j, 70.0F);
                 this.ironGolemLeftArm.rotateAngleX = 0.0F;
@@ -75,7 +76,7 @@ public class FurnaceGolemModel<T extends IronGolemEntity> extends SegmentedModel
         return (Math.abs(p_78172_1_ % p_78172_2_ - p_78172_2_ * 0.5F) - p_78172_2_ * 0.25F) / (p_78172_2_ * 0.25F);
     }
 
-    public ModelRenderer getArmHoldingRose() {
+    public ModelRenderer getArmHoldingTorch() {
         return this.ironGolemRightArm;
     }
 }

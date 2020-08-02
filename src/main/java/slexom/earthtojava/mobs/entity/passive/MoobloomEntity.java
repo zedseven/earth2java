@@ -1,11 +1,7 @@
 
 package slexom.earthtojava.mobs.entity.passive;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.passive.CowEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -14,14 +10,11 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IForgeShearable;
-import net.minecraftforge.common.util.BlockSnapshot;
 import net.minecraftforge.fml.network.NetworkHooks;
+import slexom.earthtojava.mobs.entity.ai.goal.MoobloomPlaceBlockGoal;
 import slexom.earthtojava.mobs.entity.base.E2JBaseCowEntity;
 import slexom.earthtojava.mobs.init.BlockInit;
 
@@ -37,7 +30,7 @@ public class MoobloomEntity extends E2JBaseCowEntity<MoobloomEntity> implements 
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(8, new MoobloomEntity.PlaceBlockGoal(this));
+        this.goalSelector.addGoal(8, new MoobloomPlaceBlockGoal(this));
     }
 
     public boolean isShearable(@javax.annotation.Nonnull ItemStack item, World world, BlockPos pos) {
@@ -69,38 +62,6 @@ public class MoobloomEntity extends E2JBaseCowEntity<MoobloomEntity> implements 
             }
          }
         return java.util.Collections.emptyList();
-    }
-
-    static class PlaceBlockGoal extends Goal {
-        private final MoobloomEntity moobloom;
-
-        public PlaceBlockGoal(MoobloomEntity p_i45843_1_) {
-            this.moobloom = p_i45843_1_;
-        }
-
-        public boolean shouldExecute() {
-            return this.moobloom.getRNG().nextInt(2000) == 0;
-        }
-
-        public boolean canPlace(IWorldReader world, BlockState target, BlockPos targetPos, BlockState downTarget, BlockPos downTargetPos) {
-            return !downTarget.isAir(world, downTargetPos) && downTarget.isOpaqueCube(world, downTargetPos) && target.isValidPosition(world, targetPos);
-        }
-
-        public void tick() {
-            IWorld iworld = this.moobloom.world;
-            int i = MathHelper.floor(this.moobloom.getPosX());
-            int j = MathHelper.floor(this.moobloom.getPosY());
-            int k = MathHelper.floor(this.moobloom.getPosZ());
-            Block flower = Math.random() > 0.8 ? Blocks.SUNFLOWER : BlockInit.BUTTERCUP.get();
-            BlockPos blockPos = new BlockPos(i, j, k);
-            BlockState blockState = flower.getDefaultState();
-            BlockPos blockDownPos = blockPos.down();
-            BlockState blockDownState = iworld.getBlockState(blockDownPos);
-            if (canPlace(iworld, blockState, blockPos, blockDownState, blockDownPos) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(moobloom, BlockSnapshot.create(iworld, blockDownPos), net.minecraft.util.Direction.UP)) {
-                iworld.destroyBlock(blockPos, false);
-                iworld.setBlockState(blockPos, blockState, 3);
-            }
-        }
     }
 
     @Override

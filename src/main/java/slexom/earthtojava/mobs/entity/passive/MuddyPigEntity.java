@@ -13,11 +13,11 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
+import slexom.earthtojava.mobs.entity.ai.goal.MoveToMudGoal;
 import slexom.earthtojava.mobs.entity.base.E2JBasePigEntity;
 import slexom.earthtojava.mobs.init.BlockInit;
 
@@ -43,7 +43,7 @@ public class MuddyPigEntity extends E2JBasePigEntity<MuddyPigEntity> {
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, Ingredient.fromItems(Items.CARROT_ON_A_STICK), false));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, TEMPTATION_ITEMS, false));
-        this.goalSelector.addGoal(4, new MuddyPigEntity.GoToMudGoal(this, 1.2D));
+        this.goalSelector.addGoal(4, new MoveToMudGoal(this, 1.2D));
         this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1D));
         this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.addGoal(7, new LookRandomlyGoal(this));
@@ -130,33 +130,6 @@ public class MuddyPigEntity extends E2JBasePigEntity<MuddyPigEntity> {
         this.setMuddyState(compound.getBoolean("IsInMud"));
     }
 
-    public static class GoToMudGoal extends MoveToBlockGoal {
-        private final MuddyPigEntity muddyPig;
-
-        public GoToMudGoal(MuddyPigEntity entity, double speedIn) {
-            super(entity, speedIn, 16, 3);
-            this.muddyPig = entity;
-            this.field_203112_e = -1;
-        }
-
-        public boolean shouldExecute() {
-            return !this.muddyPig.isInMuddyState() && super.shouldExecute();
-        }
-
-        public boolean shouldContinueExecuting() {
-            return !this.muddyPig.isInMuddyState() && this.timeoutCounter <= 600 && this.shouldMoveTo(this.muddyPig.world, this.destinationBlock);
-        }
-
-        public boolean shouldMove() {
-            return this.timeoutCounter % 100 == 0;
-        }
-
-        @Override
-        protected boolean shouldMoveTo(IWorldReader worldIn, BlockPos pos) {
-            return worldIn.getBlockState(pos).isIn(BlockInit.MUD_BLOCK.get());
-        }
-    }
-
     @OnlyIn(Dist.CLIENT)
     public void handleStatusUpdate(byte id) {
         if (id == 8) {
@@ -166,7 +139,6 @@ public class MuddyPigEntity extends E2JBasePigEntity<MuddyPigEntity> {
         } else {
             super.handleStatusUpdate(id);
         }
-
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -177,7 +149,6 @@ public class MuddyPigEntity extends E2JBasePigEntity<MuddyPigEntity> {
         } else if (f > 1.0F) {
             f = 1.0F;
         }
-
         return MathHelper.sin(f * (float) Math.PI) * MathHelper.sin(f * (float) Math.PI * 11.0F) * 0.15F * (float) Math.PI;
     }
 

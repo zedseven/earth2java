@@ -1,10 +1,7 @@
 package slexom.earthtojava.mobs.entity.passive;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.CreeperEntity;
@@ -19,16 +16,18 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import slexom.earthtojava.mobs.entity.ai.goal.FurnaceGolemDefendVillageTargetGoal;
+import slexom.earthtojava.mobs.entity.ai.goal.FurnaceGolemNearestAttackableTargetGoal;
+import slexom.earthtojava.mobs.entity.ai.goal.FurnaceGolemShowVillagerTorchGoal;
 
-import javax.annotation.Nullable;
-import java.util.EnumSet;
 import java.util.Random;
-import java.util.function.Predicate;
 
 public class FurnaceGolemEntity extends IronGolemEntity {
     public static final DataParameter<Boolean> IS_ANGRY = EntityDataManager.createKey(FurnaceGolemEntity.class, DataSerializers.BOOLEAN);
     private int attackTimer;
-
+    private int holdTorchTick;
     private int lastBlink = 0;
     private int nextBlinkInterval = new Random().nextInt(760) + 60;
     private int remainingTick = 0;
@@ -46,12 +45,13 @@ public class FurnaceGolemEntity extends IronGolemEntity {
         this.goalSelector.addGoal(2, new MoveTowardsTargetGoal(this, 0.9D, 32.0F));
         this.goalSelector.addGoal(2, new ReturnToVillageGoal(this, 0.6D, false));
         this.goalSelector.addGoal(4, new PatrolVillageGoal(this, 0.6D));
+        this.goalSelector.addGoal(5, new FurnaceGolemShowVillagerTorchGoal(this));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.6D));
         this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
-        this.targetSelector.addGoal(1, new DefendVillageTargetGoal(this));
+        this.targetSelector.addGoal(1, new FurnaceGolemDefendVillageTargetGoal(this));
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(3, new FurnaceGolemEntity.NearestAttackableTargetGoal(this, MobEntity.class, 5, false, false, (p_213619_0_) -> p_213619_0_ instanceof IMob && !(p_213619_0_ instanceof CreeperEntity) && !(p_213619_0_ instanceof TropicalSlimeEntity)));
+        this.targetSelector.addGoal(3, new FurnaceGolemNearestAttackableTargetGoal(this, MobEntity.class, 5, false, false, (p_213619_0_) -> p_213619_0_ instanceof IMob && !(p_213619_0_ instanceof CreeperEntity) && !(p_213619_0_ instanceof TropicalSlimeEntity)));
     }
 
     public boolean attackEntityAsMob(Entity entityIn) {
@@ -70,6 +70,10 @@ public class FurnaceGolemEntity extends IronGolemEntity {
 
     public void livingTick() {
         super.livingTick();
+
+        if (this.holdTorchTick > 0) {
+            --this.holdTorchTick;
+        }
         if (this.isAngry()) {
             float rand = new Random().nextFloat();
             if (rand > 0.80F && rand <= 0.83F) {
@@ -115,46 +119,33 @@ public class FurnaceGolemEntity extends IronGolemEntity {
         this.dataManager.set(IS_ANGRY, angry);
     }
 
-    private static final class NearestAttackableTargetGoal extends net.minecraft.entity.ai.goal.NearestAttackableTargetGoal<LivingEntity> {
-        FurnaceGolemEntity golem;
-
-        public NearestAttackableTargetGoal(FurnaceGolemEntity entity, Class targetClassIn, int targetChanceIn, boolean checkSight, boolean nearbyOnlyIn, @Nullable Predicate targetPredicate) {
-            super(entity, targetClassIn, targetChanceIn, checkSight, nearbyOnlyIn, targetPredicate);
-            this.golem = entity;
+    @OnlyIn(Dist.CLIENT)
+    public void handleStatusUpdate(byte id) {
+        if (id == 11) {
+            this.holdTorchTick = 400;
+        } else if (id == 34) {
+            this.holdTorchTick = 0;
+        } else {
+            super.handleStatusUpdate(id);
         }
 
-        public void startExecuting() {
-            this.golem.setAngry(true);
-            super.startExecuting();
-        }
-
-        public void resetTask() {
-            this.golem.setAngry(false);
-            super.resetTask();
-        }
     }
 
-
-    public class DefendVillageTargetGoal extends net.minecraft.entity.ai.goal.DefendVillageTargetGoal {
-        private final FurnaceGolemEntity golem;
-        private LivingEntity villageAgressorTarget;
-
-        public DefendVillageTargetGoal(FurnaceGolemEntity ironGolemIn) {
-            super(ironGolemIn);
-            this.golem = ironGolemIn;
-            this.setMutexFlags(EnumSet.of(Goal.Flag.TARGET));
+    public void setHoldingTorch(boolean holdingTorch) {
+        if (holdingTorch) {
+            this.holdTorchTick = 400;
+            this.world.setEntityState(this, (byte) 11);
+        } else {
+            this.holdTorchTick = 0;
+            this.world.setEntityState(this, (byte) 34);
         }
 
-        public void startExecuting() {
-            this.golem.setAngry(true);
-            this.golem.setAttackTarget(this.villageAgressorTarget);
-            super.startExecuting();
-        }
-
-        public void resetTask() {
-            this.golem.setAngry(false);
-            super.resetTask();
-        }
     }
+
+    @OnlyIn(Dist.CLIENT)
+    public int getHoldTorchTick() {
+        return this.holdTorchTick;
+    }
+
 
 }

@@ -20,6 +20,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.network.NetworkHooks;
+import slexom.earthtojava.mobs.entity.ai.goal.HornedSheepAttackHornedSheepGoal;
+import slexom.earthtojava.mobs.entity.ai.goal.HornedSheepAttackPlayerGoal;
+import slexom.earthtojava.mobs.entity.ai.goal.HornedSheepHurtByTargetGoal;
+import slexom.earthtojava.mobs.entity.ai.goal.HornedSheepMeleeAttackGoal;
 import slexom.earthtojava.mobs.entity.base.E2JBaseSheepEntity;
 
 import javax.annotation.Nullable;
@@ -28,15 +32,22 @@ import java.util.UUID;
 
 public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> implements IAngerable {
 
-    private EatGrassGoal eatGrassGoal;
     private static final DataParameter<Byte> DATA_FLAGS_ID = EntityDataManager.createKey(HornedSheepEntity.class, DataSerializers.BYTE);
     private static final DataParameter<Integer> ANGER_TIME = EntityDataManager.createKey(HornedSheepEntity.class, DataSerializers.VARINT);
-    private UUID lastHurtBy;
-
     private static final RangedInteger field_234180_bw_ = TickRangeConverter.convertRange(20, 39);
+    private EatGrassGoal eatGrassGoal;
+    private UUID lastHurtBy;
 
     public HornedSheepEntity(EntityType<HornedSheepEntity> type, World world) {
         super(type, world);
+    }
+
+    public static AttributeModifierMap.MutableAttribute registerAttributes() {
+        return MobEntity.func_233666_p_()
+                .func_233815_a_(Attributes.MAX_HEALTH, 8.0D)
+                .func_233815_a_(Attributes.FOLLOW_RANGE, 48.0D)
+                .func_233815_a_(Attributes.MOVEMENT_SPEED, 0.23D)
+                .func_233815_a_(Attributes.ATTACK_DAMAGE, 2.0D);
     }
 
     protected void registerData() {
@@ -47,7 +58,7 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
 
     protected void registerGoals() {
         this.eatGrassGoal = new EatGrassGoal(this);
-        this.goalSelector.addGoal(0, new HornedSheepEntity.ChargeGoal(this, 1.4D, true));
+        this.goalSelector.addGoal(0, new HornedSheepMeleeAttackGoal(this, this, 1.4D, true));
         this.goalSelector.addGoal(1, new SwimGoal(this));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, Ingredient.fromItems(Items.WHEAT), false));
@@ -56,8 +67,9 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
         this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
         this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
-        this.targetSelector.addGoal(1, (new AngerGoal(this)).setCallsForHelp());
-        this.targetSelector.addGoal(2, new HornedSheepEntity.AttackPlayerGoal(this));
+        this.targetSelector.addGoal(1, (new HornedSheepHurtByTargetGoal(this)).setCallsForHelp());
+        this.targetSelector.addGoal(2, new HornedSheepAttackPlayerGoal(this));
+        this.targetSelector.addGoal(3, new HornedSheepAttackHornedSheepGoal(this));
     }
 
     public void writeAdditional(CompoundNBT compound) {
@@ -71,7 +83,11 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
     }
 
     public boolean attackEntityAsMob(Entity entityIn) {
-        boolean flag = entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), (float) ((int) this.func_233637_b_(Attributes.ATTACK_DAMAGE)));//ATTACK
+        double damage = this.func_233637_b_(Attributes.ATTACK_DAMAGE);
+        if (entityIn instanceof HornedSheepEntity) {
+            damage = 0;
+        }
+        boolean flag = entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), (float) ((int) damage));
         if (flag) {
             this.applyEnchantments(this, entityIn);
         }
@@ -129,6 +145,9 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
         this.setSheepFlag(p_226452_1_);
     }
 
+//    private boolean getSheepFlag() {
+//        return (this.dataManager.get(DATA_FLAGS_ID) & 2) != 0;
+//    }
 
     private void setSheepFlag(boolean p_226404_2_) {
         if (p_226404_2_) {
@@ -136,18 +155,6 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
         } else {
             this.dataManager.set(DATA_FLAGS_ID, (byte) (this.dataManager.get(DATA_FLAGS_ID) & ~2));
         }
-    }
-
-//    private boolean getSheepFlag() {
-//        return (this.dataManager.get(DATA_FLAGS_ID) & 2) != 0;
-//    }
-
-    public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return MobEntity.func_233666_p_()
-                .func_233815_a_(Attributes.MAX_HEALTH, 8.0D)
-                .func_233815_a_(Attributes.FOLLOW_RANGE, 48.0D)
-                .func_233815_a_(Attributes.MOVEMENT_SPEED, 0.23D)
-                .func_233815_a_(Attributes.ATTACK_DAMAGE, 2.0D);
     }
 
     public ResourceLocation getLootTable() {
@@ -216,62 +223,9 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
         return pos.withinDistance(new BlockPos(this.getPosX(), this.getPosY(), this.getPosZ()), (double) 48);
     }
 
-    static class AngerGoal extends HurtByTargetGoal {
-
-        AngerGoal(HornedSheepEntity sheepIn) {
-            super(sheepIn);
-        }
-
-        protected void setAttackTarget(MobEntity mobIn, LivingEntity targetIn) {
-            if (mobIn instanceof HornedSheepEntity && this.goalOwner.canEntityBeSeen(targetIn) && ((HornedSheepEntity) mobIn).setSheepAttacker(targetIn)) {
-                mobIn.setAttackTarget(targetIn);
-            }
-        }
-
-    }
-
-    static class AttackPlayerGoal extends NearestAttackableTargetGoal<PlayerEntity> {
-        AttackPlayerGoal(HornedSheepEntity sheepEntity) {
-            super(sheepEntity, PlayerEntity.class, 10, true, false, sheepEntity::func_233680_b_);
-        }
-
-        public boolean shouldExecute() {
-            return this.canCharge() && super.shouldExecute();
-        }
-
-        public boolean shouldContinueExecuting() {
-            boolean flag = this.canCharge();
-            if (flag && this.goalOwner.getAttackTarget() != null) {
-                return super.shouldContinueExecuting();
-            } else {
-                this.target = null;
-                return false;
-            }
-        }
-
-        private boolean canCharge() {
-            HornedSheepEntity sheepEntity = (HornedSheepEntity) this.goalOwner;
-            return sheepEntity.func_233678_J__();
-        }
-    }
-
-    class ChargeGoal extends MeleeAttackGoal {
-
-        ChargeGoal(HornedSheepEntity creatureIn, double speedIn, boolean useLongMemory) {
-            super(creatureIn, speedIn, useLongMemory);
-        }
-
-        public boolean shouldExecute() {
-            return super.shouldExecute() && HornedSheepEntity.this.func_233678_J__();
-        }
-
-        public boolean shouldContinueExecuting() {
-            return super.shouldContinueExecuting() && HornedSheepEntity.this.func_233678_J__();
-        }
-    }
-
     @Override
     public IPacket<?> createSpawnPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
+
 }

@@ -15,7 +15,7 @@ public class JollyLlamaModel  extends EntityModel<JollyLlamaEntity> {
     private final ModelRenderer legBackLeft;
     private final ModelRenderer legFrontRight;
     private final ModelRenderer legFrontLeft;
-
+    private float headRotationAngleX;
     public JollyLlamaModel(float p_i47226_1_) {
         this.textureWidth = 128;
         this.textureHeight = 64;
@@ -58,7 +58,8 @@ public class JollyLlamaModel  extends EntityModel<JollyLlamaEntity> {
      * Sets this entity's model rotation angles
      */
     public void setRotationAngles(JollyLlamaEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        this.head.rotateAngleX = headPitch * ((float)Math.PI / 180F);
+//        this.head.rotateAngleX = headPitch * ((float)Math.PI / 180F);
+        this.head.rotateAngleX = this.headRotationAngleX;
         this.head.rotateAngleY = netHeadYaw * ((float)Math.PI / 180F);
         this.body.rotateAngleX = ((float)Math.PI / 2F);
         this.legBackRight.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
@@ -95,5 +96,11 @@ public class JollyLlamaModel  extends EntityModel<JollyLlamaEntity> {
             });
         }
 
+    }
+
+    public void setLivingAnimations(JollyLlamaEntity entityIn, float limbSwing, float limbSwingAmount, float partialTick) {
+        super.setLivingAnimations(entityIn, limbSwing, limbSwingAmount, partialTick);
+        this.head.rotationPointY = 6.0F + entityIn.getHeadRotationPointY(partialTick) * 9.0F;
+        this.headRotationAngleX = entityIn.getHeadRotationAngleX(partialTick);
     }
 }

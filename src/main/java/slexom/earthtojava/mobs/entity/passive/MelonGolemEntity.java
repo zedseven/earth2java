@@ -5,7 +5,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.GolemEntity;
@@ -23,6 +22,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IForgeShearable;
+import slexom.earthtojava.mobs.entity.ai.controller.MelonGolemMovementController;
+import slexom.earthtojava.mobs.entity.ai.goal.MelonGolemHopGoal;
+import slexom.earthtojava.mobs.entity.ai.goal.MelonGolemRangedAttackGoal;
 import slexom.earthtojava.mobs.entity.projectile.MelonSeedProjectileEntity;
 
 import javax.annotation.Nullable;
@@ -39,15 +41,16 @@ public class MelonGolemEntity extends GolemEntity implements IRangedAttackMob, I
 
     public MelonGolemEntity(EntityType<? extends MelonGolemEntity> type, World worldIn) {
         super(type, worldIn);
-        this.moveController = new MelonGolemEntity.MoveHelperController(this);
+        this.moveController = new MelonGolemMovementController(this);
     }
 
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new MelonGolemEntity.RangedAttack(this, 1.25D, 20, 10.0F));
-        this.goalSelector.addGoal(2, new MelonGolemEntity.FaceRandomGoal(this));
+        this.goalSelector.addGoal(1, new MelonGolemRangedAttackGoal(this, 1.25D, 20, 10.0F));
+        this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0D, 1.0000001E-5F));
+//        this.goalSelector.addGoal(2, new MelonGolemEntity.FaceRandomGoal(this));
         this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
-        this.goalSelector.addGoal(5, new MelonGolemEntity.HopGoal(this));
+        this.goalSelector.addGoal(5, new MelonGolemHopGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, MobEntity.class, 10, true, false, (entity) -> entity instanceof IMob && !(entity instanceof TropicalSlimeEntity)));
     }
 
@@ -174,7 +177,7 @@ public class MelonGolemEntity extends GolemEntity implements IRangedAttackMob, I
         return SoundEvents.ENTITY_SNOW_GOLEM_DEATH;
     }
 
-    protected int getJumpDelay() {
+    public int getJumpDelay() {
         return this.rand.nextInt(20) + 10;
     }
 
@@ -185,95 +188,6 @@ public class MelonGolemEntity extends GolemEntity implements IRangedAttackMob, I
     public java.util.List<ItemStack> onSheared(ItemStack item, net.minecraft.world.IWorld world, BlockPos pos, int fortune) {
         this.setMelonEquipped(false);
         return new java.util.ArrayList<>();
-    }
-
-    static class RangedAttack extends RangedAttackGoal {
-        private final MelonGolemEntity rangedAttackEntityHost;
-
-        public RangedAttack(MelonGolemEntity attacker, double movespeed, int maxAttackTime, float maxAttackDistanceIn) {
-            super(attacker, movespeed, maxAttackTime, maxAttackDistanceIn);
-            this.rangedAttackEntityHost = attacker;
-        }
-
-        public RangedAttack(MelonGolemEntity attacker, double movespeed, int p_i1650_4_, int maxAttackTime, float maxAttackDistanceIn) {
-            super(attacker, movespeed, p_i1650_4_, maxAttackTime, maxAttackDistanceIn);
-            this.rangedAttackEntityHost = attacker;
-        }
-
-        @Override
-        public void tick() {
-            super.tick();
-            ((MelonGolemEntity.MoveHelperController) this.rangedAttackEntityHost.getMoveHelper()).setDirection(this.rangedAttackEntityHost.rotationYaw, true);
-        }
-    }
-
-    static class HopGoal extends Goal {
-        private final MelonGolemEntity melonGolem;
-
-        public HopGoal(MelonGolemEntity entity) {
-            this.melonGolem = entity;
-            this.setMutexFlags(EnumSet.of(Goal.Flag.JUMP, Goal.Flag.MOVE));
-        }
-
-        public boolean shouldExecute() {
-            return !this.melonGolem.isPassenger();
-        }
-
-        public void tick() {
-            ((MelonGolemEntity.MoveHelperController) this.melonGolem.getMoveHelper()).setSpeed(1.0D);
-        }
-    }
-
-    static class MoveHelperController extends MovementController {
-        private float yRot;
-        private int jumpDelay;
-        private final MelonGolemEntity melonGolem;
-        private boolean isAggressive;
-
-        public MoveHelperController(MelonGolemEntity entity) {
-            super(entity);
-            this.melonGolem = entity;
-            this.yRot = 180.0F * entity.rotationYaw / (float) Math.PI;
-        }
-
-        public void setDirection(float yRotIn, boolean aggressive) {
-            this.yRot = yRotIn;
-            this.isAggressive = aggressive;
-        }
-
-        public void setSpeed(double speedIn) {
-            this.speed = speedIn;
-            this.action = MovementController.Action.MOVE_TO;
-        }
-
-        public void tick() {
-            this.mob.rotationYaw = this.limitAngle(this.mob.rotationYaw, this.yRot, 90.0F);
-            this.mob.rotationYawHead = this.mob.rotationYaw;
-            this.mob.renderYawOffset = this.mob.rotationYaw;
-            if (this.action != MovementController.Action.MOVE_TO) {
-                this.mob.setMoveForward(0.0F);
-            } else {
-                this.action = MovementController.Action.WAIT;
-                if (this.mob.func_233570_aj_()) {
-                    this.mob.setAIMoveSpeed((float) (this.speed * this.mob.getAttribute(Attributes.MOVEMENT_SPEED).getValue()));
-                    if (this.jumpDelay-- <= 0) {
-                        this.jumpDelay = this.melonGolem.getJumpDelay();
-                        if (this.isAggressive) {
-                            this.jumpDelay /= 3;
-                        }
-                        this.melonGolem.getJumpController().setJumping();
-
-                    } else {
-                        this.melonGolem.moveStrafing = 0.0F;
-                        this.melonGolem.moveForward = 0.0F;
-                        this.mob.setAIMoveSpeed(0.0F);
-                    }
-                } else {
-                    this.mob.setAIMoveSpeed((float) (this.speed * this.mob.getAttribute(Attributes.MOVEMENT_SPEED).getValue()));
-                }
-
-            }
-        }
     }
 
     static class FaceRandomGoal extends Goal {
@@ -287,7 +201,7 @@ public class MelonGolemEntity extends GolemEntity implements IRangedAttackMob, I
         }
 
         public boolean shouldExecute() {
-            return this.melonGolem.getAttackTarget() == null && (this.melonGolem.onGround || this.melonGolem.isInWater() || this.melonGolem.isInLava() || this.melonGolem.isPotionActive(Effects.LEVITATION)) && this.melonGolem.getMoveHelper() instanceof MelonGolemEntity.MoveHelperController;
+            return this.melonGolem.getAttackTarget() == null && (this.melonGolem.onGround || this.melonGolem.isInWater() || this.melonGolem.isInLava() || this.melonGolem.isPotionActive(Effects.LEVITATION)) && this.melonGolem.getMoveHelper() instanceof MelonGolemMovementController;
         }
 
         public void tick() {
@@ -295,7 +209,7 @@ public class MelonGolemEntity extends GolemEntity implements IRangedAttackMob, I
                 this.nextRandomizeTime = 40 + this.melonGolem.getRNG().nextInt(60);
                 this.chosenDegrees = (float) this.melonGolem.getRNG().nextInt(360);
             }
-            ((MelonGolemEntity.MoveHelperController) this.melonGolem.getMoveHelper()).setDirection(this.chosenDegrees, false);
+            ((MelonGolemMovementController) this.melonGolem.getMoveHelper()).setDirection(this.chosenDegrees, false);
         }
     }
 }

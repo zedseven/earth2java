@@ -20,7 +20,11 @@ import net.minecraftforge.common.IForgeShearable;
 import net.minecraftforge.fml.network.NetworkHooks;
 import slexom.earthtojava.mobs.entity.base.E2JBaseCowEntity;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements IShearable, IForgeShearable {
 
@@ -86,22 +90,22 @@ public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements 
         }
     }
 
-    public boolean isShearable(@javax.annotation.Nonnull ItemStack item, World world, BlockPos pos) {
+    public boolean isShearable(@Nonnull ItemStack item, World world, BlockPos pos) {
         return this.isAlive() && !this.getSheared() && !this.isChild();
     }
 
-    public java.util.List<ItemStack> onSheared(@Nullable PlayerEntity player, @javax.annotation.Nonnull ItemStack item, World world, BlockPos pos, int fortune) {
+    public List<ItemStack> onSheared(@Nullable PlayerEntity player, @Nonnull ItemStack item, World world, BlockPos pos, int fortune) {
         world.playMovingSound(null, this, SoundEvents.ENTITY_SHEEP_SHEAR, player == null ? SoundCategory.BLOCKS : SoundCategory.PLAYERS, 1.0F, 1.0F);
         if (!this.world.isRemote) {
             this.setSheared(true);
-            java.util.List<ItemStack> items = new java.util.ArrayList<>();
+            List<ItemStack> items = new ArrayList<>();
             int i = 1 + this.rand.nextInt(3);
             for (int j = 0; j < i; ++j) {
                 items.add(new ItemStack(Blocks.BROWN_WOOL));
             }
             return items;
         }
-        return java.util.Collections.emptyList();
+        return Collections.emptyList();
     }
 
     public void writeAdditional(CompoundNBT compound) {
