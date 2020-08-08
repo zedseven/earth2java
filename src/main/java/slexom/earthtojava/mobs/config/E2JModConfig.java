@@ -16,6 +16,9 @@ public final class E2JModConfig {
 
     public static int mudLakeFrequency;
     public static boolean canWanderingTraderSpawn;
+    public static int wanderingTraderDelay;
+    public static int wanderingTraderChance;
+    public static String wanderingTraderCurrency;
     public static boolean canRubyOreGenerate;
     public static int rubyOreCount;
     public static int rubyOreBottomOffset;
@@ -92,6 +95,11 @@ public final class E2JModConfig {
     public static int piebaldPigWeight;
     public static int piebaldPigGroupMin;
     public static int piebaldPigGroupMax;
+
+    public static List<String> pinkFootedPigSpawnBiomes;
+    public static int pinkFootedPigWeight;
+    public static int pinkFootedPigGroupMin;
+    public static int pinkFootedPigGroupMax;
 
     public static List<String> rockySheepSpawnBiomes;
     public static int rockySheepWeight;

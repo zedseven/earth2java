@@ -80,6 +80,7 @@ public final class ClientModEventSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.BONE_SPIDER_REGISTRY_OBJECT.get(), BoneSpiderRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.WANDERING_TRADER_REGISTRY_OBJECT.get(), E2JWanderingTraderRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.RAINBOW_SHEEP_REGISTRY_OBJECT.get(), RainbowSheepRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypesInit.PINK_FOOTED_PIG_REGISTRY_OBJECT.get(), renderManager -> new E2JPigRenderer(renderManager, EntityTypesInit.PINK_FOOTED_PIG_REGISTRY_NAME));
     }
 
     @SubscribeEvent

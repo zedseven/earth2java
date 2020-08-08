@@ -16,6 +16,9 @@ public final class ConfigHelper {
 
         E2JModConfig.mudLakeFrequency = ConfigHolder.COMMON.mudLakeFrequency.get();
         E2JModConfig.canWanderingTraderSpawn = ConfigHolder.COMMON.canWanderingTraderSpawn.get();
+        E2JModConfig.wanderingTraderDelay = ConfigHolder.COMMON.wanderingTraderDelay.get();
+        E2JModConfig.wanderingTraderChance = ConfigHolder.COMMON.wanderingTraderChance.get();
+        E2JModConfig.wanderingTraderCurrency = ConfigHolder.COMMON.wanderingTraderCurrency.get();
         E2JModConfig.canRubyOreGenerate = ConfigHolder.COMMON.canRubyOreGenerate.get();
         E2JModConfig.rubyOreCount = ConfigHolder.COMMON.rubyOreCount.get();
         E2JModConfig.rubyOreBottomOffset = ConfigHolder.COMMON.rubyOreBottomOffset.get();
@@ -92,6 +95,11 @@ public final class ConfigHelper {
         E2JModConfig.piebaldPigWeight = ConfigHolder.COMMON.piebaldPigWeight.get();
         E2JModConfig.piebaldPigGroupMin = ConfigHolder.COMMON.piebaldPigGroupMin.get();
         E2JModConfig.piebaldPigGroupMax = ConfigHolder.COMMON.piebaldPigGroupMax.get();
+
+        E2JModConfig.pinkFootedPigSpawnBiomes = ConfigHolder.COMMON.pinkFootedPigSpawnBiomes.get();
+        E2JModConfig.pinkFootedPigWeight = ConfigHolder.COMMON.pinkFootedPigWeight.get();
+        E2JModConfig.pinkFootedPigGroupMin = ConfigHolder.COMMON.pinkFootedPigGroupMin.get();
+        E2JModConfig.pinkFootedPigGroupMax = ConfigHolder.COMMON.pinkFootedPigGroupMax.get();
 
         E2JModConfig.rockySheepSpawnBiomes = ConfigHolder.COMMON.rockySheepSpawnBiomes.get();
         E2JModConfig.rockySheepWeight = ConfigHolder.COMMON.rockySheepWeight.get();

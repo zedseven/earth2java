@@ -13,6 +13,9 @@ final class CommonConfig {
 
     final ForgeConfigSpec.IntValue mudLakeFrequency;
     final ForgeConfigSpec.BooleanValue canWanderingTraderSpawn;
+    final ForgeConfigSpec.IntValue wanderingTraderDelay;
+    final ForgeConfigSpec.IntValue wanderingTraderChance;
+    final ForgeConfigSpec.ConfigValue<String> wanderingTraderCurrency;
     final ForgeConfigSpec.BooleanValue canRubyOreGenerate;
     final ForgeConfigSpec.IntValue rubyOreCount;
     final ForgeConfigSpec.IntValue rubyOreBottomOffset;
@@ -89,6 +92,11 @@ final class CommonConfig {
     final ForgeConfigSpec.IntValue piebaldPigGroupMin;
     final ForgeConfigSpec.IntValue piebaldPigGroupMax;
 
+    final ForgeConfigSpec.ConfigValue<List<String>> pinkFootedPigSpawnBiomes;
+    final ForgeConfigSpec.IntValue pinkFootedPigWeight;
+    final ForgeConfigSpec.IntValue pinkFootedPigGroupMin;
+    final ForgeConfigSpec.IntValue pinkFootedPigGroupMax;
+
     final ForgeConfigSpec.ConfigValue<List<String>> rockySheepSpawnBiomes;
     final ForgeConfigSpec.IntValue rockySheepWeight;
     final ForgeConfigSpec.IntValue rockySheepGroupMin;
@@ -159,7 +167,6 @@ final class CommonConfig {
     final ForgeConfigSpec.IntValue jollyLlamaGroupMin;
     final ForgeConfigSpec.IntValue jollyLlamaGroupMax;
 
-
     final ForgeConfigSpec.ConfigValue<List<String>> rainbowSheepSpawnBiomes;
     final ForgeConfigSpec.IntValue rainbowSheepWeight;
     final ForgeConfigSpec.IntValue rainbowSheepGroupMin;
@@ -181,15 +188,23 @@ final class CommonConfig {
 
         canWanderingTraderSpawn = builder
                 .comment("Enable or disable the custom Wandering Trader")
-                .define("canWanderingTraderSpawn", true);
-
+                .define("canWanderingTraderSpawn", false);
+        wanderingTraderDelay = builder
+                .comment("Number of in-game days to wait between mod trader spawn")
+                .defineInRange("wanderingTraderDelay", 4, 1, Integer.MAX_VALUE);
+        wanderingTraderChance = builder
+                .comment("Chance for the mod trader to spawn")
+                .defineInRange("wanderingTraderChance", 20, 1, 100);
+        wanderingTraderCurrency = builder
+                .comment("Identifier of the item to use as currency for trades")
+                .define("wanderingTraderCurrency", "earthtojavamobs:ruby");
         builder.pop();
 
         builder.push(CATEGORY_ORE_GENERATION);
         builder.push("ruby");
         canRubyOreGenerate = builder
                 .comment("Enable or disable the generation for Ruby Ore")
-                .define("canRubyOreGenerate", true);
+                .define("canRubyOreGenerate", false);
         rubyOreCount = builder
                 .defineInRange("rubyOreCount", 2, 0, Integer.MAX_VALUE);
         rubyOreBottomOffset = builder
@@ -408,6 +423,21 @@ final class CommonConfig {
                 .comment("Minimum number of entities in group")
                 .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
         piebaldPigGroupMax = builder
+                .comment("Maximum number of entities in group")
+                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+
+        builder.push("pinkFootedPig");
+        pinkFootedPigSpawnBiomes = builder
+                .comment("Biome where entity Spawn")
+                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.PINK_FOOTED_PIG_SPAWN_BIOMES));
+        pinkFootedPigWeight = builder
+                .comment("Weight of entity in spawn")
+                .defineInRange("entityWeight", standardPigWeight, 0, Integer.MAX_VALUE);
+        pinkFootedPigGroupMin = builder
+                .comment("Minimum number of entities in group")
+                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
+        pinkFootedPigGroupMax = builder
                 .comment("Maximum number of entities in group")
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();
