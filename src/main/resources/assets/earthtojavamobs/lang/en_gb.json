@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Harelequin Rabbit",
     "entity.earthtojavamobs.rainbow_sheep": "Rainbow Sheep",
     "entity.earthtojavamobs.pink_footed_pig": "Pink-Footed Pig",
+    "entity.earthtojavamobs.bronzed_chicken": "Bronzed Chicken",
     "entity.earthtojavamobs.wandering_trader": "Wandering Trader",
     "item.earthtojavamobs.horn": "Horn",
     "block.earthtojavamobs.buttercup": "Buttercup",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "This spotty pig is as sweet as can be. It loves to live with its piggy friends, hunting the Grassy Plains for sweet treats to eat.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Bored of single, solid colours? The Rainbow Sheep grows wool with not one, not two, but SEVEN bold hues to make rainbow-tastic creations.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "A chicken that boasts brilliant plumage and may be more useful than gold itself.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "A plucky bird who can cluck with the best of them, and a wonderful addition to any coop.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Darker than a block of coal, this chicken can be hard to see in shadows. Keep your eyes peeled!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "This cloudy-coloured chicken would like all to know that they are not responsible for any fowl weather.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Like the stones beneath the grass, this sheep shows the variety of simple colours.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "So colourful! Beds are one of the first things you'll want to make for your new house because they are brilliant. Who doesn't like a bed?",
     "block.earthtojavamobs.rainbow_carpet.desc": "So colourful! Brighten up your buildings and give them a homely feel. Remember though: carpets are flammable.",
     "block.earthtojavamobs.rainbow_wool.desc": "Baa, baa, rainbow-coloured sheep, have you any wool? This wool makes a fantastic building material. Just remember that it's flammable.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

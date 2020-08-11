@@ -28,6 +28,8 @@
     "entity.earthtojavamobs.inky_sheep": "Mürekkepli Koyun",
     "entity.earthtojavamobs.harelequin_rabbit": "Harlequin Tavşanı",
     "entity.earthtojavamobs.rainbow_sheep": "Gökkuşağı Koyun",
+    "entity.earthtojavamobs.pink_footed_pig": "Pembe Ayaklı Domuz",
+    "entity.earthtojavamobs.bronzed_chicken": "Bronz Tavuk",
     "entity.earthtojavamobs.wandering_trader": "Gezgin Tüccar",
     "item.earthtojavamobs.horn": "Boynuz",
     "block.earthtojavamobs.buttercup": "Düğün Çiçeği",
@@ -54,9 +56,11 @@
     "item.earthtojavamobs.sunset_cow_spawn_egg.desc": "Her sürüye altın değerinde bir katkı.",
     "item.earthtojavamobs.pale_pig_spawn_egg.desc": "Bu domuzda eksik olan pigmentler onu daha da sevimli kılıyor.",
     "item.earthtojavamobs.piebald_pig_spawn_egg.desc": "Zeki domuz toplayıcılar için eşsiz bir renklendirme.",
+    "item.earthtojavamobs.pink_footed_pig_spawn_egg.desc": "Domuzlar çeşitli ve benzersizdir. Bunun pembe ayakları var.",
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Bu benekli domuz daha tatlı olamazdı. Domuz arkadaşları ile birlikte yaşamayı, yiyebileceği tatlı ikramlar için Çimenli Düzlüklerde avlanmayı sever.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Tek, düz renklerden sıkıldın mı? Gökkuşağı Koyun, bir değil, iki değil, tam YEDİ cesur tonda yün büyüterek gökkuşa-hane kreasyonlar yaratır.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Parlak tüylere sahip olan ve altından daha yararlı olabilecek bir tavuk.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "En iyilerle gıdaklayabilen cesur bir kuş ve her kümese harika bir katkı.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Bir kömür blokundan daha koyu olan bu tavuğu gölgede görmek zor olabilir. Gözlerini dört aç!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Bu duman renkli tavuk, kuş gribinden kendilerinin sorumlu olmadığını herkesin bilmesini istiyor.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Çimenlerin altındaki taşlar gibi bu koyun da basit renklerin çeşitliliğini gösterir.",
@@ -72,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Ne kadar rengarenk! Yataklar yeni evin için yapmak isteyeceğin ilk şeylerden biridir çünkü yataklar harikadır. Kim yatak sevmez ki?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Ne kadar rengarenk! Binalarını aydınlat ve sade bir hava kat. Ama unutma: Halılar alev alabilir.",
     "block.earthtojavamobs.rainbow_wool.desc": "Mee, mee, gökkuşağı renkli koyun, hiç yünün var mı? Bu yün muhteşem bir inşaat malzemesi olur. Sadece tutuşabildiğini aklından çıkarma.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

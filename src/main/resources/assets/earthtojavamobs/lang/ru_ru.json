@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Кролик-арлекин",
     "entity.earthtojavamobs.rainbow_sheep": "Радужная овца",
     "entity.earthtojavamobs.pink_footed_pig": "Свинья с розовыми ногами",
+    "entity.earthtojavamobs.bronzed_chicken": "Бронзированная курица",
     "entity.earthtojavamobs.wandering_trader": "Бродячий торговец",
     "item.earthtojavamobs.muddy_pig_spawn_egg": "Яйцо призыва заляпанная свинья",
     "item.earthtojavamobs.cluckshroom_spawn_egg": "Яйцо призыва кудахтогриб",
@@ -60,6 +61,7 @@
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg": "Яйцо призыва кролик-арлекин",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg": "Яйцо призыва радужная овца",
     "item.earthtojavamobs.pink_footed_pig_spawn_egg": "Яйцо призыва свинья с розовыми ногами",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg": "Яйцо призыва бронзированная курица",
     "item.earthtojavamobs.wandering_trader_spawn_egg": "Яйцо призыва бродячий торговец",
     "item.earthtojavamobs.horn": "Горн",
     "block.earthtojavamobs.buttercup": "Лютик",
@@ -90,6 +92,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Эта пятнистая свинья невероятно мила. Ей нравится жить с друзьями-свиньями и разыскивать с ними сласти по травяным равнинам.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Надоели однотонные цвета? Радужная овца окрашена не в один, не в два, а в семь ярких цветов! Вдохните немного радуги в свои творения с ее шерстью.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Курица с блестящим оперением, которая может оказаться полезнее, чем само золото.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Храбрая птица, способная кудахтать наравне с лучшими, станет отличным подспорьем в любой игре в режиме взаимопомощи.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Эта курица чернее блока угля, и ее непросто заметить в темноте. Смотрите во все глаза!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Этим курицам цвета туч хотелось бы, чтобы все знали, что они никак не связаны с плохой погодой.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Подобно камням в траве эта овца демонстрирует разнообразие простых цветов.",
@@ -107,5 +110,6 @@
     "block.earthtojavamobs.rainbow_wool.desc": "Бее-бее, радужная овечка, у тебя есть шерсть? Эта шерсть — фантастический строительный материал. Не забывайте, только, что она огнеопасна.",
     "block.earthtojavamobs.carved_melon": "Вырезанная дыня",
     "block.earthtojavamobs.melon_lantern": "Светильник дыня",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

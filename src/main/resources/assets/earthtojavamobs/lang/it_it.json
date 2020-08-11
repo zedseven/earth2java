@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Coniglio Arleprecchino",
     "entity.earthtojavamobs.rainbow_sheep": "Pecora arcobaleno",
     "entity.earthtojavamobs.pink_footed_pig": "Maiale dai piedi rosa",
+    "entity.earthtojavamobs.bronzed_chicken": "Pollo di bronzo",
     "entity.earthtojavamobs.wandering_trader": "Mercante errante",
     "item.earthtojavamobs.muddy_pig_spawn_egg": "Uovo generatore di maialino fangoso",
     "item.earthtojavamobs.cluckshroom_spawn_egg": "Uovo generatore di funghetto coccodè",
@@ -60,6 +61,7 @@
     "item.earthtojavamobs.harelequin_rabbit_spawn_egg": "Uovo generatore di coniglio arleprecchino",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg": "Uovo generatore di pecora arcobaleno",
     "item.earthtojavamobs.pink_footed_pig_spawn_egg": "Uovo generatore di maiale dai piedi rosa",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg": "Uovo generatore di pollo di bronzo",
     "item.earthtojavamobs.wandering_trader_spawn_egg": "Uovo generatore di mercante errante",
     "item.earthtojavamobs.horn": "Corno",
     "block.earthtojavamobs.buttercup": "Ranuncolo",
@@ -90,6 +92,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Questo maiale maculato è di una dolcezza infinita. Ama vivere con i suoi amici maialini, in cerca di pianure erbose con dolci delizie da mangiare.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Sei stufo dei colori uniformi a tinta unita? La lana della pecora arcobaleno sfoggia ben SETTE audaci tonalità per realizzare creazioni arcobaleno assolutamente fantastiche.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Un pollo dal piumaggio brillante che potrebbe rivelarsi più utile dell'oro.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Un uccello coraggioso che può competere a forza di coccodè con i migliori e una meravigliosa aggiunta a qualsiasi co-op.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Più scuro di un blocco di carbone, questo pollo può essere difficile da vedere al buio. Tieni gli occhi aperti!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Questo pollo dai colori plumbei vorrebbe che tutti sapessero che non è in alcun modo responsabile del brutto tempo.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Come le pietre che si nascondono tra l'erba, questa pecora esibisce una gamma di colori semplici.",
@@ -110,5 +113,6 @@
     "block.earthtojavamobs.ruby_block": "Blocco di rubino",
     "block.earthtojavamobs.ruby_ore": "Rubino grezzo",
     "item.earthtojavamobs.ruby": "Rubino",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

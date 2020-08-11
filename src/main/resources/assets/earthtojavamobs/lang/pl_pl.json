@@ -29,6 +29,7 @@
     "entity.earthtojavamobs.harelequin_rabbit": "Pstrokaty królik",
     "entity.earthtojavamobs.rainbow_sheep": "Tęczowa owca",
     "entity.earthtojavamobs.pink_footed_pig": "Różowonoga świnia",
+    "entity.earthtojavamobs.bronzed_chicken": "Kura z brązu",
     "entity.earthtojavamobs.wandering_trader": "Kupiec wędrowny",
     "item.earthtojavamobs.horn": "Róg",
     "block.earthtojavamobs.buttercup": "Jaskier",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Ta świnka z plamkami jest niebywale urocza. Uwielbia przebywać z innymi świnkami-znajomkami, przeczesując Trawiaste równiny w poszukiwaniu smakołyków.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Nudzą ci się pojedyncze, jednolite kolory? Na tęczowych owcach rośnie wełna nie w jednym, nie w dwóch, ale aż w SIEDMIU śmiałych barwach, oblekając je w fan-tęczowo-styczne kreacje.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Kura, który szczyci się wspaniałym upierzeniem i może okazać się warta więcej niż złoto.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Rezolutny ptak, który potrafi się dogdakać ze wszystkimi to niezastąpiony towarzysz w każdym kurniku.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Jest ciemniejszy od bloku węgla – tego kurczaka bardzo trudno dojrzeć w cieniu. Miej oczy szeroko otwarte!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Ta kura przypominająca kolorem zachmurzone niebo chciałaby, aby wszyscy wiedzieli, że to nie ona odpowiada za pogodę pod psem.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Ta owca, podobnie jak kamienie kryjące się pod trawą, pokazuje różnorodność prostych kolorów.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Co za kolory! Łóżko to jeden z pierwszych mebli, które warto skonstruować w nowym domu. Łóżka są wspaniałe! Każdy je uwielbia.",
     "block.earthtojavamobs.rainbow_carpet.desc": "Co za szyk! Dodaj kolorów swoim budynkom, by stały się bardziej przytulne. Ale uważaj: dywany mogą zająć się ogniem.",
     "block.earthtojavamobs.rainbow_wool.desc": "Bee, bee! Tęczowa owco, masz może trochę wełny? Taka wełna to fantastyczny materiał budowlany. Pamiętaj tylko, że jest łatwopalna.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }

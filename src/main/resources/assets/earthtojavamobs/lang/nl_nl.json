@@ -28,7 +28,8 @@
     "entity.earthtojavamobs.inky_sheep": "Inktschaap",
     "entity.earthtojavamobs.harelequin_rabbit": "Harlekijnkonijn",
     "entity.earthtojavamobs.rainbow_sheep": "Regenboogschaap",
-    "entity.earthtojavamobs.pink_footed_pig": "Rozevoetig varken",
+    "entity.earthtojavamobs.pink_footed_pig": "Rozepotig varken",
+    "entity.earthtojavamobs.bronzed_chicken": "Gebronsde kip",
     "entity.earthtojavamobs.wandering_trader": "Zwervende handelaar",
     "item.earthtojavamobs.horn": "Hoorn",
     "block.earthtojavamobs.buttercup": "Boterbloem",
@@ -59,6 +60,7 @@
     "item.earthtojavamobs.spotted_pig_spawn_egg.desc": "Het vlekkerig varken is zo zoet als maar kan. Het houdt ervan om samen te zijn met zijn varkensvrienden of op de grasrijke vlakten te zoeken naar zoete lekkernijen om te eten.",
     "item.earthtojavamobs.rainbow_sheep_spawn_egg.desc": "Ben je enkele effen kleuren beu? Het regenboogschaap groeit wol met niet één, niet twee, maar ZEVEN gedurfde tinten om regenboogtastische creaties mee te maken.",
     "item.earthtojavamobs.amber_chicken_spawn_egg.desc": "Een kip die een briljant verenkleed heeft en mogelijk nog nuttiger is dan goud.",
+    "item.earthtojavamobs.bronzed_chicken_spawn_egg.desc": "Een dappere vogel die als de beste kan kakelen, en een geweldige aanvulling aan elk kippenhok.",
     "item.earthtojavamobs.midnight_chicken_spawn_egg.desc": "Deze kip is donkerder dan een blok steenkool en is daardoor lastig te zien in het donker. Hou je ogen open!",
     "item.earthtojavamobs.stormy_chicken_spawn_egg.desc": "Deze troebelgekleurde kip wil graag horen dat ze niet verantwoordelijk is voor dit kippenweer.",
     "item.earthtojavamobs.rocky_sheep_spawn_egg.desc": "Net als de stenen onder het gras toont dit schaap de verscheidenheid van eenvoudige kleuren.",
@@ -74,5 +76,6 @@
     "block.earthtojavamobs.rainbow_bed.desc": "Zo kleurrijk! Een bed is een van de eerste dingen die je wilt maken voor je huis – ze zijn zo geweldig! Wie houdt er nu niet van bedden?",
     "block.earthtojavamobs.rainbow_carpet.desc": "Zo kleurrijk! Fleur je bouwwerken op en maak ze gezellig. Maar denk eraan: tapijten zijn brandbaar.",
     "block.earthtojavamobs.rainbow_wool.desc": "Beeeh, beeeh, regenboog gekleurd schaap, heb je wol? Dit wol is een geweldige bouwmateriaal. Denk er wel aan dat het brandbaar is.",
-    "itemGroup.earthtojavamobs": "Earth2Java"
+    "itemGroup.earthtojavamobs": "Earth2Java",
+    "itemGroup.earthtojavamobs.group": "Earth2Java"
 }
