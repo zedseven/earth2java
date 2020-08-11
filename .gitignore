@@ -1,12 +1,12 @@
 ## Based on GitHub's Eclipse .gitignore
 
 run/
+logs/
 .gradle/
 build/
 gradle-app.setting
 
 ## IntelliJ IDEA
-
 .idea/
 *.iml
 *.iws
