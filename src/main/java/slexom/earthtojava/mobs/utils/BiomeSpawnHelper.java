@@ -80,6 +80,7 @@ public final class BiomeSpawnHelper {
     public static final String[] GLOW_SQUID_SPAWN_BIOMES = getBiomesListFromBiomes(OCEAN, RIVER, SWAMP);
     public static final String[] JOLLY_LLAMA_SPAWN_BIOMES = getBiomesListFromBiomes(SNOWY_TUNDRA, ICE_SPIKE, SNOWY_TAIGA, FROZEN_RIVER, SNOWY_BEACH);
     public static final String[] PINK_FOOTED_PIG_SPAWN_BIOMES = getBiomesListFromBiomeCategories(Biome.Category.PLAINS);
+    public static final String[] BRONZED_CHICKEN_SPAWN_BIOMES = getBiomesListFromBiomes(PLAINS);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
