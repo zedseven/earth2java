@@ -46,6 +46,14 @@ public class EntityTypesInit {
                     .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, AMBER_CHICKEN_REGISTRY_NAME).toString())
     );
 
+    public static final String BRONZED_CHICKEN_REGISTRY_NAME = "bronzed_chicken";
+    public static final RegistryObject<EntityType<BronzedChickenEntity>> BRONZED_CHICKEN_REGISTRY_OBJECT = ENTITY_TYPES.register(
+            BRONZED_CHICKEN_REGISTRY_NAME,
+            () -> EntityType.Builder.create(BronzedChickenEntity::new, EntityClassification.CREATURE)
+                    .size(EntityType.CHICKEN.getWidth(), EntityType.CHICKEN.getHeight())
+                    .build(new ResourceLocation(EarthToJavaMobsMod.MOD_ID, BRONZED_CHICKEN_REGISTRY_NAME).toString())
+    );
+
     public static final String ASHEN_COW_REGISTRY_NAME = "ashen_cow";
     public static final RegistryObject<EntityType<AshenCowEntity>> ASHEN_COW_REGISTRY_OBJECT = ENTITY_TYPES.register(
             ASHEN_COW_REGISTRY_NAME,

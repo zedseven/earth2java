@@ -22,6 +22,7 @@ public class EntityAttributeInit {
         registerAttributes(EntityTypesInit.MIDNIGHT_CHICKEN_REGISTRY_OBJECT.get(), E2JBaseChickenEntity.registerAttributes());
         registerAttributes(EntityTypesInit.STORMY_CHICKEN_REGISTRY_OBJECT.get(), E2JBaseChickenEntity.registerAttributes());
         registerAttributes(EntityTypesInit.CLUCKSHROOM_REGISTRY_OBJECT.get(), E2JBaseChickenEntity.registerAttributes());
+        registerAttributes(EntityTypesInit.BRONZED_CHICKEN_REGISTRY_OBJECT.get(), E2JBaseChickenEntity.registerAttributes());
 
 
         registerAttributes(EntityTypesInit.ALBINO_COW_REGISTRY_OBJECT.get(), E2JBaseCowEntity.registerAttributes());

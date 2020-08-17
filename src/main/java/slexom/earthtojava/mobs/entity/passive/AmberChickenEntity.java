@@ -1,4 +1,3 @@
-
 package slexom.earthtojava.mobs.entity.passive;
 
 import net.minecraft.entity.EntityType;
@@ -10,4 +9,5 @@ public class AmberChickenEntity extends E2JBaseChickenEntity<AmberChickenEntity>
     public AmberChickenEntity(EntityType<AmberChickenEntity> type, World world) {
         super(type, world);
     }
+
 }

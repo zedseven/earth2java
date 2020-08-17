@@ -32,6 +32,11 @@ final class CommonConfig {
     final ForgeConfigSpec.IntValue ashenCowGroupMin;
     final ForgeConfigSpec.IntValue ashenCowGroupMax;
 
+    final ForgeConfigSpec.ConfigValue<List<String>> bronzedChickenSpawnBiomes;
+    final ForgeConfigSpec.IntValue bronzedChickenWeight;
+    final ForgeConfigSpec.IntValue bronzedChickenGroupMin;
+    final ForgeConfigSpec.IntValue bronzedChickenGroupMax;
+
     final ForgeConfigSpec.ConfigValue<List<String>> cluckshroomSpawnBiomes;
     final ForgeConfigSpec.IntValue cluckshroomWeight;
     final ForgeConfigSpec.IntValue cluckshroomGroupMin;
@@ -244,6 +249,21 @@ final class CommonConfig {
                 .comment("Minimum number of entities in group")
                 .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
         ashenCowGroupMax = builder
+                .comment("Maximum number of entities in group")
+                .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+
+        builder.push("bronzedChicken");
+        bronzedChickenSpawnBiomes = builder
+                .comment("Biome where entity Spawn")
+                .define("spawnBiomes", BiomeSpawnHelper.convertForConfig(BiomeSpawnHelper.BRONZED_CHICKEN_SPAWN_BIOMES));
+        bronzedChickenWeight = builder
+                .comment("Weight of entity in spawn")
+                .defineInRange("entityWeight", standardChickenWeight, 0, Integer.MAX_VALUE);
+        bronzedChickenGroupMin = builder
+                .comment("Minimum number of entities in group")
+                .defineInRange("entityGroupMin", 2, 0, Integer.MAX_VALUE);
+        bronzedChickenGroupMax = builder
                 .comment("Maximum number of entities in group")
                 .defineInRange("entityGroupMax", 4, 0, Integer.MAX_VALUE);
         builder.pop();

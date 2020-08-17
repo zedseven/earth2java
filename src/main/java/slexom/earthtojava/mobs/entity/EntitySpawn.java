@@ -45,6 +45,7 @@ public class EntitySpawn {
         registerAnimalEntitySpawn(EntityTypesInit.JUMBO_RABBIT_REGISTRY_OBJECT.get(), E2JModConfig.jumboRabbitSpawnBiomes.toArray(new String[0]), E2JModConfig.jumboRabbitWeight, E2JModConfig.jumboRabbitGroupMin, E2JModConfig.jumboRabbitGroupMax);
         registerAnimalEntitySpawn(EntityTypesInit.JOLLY_LLAMA_REGISTRY_OBJECT.get(), E2JModConfig.jollyLlamaSpawnBiomes.toArray(new String[0]), E2JModConfig.jollyLlamaWeight, E2JModConfig.jollyLlamaGroupMin, E2JModConfig.jollyLlamaGroupMax);
         registerAnimalEntitySpawn(EntityTypesInit.RAINBOW_SHEEP_REGISTRY_OBJECT.get(), E2JModConfig.rainbowSheepSpawnBiomes.toArray(new String[0]), E2JModConfig.rainbowSheepWeight, E2JModConfig.rainbowSheepGroupMin, E2JModConfig.rainbowSheepGroupMax);
+        registerAnimalEntitySpawn(EntityTypesInit.BRONZED_CHICKEN_REGISTRY_OBJECT.get(), E2JModConfig.bronzedChickenSpawnBiomes.toArray(new String[0]), E2JModConfig.bronzedChickenWeight, E2JModConfig.bronzedChickenGroupMin, E2JModConfig.bronzedChickenGroupMax);
     }
 
     private static <T extends AnimalEntity> void registerAnimalEntitySpawn(EntityType<T> entity, String[] spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn) {
