@@ -68,7 +68,7 @@ public final class ForgeEventSubscriber {
     }
 
     private static ChickenEntity getChickenEntity(World world) {
-        int chickenType = new Random().nextInt(6);
+        int chickenType = new Random().nextInt(8);
         ChickenEntity chickenentity;
         switch (chickenType) {
             case 0:
@@ -79,6 +79,9 @@ public final class ForgeEventSubscriber {
                 break;
             case 4:
                 chickenentity = EntityTypesInit.STORMY_CHICKEN_REGISTRY_OBJECT.get().create(world);
+                break;
+            case 6:
+                chickenentity = EntityTypesInit.BRONZED_CHICKEN_REGISTRY_OBJECT.get().create(world);
                 break;
             default:
                 chickenentity = EntityType.CHICKEN.create(world);

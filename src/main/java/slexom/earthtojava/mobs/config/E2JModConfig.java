@@ -36,6 +36,11 @@ public final class E2JModConfig {
     public static int ashenCowGroupMin;
     public static int ashenCowGroupMax;
 
+    public static List<String> bronzedChickenSpawnBiomes;
+    public static int bronzedChickenWeight;
+    public static int bronzedChickenGroupMin;
+    public static int bronzedChickenGroupMax;
+
     public static List<String> cluckshroomSpawnBiomes;
     public static int cluckshroomWeight;
     public static int cluckshroomGroupMin;

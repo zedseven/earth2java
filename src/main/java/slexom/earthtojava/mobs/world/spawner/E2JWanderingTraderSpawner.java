@@ -17,6 +17,7 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.spawner.WorldEntitySpawner;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.LogicalSide;
 import slexom.earthtojava.mobs.config.E2JModConfig;
 import slexom.earthtojava.mobs.entity.merchant.villager.E2JWanderingTraderEntity;
 import slexom.earthtojava.mobs.init.EntityTypesInit;
@@ -27,19 +28,23 @@ import java.util.Random;
 
 public class E2JWanderingTraderSpawner {
 
+    private final int DAY = 24000;
     private Random random;
     private ServerWorld world;
-    private final int CHANCE = 25;
 
     @SubscribeEvent
     public void tick(TickEvent.WorldTickEvent event) {
-
-        if(E2JModConfig.canWanderingTraderSpawn) {
-            this.world = (ServerWorld) event.world;
-            this.random = this.world.getRandom();
-            if (world.getDayTime() % 24000 == 1500) {
-                if (random.nextInt(100) < CHANCE) {
-                    spawnTrader();
+        if (E2JModConfig.canWanderingTraderSpawn) {
+            if (event.phase == TickEvent.Phase.END && event.side == LogicalSide.SERVER) {
+                world = (ServerWorld) event.world;
+                int CHANCE = E2JModConfig.wanderingTraderChance;
+                int DELAY = E2JModConfig.wanderingTraderDelay;
+                random = this.world.getRandom();
+                long dayTime = world.getDayTime();
+                if (dayTime % ((long) (DAY * DELAY)) == 1500) {
+                    if (random.nextInt(100) < CHANCE) {
+                        spawnTrader();
+                    }
                 }
             }
         }

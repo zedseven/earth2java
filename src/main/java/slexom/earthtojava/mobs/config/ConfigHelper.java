@@ -36,6 +36,11 @@ public final class ConfigHelper {
         E2JModConfig.ashenCowGroupMin = ConfigHolder.COMMON.ashenCowGroupMin.get();
         E2JModConfig.ashenCowGroupMax = ConfigHolder.COMMON.ashenCowGroupMax.get();
 
+        E2JModConfig.bronzedChickenSpawnBiomes = ConfigHolder.COMMON.bronzedChickenSpawnBiomes.get();
+        E2JModConfig.bronzedChickenWeight = ConfigHolder.COMMON.bronzedChickenWeight.get();
+        E2JModConfig.bronzedChickenGroupMin = ConfigHolder.COMMON.bronzedChickenGroupMin.get();
+        E2JModConfig.bronzedChickenGroupMax = ConfigHolder.COMMON.bronzedChickenGroupMax.get();
+
         E2JModConfig.cluckshroomSpawnBiomes = ConfigHolder.COMMON.cluckshroomSpawnBiomes.get();
         E2JModConfig.cluckshroomWeight = ConfigHolder.COMMON.cluckshroomWeight.get();
         E2JModConfig.cluckshroomGroupMin = ConfigHolder.COMMON.cluckshroomGroupMin.get();

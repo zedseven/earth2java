@@ -42,9 +42,6 @@ import slexom.earthtojava.mobs.world.spawner.E2JWanderingTraderSpawner;
 
 import java.util.Random;
 
-//TODO: modificare ricetta vaso mod
-// Finire di sistemare il lama allegro e aggiungerlo al nuovo mercante
-
 @Mod(EarthToJavaMobsMod.MOD_ID)
 public class EarthToJavaMobsMod {
 
@@ -94,6 +91,7 @@ public class EarthToJavaMobsMod {
     private static void registerEntitiesSpawn() {
         registerAnimalEntitySpawn(EntityTypesInit.AMBER_CHICKEN_REGISTRY_OBJECT.get(), E2JModConfig.amberChickenSpawnBiomes.toArray(new String[0]), E2JModConfig.amberChickenWeight, E2JModConfig.amberChickenGroupMin, E2JModConfig.amberChickenGroupMax);
         registerAnimalEntitySpawn(EntityTypesInit.ASHEN_COW_REGISTRY_OBJECT.get(), E2JModConfig.ashenCowSpawnBiomes.toArray(new String[0]), E2JModConfig.ashenCowWeight, E2JModConfig.ashenCowGroupMin, E2JModConfig.ashenCowGroupMax);
+        registerAnimalEntitySpawn(EntityTypesInit.BRONZED_CHICKEN_REGISTRY_OBJECT.get(), E2JModConfig.bronzedChickenSpawnBiomes.toArray(new String[0]), E2JModConfig.bronzedChickenWeight, E2JModConfig.bronzedChickenGroupMin, E2JModConfig.bronzedChickenGroupMax);
         registerAnimalEntitySpawn(EntityTypesInit.CLUCKSHROOM_REGISTRY_OBJECT.get(), E2JModConfig.cluckshroomSpawnBiomes.toArray(new String[0]), E2JModConfig.cluckshroomWeight, E2JModConfig.cluckshroomGroupMin, E2JModConfig.cluckshroomGroupMax);
         registerAnimalEntitySpawn(EntityTypesInit.FLECKED_SHEEP_REGISTRY_OBJECT.get(), E2JModConfig.fleckedSheepSpawnBiomes.toArray(new String[0]), E2JModConfig.fleckedSheepWeight, E2JModConfig.fleckedSheepGroupMin, E2JModConfig.fleckedSheepGroupMax);
         registerGlowingSquidSpawn();
