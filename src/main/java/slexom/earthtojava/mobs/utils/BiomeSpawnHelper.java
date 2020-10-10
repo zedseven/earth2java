@@ -11,10 +11,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -56,22 +53,6 @@ public final class BiomeSpawnHelper {
     private BiomeSpawnHelper() {
     }
 
-    public static String[] getBiomesList(String[]... identifiers) {
-        List<String> biomes = new ArrayList<>();
-        List<String> types = new ArrayList<>();
-        String[] flatted = Stream.of(identifiers).flatMap(Stream::of).toArray(String[]::new);
-        for (String identifier : flatted) {
-            String[] splitted = identifier.split(":");
-            if (splitted.length == 2) {
-                biomes.add(identifier);
-            }
-            if (splitted.length == 1) {
-                types.add(identifier);
-            }
-        }
-        return Stream.concat(biomes.stream(), types.stream()).toArray(String[]::new);
-    }
-
     public static String[] getBiomesListFromBiomes(String[]... biomes) {
         return Stream.of(biomes).flatMap(Stream::of).toArray(String[]::new);
     }
@@ -80,45 +61,47 @@ public final class BiomeSpawnHelper {
         return Stream.of(types).flatMap(Stream::of).map(BiomeDictionary.Type::getName).toArray(String[]::new);
     }
 
-    private static boolean isOverworld(Biome biome) {
-        Set<Biome> biomesNether = BiomeDictionary.getBiomes(BiomeDictionary.Type.NETHER);
-        Set<Biome> biomesEnd = BiomeDictionary.getBiomes(BiomeDictionary.Type.END);
-        for (Biome biomeNether : biomesNether) {
-            if (biome == biomeNether) {
-                return false;
-            }
-        }
-        for (Biome biomeEnd : biomesEnd) {
-            if (biome == biomeEnd) {
-                return false;
-            }
-        }
-        return true;
+    private static void setSpawnBiomes(EntityType<?> entity, String[] spawnBiomes, int weight, int minGroupSize, int maxGroupSize, EntityClassification classification) {
+        List<String> blackList = Arrays.stream(spawnBiomes).filter(id -> id.contains("!")).collect(Collectors.toList());
+        List<String> spawnList = expandSpawnList(Arrays.stream(spawnBiomes).filter(id -> !id.contains("!")).collect(Collectors.toList()));
+        blackList.replaceAll(s -> s.replace("!", ""));
+        spawnList.removeAll(blackList);
+        addEntityToBiomes(entity, spawnList, weight, minGroupSize, maxGroupSize, classification);
     }
 
-    private static void setSpawnBiomes(EntityType<?> entity, String[] spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn, EntityClassification classification) {
-        for (String identifier : spawnBiomes) {
-            String[] splitted = identifier.split(":");
-            if (splitted.length == 2) {
-                Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(identifier));
-                if (biome != null) {
-                    biome.getSpawns(classification).add(new Biome.SpawnListEntry(entity, weight, minGroupCountIn, maxGroupCountIn));
-                }
+
+    private static List<String> expandSpawnList(List<String> spawnList) {
+        List<String> biomes = new ArrayList<>(Collections.emptyList());
+        List<String> biomeCategories = new ArrayList<>(Collections.emptyList());
+        List<String> biomesFromDictionary = new ArrayList<>(Collections.emptyList());
+        spawnList.forEach(identifier -> {
+            if (isBiomeCategory(identifier)) {
+                biomeCategories.add(identifier);
+            } else {
+                biomes.add(identifier);
             }
-            if (splitted.length == 1) {
-                Set<Biome> biomes = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(identifier.toUpperCase()));
-                for (Biome biome : biomes) {
-                    if (isOverworld(biome)) {
-                        biome.getSpawns(classification).add(new Biome.SpawnListEntry(entity, weight, minGroupCountIn, maxGroupCountIn));
-                    }
-                }
+        });
+        for (String biomeCategory : biomeCategories) {
+            Set<Biome> biomesInCategory = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(biomeCategory.toUpperCase()));
+            for (Biome biome : biomesInCategory) {
+                biomesFromDictionary.add(biome.getRegistryName().toString());
             }
         }
-        for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
-            boolean biomeCriteria = Arrays.asList(spawnBiomes).contains(ForgeRegistries.BIOMES.getKey(biome).toString());
-            if (!biomeCriteria)
-                continue;
-            biome.getSpawns(classification).add(new Biome.SpawnListEntry(entity, weight, minGroupCountIn, maxGroupCountIn));
+        return Stream.concat(biomes.stream(), biomesFromDictionary.stream()).collect(Collectors.toList());
+    }
+
+    private static boolean isBiomeCategory(String identifier) {
+        return identifier.split(":").length == 1;
+    }
+
+    private static void addEntityToBiomes(EntityType<?> entity, List<String> spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn, EntityClassification classification) {
+        for (String identifier : spawnBiomes) {
+            Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(identifier));
+            if (biome != null) {
+                biome.getSpawns(classification).add(new Biome.SpawnListEntry(entity, weight, minGroupCountIn, maxGroupCountIn));
+            } else {
+                System.out.println("[Earth2Java] Unable to find biome " + identifier + " while registering entity spawn");
+            }
         }
     }
 
