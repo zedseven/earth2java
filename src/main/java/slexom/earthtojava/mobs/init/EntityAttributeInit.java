@@ -59,11 +59,11 @@ public class EntityAttributeInit {
         registerAttributes(EntityTypesInit.SKELETON_WOLF_REGISTRY_OBJECT.get(), SkeletonWolfEntity.registerAttributes());
 
         registerAttributes(EntityTypesInit.JOLLY_LLAMA_REGISTRY_OBJECT.get(), E2JBaseLlamaEntity.registerAttributes());
-        
+
         registerAttributes(EntityTypesInit.WANDERING_TRADER_REGISTRY_OBJECT.get(), E2JWanderingTraderEntity.initAttributes());
     }
-    
-    private static void registerAttributes(EntityType<? extends LivingEntity> entity, AttributeModifierMap.MutableAttribute attributes){
-        GlobalEntityTypeAttributes.put(entity, attributes.func_233813_a_());
+
+    private static void registerAttributes(EntityType<? extends LivingEntity> entity, AttributeModifierMap.MutableAttribute attributes) {
+        GlobalEntityTypeAttributes.put(entity, attributes.create());
     }
 }

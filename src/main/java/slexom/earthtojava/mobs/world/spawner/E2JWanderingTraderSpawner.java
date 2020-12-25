@@ -42,8 +42,8 @@ public class E2JWanderingTraderSpawner {
         if (E2JModConfig.canWanderingTraderSpawn) {
             if (event.phase == TickEvent.Phase.END && event.side == LogicalSide.SERVER) {
                 world = (ServerWorld) event.world;
-                if (world.getGameRules().getBoolean(GameRules.field_230128_E_) && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
-                    iServerWorldInfo = world.getServer().func_240793_aU_().func_230407_G_();
+                if (world.getGameRules().getBoolean(GameRules.DO_TRADER_SPAWNING) && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
+                    iServerWorldInfo = world.getServer().getServerConfiguration().getServerWorldInfo();
                     int CHANCE = E2JModConfig.wanderingTraderChance;
                     int DELAY = E2JModConfig.wanderingTraderDelay;
                     long dayTime = iServerWorldInfo.getDayTime();
@@ -60,21 +60,21 @@ public class E2JWanderingTraderSpawner {
     private void spawnTrader(ServerWorld world) {
         PlayerEntity playerentity = world.getRandomPlayer();
         if (playerentity != null) {
-            BlockPos blockpos = playerentity.func_233580_cy_();
+            BlockPos blockpos = playerentity.getPosition();
             PointOfInterestManager pointofinterestmanager = world.getPointOfInterestManager();
             Optional<BlockPos> optional = pointofinterestmanager.find(PointOfInterestType.MEETING.getPredicate(), (p_221241_0_) -> true, blockpos, 48, PointOfInterestManager.Status.ANY);
             BlockPos blockpos1 = optional.orElse(blockpos);
             BlockPos blockpos2 = this.getLlamaSpawnPosition(world, blockpos1, 48);
             if (blockpos2 != null && this.isValid(world, blockpos2)) {
-                if (world.getBiome(blockpos2) == Biomes.THE_VOID) {
-                    return;
+                if (world.func_242406_i(blockpos2).equals(Optional.of(Biomes.THE_VOID))) {
+                    return  ;
                 }
                 E2JWanderingTraderEntity traderEntity = EntityTypesInit.WANDERING_TRADER_REGISTRY_OBJECT.get().spawn(this.world, (CompoundNBT) null, (ITextComponent) null, (PlayerEntity) null, blockpos2, SpawnReason.EVENT, false, false);
                 if (traderEntity != null) {
                     for (int j = 0; j < 2; ++j) {
                         this.spawnTraderLlama(traderEntity);
                     }
-                    iServerWorldInfo.func_230394_a_(traderEntity.getUniqueID()); // setWanderingTraderId in 115
+                    iServerWorldInfo.setWanderingTraderID(traderEntity.getUniqueID()); // setWanderingTraderId in 115
                     traderEntity.setDespawnDelay(32000);
                     traderEntity.setWanderTarget(blockpos1);
                     traderEntity.setHomePosAndDistance(blockpos1, 16);
@@ -84,7 +84,7 @@ public class E2JWanderingTraderSpawner {
     }
 
     private void spawnTraderLlama(WanderingTraderEntity traderEntity) {
-        BlockPos blockpos = this.getLlamaSpawnPosition(traderEntity.world, traderEntity.func_233580_cy_(), 4);
+        BlockPos blockpos = this.getLlamaSpawnPosition(traderEntity.world, traderEntity.getPosition(), 4);
         if (blockpos != null) {
             TraderLlamaEntity traderLlamaEntity = EntityType.TRADER_LLAMA.spawn(this.world, (CompoundNBT) null, (ITextComponent) null, (PlayerEntity) null, blockpos, SpawnReason.EVENT, false, false);
             if (traderLlamaEntity != null) {

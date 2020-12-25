@@ -8,6 +8,7 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import java.util.Random;
@@ -26,7 +27,7 @@ public class E2JBaseRabbitEntity<T extends RabbitEntity> extends RabbitEntity {
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return MobEntity.func_233666_p_().func_233815_a_(Attributes.MAX_HEALTH, 3.0D).func_233815_a_(Attributes.MOVEMENT_SPEED, (double) 0.3F);
+        return MobEntity.func_233666_p_().createMutableAttribute(Attributes.MAX_HEALTH, 3.0D).createMutableAttribute(Attributes.MOVEMENT_SPEED, (double) 0.3F);
     }
 
     @Override
@@ -48,9 +49,10 @@ public class E2JBaseRabbitEntity<T extends RabbitEntity> extends RabbitEntity {
     }
 
     @Override
-    public T createChild(AgeableEntity ageable) {
-        return (T) getType().create(this.world);
+        public T func_241840_a(ServerWorld world , AgeableEntity ageable) {
+        return (T) getType().create(world);
     }
+
 
     @Override
     public IPacket<?> createSpawnPacket() {

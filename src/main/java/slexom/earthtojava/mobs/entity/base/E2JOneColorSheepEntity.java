@@ -26,6 +26,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.IForgeShearable;
@@ -36,7 +37,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity implements IShearable, IForgeShearable {
+public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity implements   IForgeShearable {
 
     private static final DataParameter<Byte> isSheared = EntityDataManager.createKey(E2JOneColorSheepEntity.class, DataSerializers.BYTE);
 
@@ -56,7 +57,7 @@ public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return MobEntity.func_233666_p_().func_233815_a_(Attributes.MAX_HEALTH, 8.0D).func_233815_a_(Attributes.MOVEMENT_SPEED, 0.23F);
+        return MobEntity.func_233666_p_().createMutableAttribute(Attributes.MAX_HEALTH, 8.0D).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.23F);
     }
 
     protected void registerGoals() {
@@ -112,9 +113,10 @@ public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity
     }
 
     @Override
-    public T createChild(AgeableEntity ageable) {
-        return (T) getType().create(this.world);
+        public T func_241840_a(ServerWorld world , AgeableEntity ageable) {
+        return (T) getType().create(world);
     }
+
 
     public boolean getSheared() {
         return (this.dataManager.get(isSheared) & 16) != 0;
@@ -199,25 +201,6 @@ public class E2JOneColorSheepEntity<T extends AnimalEntity> extends AnimalEntity
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.ENTITY_SHEEP_STEP, 0.35F, 1.0F);
-    }
-
-
-    @Override
-    public void func_230263_a_(SoundCategory soundCategory) {
-        this.world.playMovingSound(null, this, SoundEvents.ENTITY_SHEEP_SHEAR, soundCategory, 1.0F, 1.0F);
-        this.setSheared(true);
-        int i = 1 + this.rand.nextInt(3);
-        for (int j = 0; j < i; ++j) {
-            ItemEntity itementity = this.entityDropItem(this.wool, 1);
-            if (itementity != null) {
-                itementity.setMotion(itementity.getMotion().add((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F, this.rand.nextFloat() * 0.05F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F));
-            }
-        }
-    }
-
-    @Override
-    public boolean func_230262_K__() {
-        return this.isAlive() && !this.getSheared() && !this.isChild();
     }
 
     @Override

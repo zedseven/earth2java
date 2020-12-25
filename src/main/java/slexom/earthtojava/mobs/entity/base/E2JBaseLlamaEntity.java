@@ -7,6 +7,7 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import java.util.Random;
@@ -25,7 +26,7 @@ public class E2JBaseLlamaEntity<T extends LlamaEntity> extends LlamaEntity {
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return func_234234_eJ_().func_233815_a_(Attributes.FOLLOW_RANGE, 40.0D);
+        return func_234234_eJ_().createMutableAttribute(Attributes.FOLLOW_RANGE, 40.0D);
     }
 
     @Override
@@ -46,9 +47,10 @@ public class E2JBaseLlamaEntity<T extends LlamaEntity> extends LlamaEntity {
         return this.remainingTick;
     }
 
-    public T createChild(AgeableEntity ageable) {
-        return (T) getType().create(this.world);
+        public T func_241840_a(ServerWorld world , AgeableEntity ageable) {
+        return (T) getType().create(world);
     }
+
 
     @Override
     public IPacket<?> createSpawnPacket() {

@@ -6,6 +6,7 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.WaterMobEntity;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -61,14 +62,13 @@ public final class BiomeSpawnHelper {
         return Stream.of(types).flatMap(Stream::of).map(BiomeDictionary.Type::getName).toArray(String[]::new);
     }
 
-    private static void setSpawnBiomes(EntityType<?> entity, String[] spawnBiomes, int weight, int minGroupSize, int maxGroupSize, EntityClassification classification) {
+    public static List<Biome> getBiomesFromConfig(String[] spawnBiomes) {
         List<String> blackList = Arrays.stream(spawnBiomes).filter(id -> id.contains("!")).collect(Collectors.toList());
         List<String> spawnList = expandSpawnList(Arrays.stream(spawnBiomes).filter(id -> !id.contains("!")).collect(Collectors.toList()));
         blackList.replaceAll(s -> s.replace("!", ""));
         spawnList.removeAll(blackList);
-        addEntityToBiomes(entity, spawnList, weight, minGroupSize, maxGroupSize, classification);
+        return spawnList.stream().map( identifier -> ForgeRegistries.BIOMES.getValue(new ResourceLocation(identifier))).collect(Collectors.toList());
     }
-
 
     private static List<String> expandSpawnList(List<String> spawnList) {
         List<String> biomes = new ArrayList<>(Collections.emptyList());
@@ -82,8 +82,8 @@ public final class BiomeSpawnHelper {
             }
         });
         for (String biomeCategory : biomeCategories) {
-            Set<Biome> biomesInCategory = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(biomeCategory.toUpperCase()));
-            for (Biome biome : biomesInCategory) {
+            Set<RegistryKey<Biome>> biomesInCategory = BiomeDictionary.getBiomes(BiomeDictionary.Type.getType(biomeCategory.toUpperCase()));
+            for (RegistryKey<Biome> biome : biomesInCategory) {
                 biomesFromDictionary.add(biome.getRegistryName().toString());
             }
         }
@@ -92,33 +92,6 @@ public final class BiomeSpawnHelper {
 
     private static boolean isBiomeCategory(String identifier) {
         return identifier.split(":").length == 1;
-    }
-
-    private static void addEntityToBiomes(EntityType<?> entity, List<String> spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn, EntityClassification classification) {
-        for (String identifier : spawnBiomes) {
-            Biome biome = ForgeRegistries.BIOMES.getValue(new ResourceLocation(identifier));
-            if (biome != null) {
-                biome.getSpawns(classification).add(new Biome.SpawnListEntry(entity, weight, minGroupCountIn, maxGroupCountIn));
-            } else {
-                System.out.println("[Earth2Java] Unable to find biome " + identifier + " while registering entity spawn");
-            }
-        }
-    }
-
-    public static <T extends AnimalEntity> void setCreatureSpawnBiomes(EntityType<T> entity, String[] spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn) {
-        setSpawnBiomes(entity, spawnBiomes, weight, minGroupCountIn, maxGroupCountIn, EntityClassification.CREATURE);
-    }
-
-    public static <T extends WaterMobEntity> void setWaterCreatureSpawnBiomes(EntityType<T> entity, String[] spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn) {
-        setSpawnBiomes(entity, spawnBiomes, weight, minGroupCountIn, maxGroupCountIn, EntityClassification.WATER_CREATURE);
-    }
-
-    public static <T extends MonsterEntity> void setMonsterSpawnBiomes(EntityType<T> entity, String[] spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn) {
-        setSpawnBiomes(entity, spawnBiomes, weight, minGroupCountIn, maxGroupCountIn, EntityClassification.MONSTER);
-    }
-
-    public static <T extends MobEntity> void setMobSpawnBiomes(EntityType<T> entity, String[] spawnBiomes, int weight, int minGroupCountIn, int maxGroupCountIn) {
-        setSpawnBiomes(entity, spawnBiomes, weight, minGroupCountIn, maxGroupCountIn, EntityClassification.MISC);
     }
 
     public static List<String> convertForConfig(String[] ary) {

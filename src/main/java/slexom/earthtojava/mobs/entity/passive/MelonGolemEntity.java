@@ -56,8 +56,8 @@ public class MelonGolemEntity extends GolemEntity implements IRangedAttackMob, I
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
         return MobEntity.func_233666_p_()
-                .func_233815_a_(Attributes.MAX_HEALTH, 4.0D)
-                .func_233815_a_(Attributes.MOVEMENT_SPEED, 0.2F);
+                .createMutableAttribute(Attributes.MAX_HEALTH, 4.0D)
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2F);
     }
 
     protected void registerData() {

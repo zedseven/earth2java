@@ -8,6 +8,7 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.network.IPacket;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.network.NetworkHooks;
 import slexom.earthtojava.mobs.entity.IEntityBlink;
 
@@ -27,7 +28,7 @@ public class E2JBaseChickenEntity<T extends ChickenEntity> extends ChickenEntity
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return MobEntity.func_233666_p_().func_233815_a_(Attributes.MAX_HEALTH, 4.0D).func_233815_a_(Attributes.MOVEMENT_SPEED, 0.25D);
+        return MobEntity.func_233666_p_().createMutableAttribute(Attributes.MAX_HEALTH, 4.0D).createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25D);
     }
 
     @Override
@@ -55,9 +56,10 @@ public class E2JBaseChickenEntity<T extends ChickenEntity> extends ChickenEntity
     }
 
     @Override
-    public T createChild(AgeableEntity ageable) {
-        return (T) getType().create(this.world);
+        public T func_241840_a(ServerWorld world , AgeableEntity ageable) {
+        return (T) getType().create(world);
     }
+
 
     @Override
     public IPacket<?> createSpawnPacket() {

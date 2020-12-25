@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements IShearable, IForgeShearable {
+public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements IForgeShearable {
 
     private static final DataParameter<Boolean> isSheared = EntityDataManager.createKey(WoolyCowEntity.class, DataSerializers.BOOLEAN);
 
@@ -123,21 +123,4 @@ public class WoolyCowEntity extends E2JBaseCowEntity<WoolyCowEntity> implements 
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 
-    @Override
-    public void func_230263_a_(SoundCategory soundCategory) {
-        this.world.playMovingSound(null, this, SoundEvents.ENTITY_SHEEP_SHEAR, soundCategory, 1.0F, 1.0F);
-        this.setSheared(true);
-        int i = 1 + this.rand.nextInt(3);
-        for (int j = 0; j < i; ++j) {
-            ItemEntity itementity = this.entityDropItem(new ItemStack(Blocks.BROWN_WOOL), 1);
-            if (itementity != null) {
-                itementity.setMotion(itementity.getMotion().add((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F, this.rand.nextFloat() * 0.05F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F));
-            }
-        }
-    }
-
-    @Override
-    public boolean func_230262_K__() {
-        return this.isAlive() && !this.getSheared() && !this.isChild();
-    }
 }

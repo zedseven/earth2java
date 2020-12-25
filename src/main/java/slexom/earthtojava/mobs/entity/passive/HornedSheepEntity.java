@@ -44,10 +44,10 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
         return MobEntity.func_233666_p_()
-                .func_233815_a_(Attributes.MAX_HEALTH, 8.0D)
-                .func_233815_a_(Attributes.FOLLOW_RANGE, 48.0D)
-                .func_233815_a_(Attributes.MOVEMENT_SPEED, 0.23D)
-                .func_233815_a_(Attributes.ATTACK_DAMAGE, 2.0D);
+                .createMutableAttribute(Attributes.MAX_HEALTH, 8.0D)
+                .createMutableAttribute(Attributes.FOLLOW_RANGE, 48.0D)
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.23D)
+                .createMutableAttribute(Attributes.ATTACK_DAMAGE, 2.0D);
     }
 
     protected void registerData() {
@@ -74,16 +74,16 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
 
     public void writeAdditional(CompoundNBT compound) {
         super.writeAdditional(compound);
-        this.func_233682_c_(compound);
+        this.writeAngerNBT(compound);
     }
 
     public void readAdditional(CompoundNBT compound) {
         super.readAdditional(compound);
-        this.func_241358_a_((ServerWorld) this.world, compound);
+        this.readAngerNBT((ServerWorld) this.world, compound);
     }
 
     public boolean attackEntityAsMob(Entity entityIn) {
-        double damage = this.func_233637_b_(Attributes.ATTACK_DAMAGE);
+        double damage = this.getAttributeValue(Attributes.ATTACK_DAMAGE);
         if (entityIn instanceof HornedSheepEntity) {
             damage = 0;
         }
@@ -95,29 +95,29 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
     }
 
     @Override
-    public int func_230256_F__() {
+    public int getAngerTime() {
         return this.dataManager.get(ANGER_TIME);
     }
 
     @Override
-    public void func_230260_a__(int value) {
+    public void setAngerTime(int value) {
         this.dataManager.set(ANGER_TIME, value);
     }
 
     @Nullable
     @Override
-    public UUID func_230257_G__() {
+    public UUID getAngerTarget() {
         return this.lastHurtBy;
     }
 
     @Override
-    public void func_230259_a_(@Nullable UUID uuid) {
+    public void setAngerTarget(@Nullable UUID uuid) {
         this.lastHurtBy = uuid;
     }
 
     @Override
     public void func_230258_H__() {
-        this.func_230260_a__(field_234180_bw_.func_233018_a_(this.rand));
+        this.setAngerTime(field_234180_bw_.getRandomWithinRange( this.rand));
     }
 
     public void setRevengeTarget(@Nullable LivingEntity livingBase) {
@@ -200,7 +200,7 @@ public class HornedSheepEntity extends E2JBaseSheepEntity<HornedSheepEntity> imp
     }
 
     public boolean setSheepAttacker(Entity attacker) {
-        this.func_230260_a__(400 + this.rand.nextInt(400));
+        this.setAngerTime(400 + this.rand.nextInt(400));
         if (attacker instanceof LivingEntity) {
             this.setRevengeTarget((LivingEntity) attacker);
         }

@@ -26,7 +26,7 @@ public class MudBlock extends FlowingFluidBlock {
 
     public boolean reactWithNeighbors(World worldIn, BlockPos pos, BlockState state) {
         ResourceLocation mudTag = new ResourceLocation(EarthToJavaMobsMod.MOD_ID, "mud");
-        if (this.getFluid().isIn(FluidTags.getCollection().getOrCreate(mudTag))) {
+        if (this.getFluid().isIn(FluidTags.getCollection().getTagByID(mudTag))) {
             boolean flag = false;
             for (Direction direction : Direction.values()) {
                 if (worldIn.getFluidState(pos.offset(direction)).isTagged(FluidTags.LAVA)) {

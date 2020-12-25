@@ -1,6 +1,5 @@
 package slexom.earthtojava.mobs.entity.ai.goal;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.MobEntity;
@@ -31,7 +30,7 @@ public class JollyLlamaEatFernGoal extends Goal {
         if (this.fernEaterEntity.getRNG().nextInt(this.fernEaterEntity.isChild() ? 50 : 1000) != 0) {
             return false;
         } else {
-            BlockPos blockpos = this.fernEaterEntity.func_233580_cy_();
+            BlockPos blockpos = this.fernEaterEntity.getPosition();
             return IS_FERN.test(this.entityWorld.getBlockState(blockpos));
         }
     }
@@ -72,7 +71,7 @@ public class JollyLlamaEatFernGoal extends Goal {
     public void tick() {
         this.eatingFernTimer = Math.max(0, this.eatingFernTimer - 1);
         if (this.eatingFernTimer == 4) {
-            BlockPos blockpos = this.fernEaterEntity.func_233580_cy_();
+            BlockPos blockpos = this.fernEaterEntity.getPosition();
             if (IS_FERN.test(this.entityWorld.getBlockState(blockpos))) {
                 if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.entityWorld, this.fernEaterEntity)) {
                     this.entityWorld.destroyBlock(blockpos, false);

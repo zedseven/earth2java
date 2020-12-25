@@ -18,7 +18,7 @@ public class TropicalSlimeFaceRandomGoal extends Goal {
     }
 
     public boolean shouldExecute() {
-        return this.slime.getAttackTarget() == null && (this.slime.func_233570_aj_() || this.slime.isInWater() || this.slime.isInLava() || this.slime.isPotionActive(Effects.LEVITATION)) && this.slime.getMoveHelper() instanceof TropicalSlimeMovementController;
+        return this.slime.getAttackTarget() == null && (this.slime.isOnGround() || this.slime.isInWater() || this.slime.isInLava() || this.slime.isPotionActive(Effects.LEVITATION)) && this.slime.getMoveHelper() instanceof TropicalSlimeMovementController;
     }
 
     public void tick() {

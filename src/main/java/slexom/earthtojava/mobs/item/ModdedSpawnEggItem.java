@@ -90,7 +90,7 @@ public class ModdedSpawnEggItem extends SpawnEggItem {
     @OnlyIn(Dist.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (E2JModConfig.showDescription) {
-            tooltip.add(this.getEggDescription().func_240699_a_(TextFormatting.GRAY));
+            tooltip.add(this.getEggDescription().mergeStyle(TextFormatting.GRAY));
         }
     }
 

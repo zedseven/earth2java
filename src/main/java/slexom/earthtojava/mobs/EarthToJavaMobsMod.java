@@ -53,7 +53,6 @@ public class EarthToJavaMobsMod {
     private void setup(final FMLCommonSetupEvent event) {
         DeferredWorkQueue.runLater(() -> {
             registerToComposter();
-            EntitySpawn.init();
             FeatureInit.init();
         });
     }

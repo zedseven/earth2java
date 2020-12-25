@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import slexom.earthtojava.mobs.entity.passive.CluckshroomEntity;
 
 public class CluckshroomPlaceBlockGoal extends Goal {
@@ -26,7 +27,7 @@ public class CluckshroomPlaceBlockGoal extends Goal {
     }
 
     public void tick() {
-        IWorld iworld = this.cluckshroom.world;
+        World world = this.cluckshroom.world;
         int i = MathHelper.floor(this.cluckshroom.getPosX());
         int j = MathHelper.floor(this.cluckshroom.getPosY());
         int k = MathHelper.floor(this.cluckshroom.getPosZ());
@@ -34,10 +35,10 @@ public class CluckshroomPlaceBlockGoal extends Goal {
         BlockPos blockPos = new BlockPos(i, j, k);
         BlockState blockState = mushroom.getDefaultState();
         BlockPos blockDownPos = blockPos.down();
-        BlockState blockDownState = iworld.getBlockState(blockDownPos);
-        if (canPlace(iworld, blockState, blockPos, blockDownState, blockDownPos) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(cluckshroom,   net.minecraftforge.common.util.BlockSnapshot.create(iworld, blockDownPos), net.minecraft.util.Direction.UP)) {
-            iworld.destroyBlock(blockPos, false);
-            iworld.setBlockState(blockPos, blockState, 3);
+        BlockState blockDownState = world.getBlockState(blockDownPos);
+        if (canPlace(world, blockState, blockPos, blockDownState, blockDownPos) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(cluckshroom,   net.minecraftforge.common.util.BlockSnapshot.create(world.getDimensionKey(), world, blockDownPos), net.minecraft.util.Direction.UP)) {
+            world.destroyBlock(blockPos, false);
+            world.setBlockState(blockPos, blockState, 3);
         }
     }
 }

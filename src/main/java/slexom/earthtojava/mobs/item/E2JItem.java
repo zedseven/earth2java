@@ -26,7 +26,7 @@ public class E2JItem extends Item {
             String translationKey = this.getTranslationKey() + ".desc";
             if (I18n.hasKey(translationKey)) {
                 TranslationTextComponent description = new TranslationTextComponent(translationKey);
-                tooltip.add(description.func_240699_a_(TextFormatting.GRAY));
+                tooltip.add(description.mergeStyle(TextFormatting.GRAY));
             }
         }
     }

@@ -6,8 +6,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.BlockSnapshot;
 import slexom.earthtojava.mobs.entity.passive.MoobloomEntity;
 import slexom.earthtojava.mobs.init.BlockInit;
@@ -28,7 +28,7 @@ public class MoobloomPlaceBlockGoal extends Goal {
     }
 
     public void tick() {
-        IWorld iworld = this.moobloom.world;
+        World world = this.moobloom.world;
         int i = MathHelper.floor(this.moobloom.getPosX());
         int j = MathHelper.floor(this.moobloom.getPosY());
         int k = MathHelper.floor(this.moobloom.getPosZ());
@@ -36,10 +36,10 @@ public class MoobloomPlaceBlockGoal extends Goal {
         BlockPos blockPos = new BlockPos(i, j, k);
         BlockState blockState = flower.getDefaultState();
         BlockPos blockDownPos = blockPos.down();
-        BlockState blockDownState = iworld.getBlockState(blockDownPos);
-        if (canPlace(iworld, blockState, blockPos, blockDownState, blockDownPos) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(moobloom, BlockSnapshot.create(iworld, blockDownPos), net.minecraft.util.Direction.UP)) {
-            iworld.destroyBlock(blockPos, false);
-            iworld.setBlockState(blockPos, blockState, 3);
+        BlockState blockDownState = world.getBlockState(blockDownPos);
+        if (canPlace(world, blockState, blockPos, blockDownState, blockDownPos) && !net.minecraftforge.event.ForgeEventFactory.onBlockPlace(moobloom, BlockSnapshot.create(world.getDimensionKey(), world, blockDownPos), net.minecraft.util.Direction.UP)) {
+            world.destroyBlock(blockPos, false);
+            world.setBlockState(blockPos, blockState, 3);
         }
     }
 }

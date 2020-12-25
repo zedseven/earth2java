@@ -78,7 +78,7 @@ public class TradesHelper {
         if (defaultCurrency == null) {
             defaultCurrency = ItemInit.RUBY.get();
         }
-        if (!defaultCurrency.isIn(ItemTags.getCollection().getOrCreate(new ResourceLocation("forge:gems/ruby")))) {
+        if (!defaultCurrency.isIn(ItemTags.getCollection().getTagByID(new ResourceLocation("forge:gems/ruby")))) {
             defaultCurrency = ItemInit.RUBY.get();
         }
         return E2JModConfig.canRubyOreGenerate ? defaultCurrency : Items.EMERALD;

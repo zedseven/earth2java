@@ -59,7 +59,7 @@ public class RainbowBedTileEntityRenderer extends TileEntityRenderer<RainbowBedT
         World world = tileEntityIn.getWorld();
         if (world != null) {
             BlockState blockstate = tileEntityIn.getBlockState();
-            TileEntityMerger.ICallbackWrapper<RainbowBedTileEntity> icallbackwrapper = TileEntityMerger.func_226924_a_(TileEntityTypeInit.RAINBOW_BED.get(), RainbowBedBlock::func_226863_i_, RainbowBedBlock::func_226862_h_, ChestBlock.FACING, blockstate, world, tileEntityIn.getPos(), (p_228846_0_, p_228846_1_) -> false);
+            TileEntityMerger.ICallbackWrapper<RainbowBedTileEntity> icallbackwrapper = TileEntityMerger.func_226924_a_(TileEntityTypeInit.RAINBOW_BED.get(), RainbowBedBlock::getMergeType, RainbowBedBlock::getFootDirection, ChestBlock.FACING, blockstate, world, tileEntityIn.getPos(), (p_228846_0_, p_228846_1_) -> false);
             int i = icallbackwrapper.apply(new DualBrightnessCallback<>()).get(combinedLightIn);
             this.func_228847_a_(matrixStackIn, bufferIn, blockstate.get(RainbowBedBlock.PART) == BedPart.HEAD, blockstate.get(RainbowBedBlock.HORIZONTAL_FACING), material, i, combinedOverlayIn, false);
         } else {

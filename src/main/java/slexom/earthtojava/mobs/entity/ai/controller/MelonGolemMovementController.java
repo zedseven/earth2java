@@ -34,7 +34,7 @@ public class MelonGolemMovementController extends MovementController {
             this.mob.setMoveForward(0.0F);
         } else {
             this.action = Action.WAIT;
-            if (this.mob.func_233570_aj_()) {
+            if (this.mob.isOnGround()) {
                 this.mob.setAIMoveSpeed((float) (this.speed * this.mob.getAttribute(Attributes.MOVEMENT_SPEED).getValue()));
                 if (this.jumpDelay-- <= 0) {
                     this.jumpDelay = this.melonGolem.getJumpDelay();

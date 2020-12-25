@@ -6,7 +6,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -26,7 +28,7 @@ import slexom.earthtojava.mobs.entity.ai.goal.TropicalSlimeFaceRandomGoal;
 import slexom.earthtojava.mobs.entity.ai.goal.TropicalSlimeFloatGoal;
 import slexom.earthtojava.mobs.entity.ai.goal.TropicalSlimeHopGoal;
 
-public class TropicalSlimeEntity extends CreatureEntity {
+public class TropicalSlimeEntity extends MobEntity implements IMob {
 
     public float squishAmount;
     public float squishFactor;
@@ -51,7 +53,7 @@ public class TropicalSlimeEntity extends CreatureEntity {
         this.goalSelector.addGoal(2, new TropicalSlimeAttackGoal(this));
         this.goalSelector.addGoal(3, new TropicalSlimeFaceRandomGoal(this));
         this.goalSelector.addGoal(5, new TropicalSlimeHopGoal(this));
-        this.targetSelector.addGoal(3, (new HurtByTargetGoal(this)));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 10, true, false, (p_213811_1_) -> Math.abs(p_213811_1_.getPosY() - this.getPosY()) <= 4.0D));
     }
 
     private void setAttributes() {
@@ -168,7 +170,7 @@ public class TropicalSlimeEntity extends CreatureEntity {
     }
 
     protected float func_225512_er_() {
-        return (float) this.func_233637_b_(Attributes.ATTACK_DAMAGE);
+        return (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE);
     }
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
